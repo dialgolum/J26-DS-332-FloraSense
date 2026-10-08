@@ -1,0 +1,1 @@
+"""New variety registration endpoint."""

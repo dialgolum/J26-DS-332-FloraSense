@@ -1,0 +1,7 @@
+[project]
+name = "floriculture-ai"
+requires-python = ">=3.11,<3.12"
+
+[tool.ruff]
+
+[tool.pytest.ini_options]

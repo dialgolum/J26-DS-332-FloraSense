@@ -1,0 +1,54 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+*.pem
+*.key
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Data (company data and images must never be committed)
+data/raw/*
+data/interim/*
+data/processed/*
+!data/**/.gitkeep
+
+# Models and weights
+models/checkpoints/*
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.gguf
+*.onnx
+!models/**/.gitkeep
+
+# Vector store and experiment outputs
+chroma_db/
+experiments/logs/*
+!experiments/logs/.gitkeep
+wandb/
+mlruns/
+
+# DVC cache
+/.dvc/cache
