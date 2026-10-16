@@ -1,0 +1,92 @@
+filename,relative_path,plant_species,disease_class,symptom_description,source
+20261001_100848.jpg,data/c2-disease/raw/abiotic/20261001_100848.jpg,Aglaonema 'Maria',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_105026.jpg,data/c2-disease/raw/abiotic/20261001_105026.jpg,Dracaena reflexa,abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_105314.jpg,data/c2-disease/raw/abiotic/20261001_105314.jpg,Dracaena surculosa 'Gold Dust',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_105740.jpg,data/c2-disease/raw/abiotic/20261001_105740.jpg,Dracaena reflexa,abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_110314.jpg,data/c2-disease/raw/abiotic/20261001_110314.jpg,Dracaena sanderiana 'White',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_111900.jpg,data/c2-disease/raw/abiotic/20261001_111900.jpg,Dracaena surculosa 'Gold Dust',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_111903.jpg,data/c2-disease/raw/abiotic/20261001_111903.jpg,Dracaena surculosa 'Gold Dust',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_111911.jpg,data/c2-disease/raw/abiotic/20261001_111911.jpg,Dracaena surculosa 'Gold Dust',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_113138.jpg,data/c2-disease/raw/abiotic/20261001_113138.jpg,Dracaena sanderiana 'White',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_113142.jpg,data/c2-disease/raw/abiotic/20261001_113142.jpg,Dracaena sanderiana 'White',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_114233.jpg,data/c2-disease/raw/abiotic/20261001_114233.jpg,Codiaeum variegatum,abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_152132.jpg,data/c2-disease/raw/abiotic/20261001_152132.jpg,Dracaena sanderiana 'White',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261002_100721.jpg,data/c2-disease/raw/abiotic/20261002_100721.jpg,Dracaena reflexa,abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261002_101222.jpg,data/c2-disease/raw/abiotic/20261002_101222.jpg,Dracaena sanderiana 'White',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261002_102035.jpg,data/c2-disease/raw/abiotic/20261002_102035.jpg,Aglaonema 'Siam Aurora',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261002_102446.jpg,data/c2-disease/raw/abiotic/20261002_102446.jpg,Dracaena sanderiana 'White',abiotic,"Non-pathogenic physiological stress, tip burn, scorch, or nutrient deficiency.",Mike Flora Nursery
+20261001_100545.jpg,data/c2-disease/raw/bacterial/20261001_100545.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_100555.jpg,data/c2-disease/raw/bacterial/20261001_100555.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_100600.jpg,data/c2-disease/raw/bacterial/20261001_100600.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_101521.jpg,data/c2-disease/raw/bacterial/20261001_101521.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_101846.jpg,data/c2-disease/raw/bacterial/20261001_101846.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_101901.jpg,data/c2-disease/raw/bacterial/20261001_101901.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_102001.jpg,data/c2-disease/raw/bacterial/20261001_102001.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_102046.jpg,data/c2-disease/raw/bacterial/20261001_102046.jpg,Aglaonema 'Maria',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_103441.jpg,data/c2-disease/raw/bacterial/20261001_103441.jpg,Aglaonema 'Siam Aurora',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_104517.jpg,data/c2-disease/raw/bacterial/20261001_104517.jpg,Aglaonema 'Siam Aurora',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_111230.jpg,data/c2-disease/raw/bacterial/20261001_111230.jpg,Dracaena reflexa,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_111919.jpg,data/c2-disease/raw/bacterial/20261001_111919.jpg,Dracaena surculosa 'Gold Dust',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_112014.jpg,data/c2-disease/raw/bacterial/20261001_112014.jpg,Dracaena sanderiana 'White',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_112838.jpg,data/c2-disease/raw/bacterial/20261001_112838.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_112846.jpg,data/c2-disease/raw/bacterial/20261001_112846.jpg,Dracaena surculosa 'Gold Dust',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_112914.jpg,data/c2-disease/raw/bacterial/20261001_112914.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_113311.jpg,data/c2-disease/raw/bacterial/20261001_113311.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_113313.jpg,data/c2-disease/raw/bacterial/20261001_113313.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_113318.jpg,data/c2-disease/raw/bacterial/20261001_113318.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_113320.jpg,data/c2-disease/raw/bacterial/20261001_113320.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122548.jpg,data/c2-disease/raw/bacterial/20261001_122548.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122550.jpg,data/c2-disease/raw/bacterial/20261001_122550.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122552.jpg,data/c2-disease/raw/bacterial/20261001_122552.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122554.jpg,data/c2-disease/raw/bacterial/20261001_122554.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122604.jpg,data/c2-disease/raw/bacterial/20261001_122604.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122614.jpg,data/c2-disease/raw/bacterial/20261001_122614.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122617.jpg,data/c2-disease/raw/bacterial/20261001_122617.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122630.jpg,data/c2-disease/raw/bacterial/20261001_122630.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122632.jpg,data/c2-disease/raw/bacterial/20261001_122632.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_122636.jpg,data/c2-disease/raw/bacterial/20261001_122636.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261002_101209.jpg,data/c2-disease/raw/bacterial/20261002_101209.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261002_101258.jpg,data/c2-disease/raw/bacterial/20261002_101258.jpg,Dracaena godseffiana,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261002_102015.jpg,data/c2-disease/raw/bacterial/20261002_102015.jpg,Aglaonema 'Siam Aurora',bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261002_102840.jpg,data/c2-disease/raw/bacterial/20261002_102840.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261002_103951.jpg,data/c2-disease/raw/bacterial/20261002_103951.jpg,Epipremnum aureum,bacterial,"Water-soaked lesions, soft tissue rot, and bacterial exudate margins.",Mike Flora Nursery
+20261001_101319.jpg,data/c2-disease/raw/fungi/20261001_101319.jpg,Aglaonema 'Maria',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_112051.jpg,data/c2-disease/raw/fungi/20261001_112051.jpg,Dracaena surculosa 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_112054.jpg,data/c2-disease/raw/fungi/20261001_112054.jpg,Dracaena surculosa 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_112152.jpg,data/c2-disease/raw/fungi/20261001_112152.jpg,Dracaena reflexa,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_112313.jpg,data/c2-disease/raw/fungi/20261001_112313.jpg,Dracaena surculosa 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_112315.jpg,data/c2-disease/raw/fungi/20261001_112315.jpg,Dracaena surculosa 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_113007.jpg,data/c2-disease/raw/fungi/20261001_113007.jpg,Dracaena godseffiana,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_113009.jpg,data/c2-disease/raw/fungi/20261001_113009.jpg,Dracaena godseffiana,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_113014.jpg,data/c2-disease/raw/fungi/20261001_113014.jpg,Dracaena godseffiana,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_113015.jpg,data/c2-disease/raw/fungi/20261001_113015.jpg,Dracaena godseffiana,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_121424.jpg,data/c2-disease/raw/fungi/20261001_121424.jpg,Codiaeum variegatum 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_121433.jpg,data/c2-disease/raw/fungi/20261001_121433.jpg,Codiaeum variegatum 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_121443.jpg,data/c2-disease/raw/fungi/20261001_121443.jpg,Codiaeum variegatum 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_121456.jpg,data/c2-disease/raw/fungi/20261001_121456.jpg,Codiaeum variegatum 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_144941.jpg,data/c2-disease/raw/fungi/20261001_144941.jpg,Epipremnum aureum,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_151224.jpg,data/c2-disease/raw/fungi/20261001_151224.jpg,Schefflera arboricola,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_151227.jpg,data/c2-disease/raw/fungi/20261001_151227.jpg,Schefflera arboricola,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_151318.jpg,data/c2-disease/raw/fungi/20261001_151318.jpg,Schefflera arboricola,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_151409.jpg,data/c2-disease/raw/fungi/20261001_151409.jpg,Schefflera arboricola,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_095812.jpg,data/c2-disease/raw/fungi/20261002_095812.jpg,Codiaeum variegatum 'Gold Dust',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_100509.jpg,data/c2-disease/raw/fungi/20261002_100509.jpg,Codiaeum variegatum 'Oakleaf',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_100541.jpg,data/c2-disease/raw/fungi/20261002_100541.jpg,Codiaeum variegatum 'Oakleaf',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_100757.jpg,data/c2-disease/raw/fungi/20261002_100757.jpg,Dracaena reflexa,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_100807.jpg,data/c2-disease/raw/fungi/20261002_100807.jpg,Dracaena reflexa,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_100832.jpg,data/c2-disease/raw/fungi/20261002_100832.jpg,Dracaena reflexa,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_101129.jpg,data/c2-disease/raw/fungi/20261002_101129.jpg,Schefflera arboricola,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_101136.jpg,data/c2-disease/raw/fungi/20261002_101136.jpg,Schefflera arboricola,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_101332.jpg,data/c2-disease/raw/fungi/20261002_101332.jpg,Aglaonema 'Siam Aurora',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_101514.jpg,data/c2-disease/raw/fungi/20261002_101514.jpg,Aglaonema 'Maria',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_101822.jpg,data/c2-disease/raw/fungi/20261002_101822.jpg,Aglaonema 'Siam Aurora',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_102243.jpg,data/c2-disease/raw/fungi/20261002_102243.jpg,Aglaonema 'Maria',fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_102534.jpg,data/c2-disease/raw/fungi/20261002_102534.jpg,Epipremnum aureum,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_102612.jpg,data/c2-disease/raw/fungi/20261002_102612.jpg,Epipremnum aureum,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261002_103021.jpg,data/c2-disease/raw/fungi/20261002_103021.jpg,Epipremnum aureum,fungi,"Necrotic circular spots, target rings, and fungal spore margins.",Mike Flora Nursery
+20261001_100028.jpg,data/c2-disease/raw/healthy/20261001_100028.jpg,Aglaonema 'Maria',healthy,"Optimal foliar health, absence of active infectious lesions.",Mike Flora Nursery
+20261001_112638.jpg,data/c2-disease/raw/healthy/20261001_112638.jpg,Dracaena godseffiana,healthy,"Optimal foliar health, absence of active infectious lesions.",Mike Flora Nursery
+20261001_143550.jpg,data/c2-disease/raw/healthy/20261001_143550.jpg,Cholrophytum comosum 'Spider',healthy,"Optimal foliar health, absence of active infectious lesions.",Mike Flora Nursery
+20261001_095232.jpg,data/c2-disease/raw/unhealthy/20261001_095232.jpg,Aglaonema 'Maria',unhealthy,Field nursery foliar condition.,Mike Flora Nursery
+20261001_101715.jpg,data/c2-disease/raw/unhealthy/20261001_101715.jpg,Aglaonema 'Maria',unhealthy,Field nursery foliar condition.,Mike Flora Nursery
+20261002_102957.jpg,data/c2-disease/raw/unknown/20261002_102957.jpg,Dracaena surculosa 'Gold Dust',unknown,Unverified symptom profile held for agronomist diagnostic review.,Mike Flora Nursery
