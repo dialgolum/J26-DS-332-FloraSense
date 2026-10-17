@@ -33,6 +33,10 @@ data/interim/*
 data/processed/*
 !data/**/.gitkeep
 
+/data/quality_assessment/original/
+/data/quality_assessment/processed/
+/data/quality_assessment/annotations/quality_dataset.xlsx
+
 # Models and weights
 models/checkpoints/*
 *.pt
