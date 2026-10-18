@@ -1,7 +1,7 @@
 
 import unittest
 
-from services.quality_assessment.rule_engine import (
+from services.c3_quality_assessment.rule_engine import (
     assess_sample,
 )
 
