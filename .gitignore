@@ -34,25 +34,24 @@ data/processed/*
 !data/**/.gitkeep
 
 # Component 2 Specific Data Rules
-# 1. Block public benchmark datasets (both hyphen and underscore variants)
-data/c2-disease/public/
-data/c2-disease/public/**
+# 1. Block public benchmark datasets
 data/c2_disease/public/
 data/c2_disease/public/**
 **/public/**
 *.zip
 *.tar.gz
 
-# 2. Block runtime uploads and dynamic review/telemetry files
-data/c2-disease/review_uploads/
-data/c2-disease/review_uploads/**
+# 2. Block raw camera/nursery images (keep folder structure via .gitkeep)
+data/c2_disease/raw/
+data/c2_disease/raw/**
+!data/c2_disease/raw/**/.gitkeep
+
+# 3. Block runtime uploads and dynamic triage telemetry
 data/c2_disease/review_uploads/
 data/c2_disease/review_uploads/**
-data/c2-disease/telemetry.jsonl
 data/c2_disease/telemetry.jsonl
 
-# 3. Explicitly allow and track ground-truth manifests
-!data/c2-disease/dataset_manifest.csv
+# 4. Explicitly allow and track ground-truth manifests
 !data/c2_disease/dataset_manifest.csv
 
 # Models and Weights
@@ -67,13 +66,10 @@ models/checkpoints/*
 
 # Component 2 Specific Model Rules
 # 1. Exclude mutable triage queues
-models/c2-disease/review_queue.json
 models/c2_disease/review_queue.json
 
 # 2. Explicitly allow and track lightweight prototype stores
-!models/c2-disease/prototypes.json
 !models/c2_disease/prototypes.json
-!models/c2-disease/prototype_support.json
 !models/c2_disease/prototype_support.json
 
 # Vector store and experiment outputs

@@ -1,1 +1,3 @@
-# see requirements/ folder
+-r requirements/base.txt
+-r requirements/c1.txt
+-r requirements/dev.txt

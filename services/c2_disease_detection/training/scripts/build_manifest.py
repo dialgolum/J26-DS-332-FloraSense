@@ -1,9 +1,9 @@
-import os
 import csv
+import os
 from pathlib import Path
 
-RAW_DIR = Path("data/c2-disease/raw")
-OUTPUT_CSV = Path("data/c2-disease/dataset_manifest.csv")
+RAW_DIR = Path("data/c2_disease/public")
+OUTPUT_CSV = Path("data/c2_disease/dataset_manifest.csv")
 VALID_EXTS = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
 
 SYMPTOM_MAP = {
@@ -14,30 +14,51 @@ SYMPTOM_MAP = {
     "unknown": "Unverified symptom profile held for agronomist diagnostic review."
 }
 
-rows = []
 
-for root, dirs, files in os.walk(RAW_DIR):
-    for f in sorted(files):
-        ext = Path(f).suffix.lower()
-        if ext in VALID_EXTS:
-            rel_folder = os.path.relpath(root, RAW_DIR).lower()
+
+def build_manifest(raw_dir: Path = RAW_DIR, output_csv: Path = OUTPUT_CSV) -> int:
+    if not raw_dir.is_dir():
+        raise FileNotFoundError(f"Image directory does not exist: {raw_dir}")
+
+    rows = []
+    for root, dirs, files in os.walk(raw_dir):
+        dirs.sort()
+        for filename in sorted(files):
+            if Path(filename).suffix.lower() not in VALID_EXTS:
+                continue
+
+            rel_folder = os.path.relpath(root, raw_dir).lower()
             disease_class = rel_folder if rel_folder != "." else "unknown"
-            
             symptom = SYMPTOM_MAP.get(disease_class, "Field nursery foliar condition.")
 
             rows.append({
-                "filename": f,
-                "relative_path": os.path.join(root, f).replace("\\", "/"),
+                "filename": filename,
+                "relative_path": os.path.join(root, filename).replace("\\", "/"),
                 "plant_species": "Ornamental Foliage",
                 "disease_class": disease_class,
                 "symptom_description": symptom,
-                "source": "Mike Flora Nursery"
+                "source": "Mike Flora Nursery",
             })
 
-OUTPUT_CSV.parent.mkdir(parents=True, exist_ok=True)
-with open(OUTPUT_CSV, mode="w", newline="", encoding="utf-8") as f:
-    writer = csv.DictWriter(f, fieldnames=["filename", "relative_path", "plant_species", "disease_class", "symptom_description", "source"])
-    writer.writeheader()
-    writer.writerows(rows)
+    output_csv.parent.mkdir(parents=True, exist_ok=True)
+    with output_csv.open(mode="w", newline="", encoding="utf-8") as manifest_file:
+        writer = csv.DictWriter(
+            manifest_file,
+            fieldnames=[
+                "filename",
+                "relative_path",
+                "plant_species",
+                "disease_class",
+                "symptom_description",
+                "source",
+            ],
+        )
+        writer.writeheader()
+        writer.writerows(rows)
 
-print(f"Manifest successfully generated with {len(rows)} images mapped to your categories.")
+    return len(rows)
+
+
+if __name__ == "__main__":
+    image_count = build_manifest()
+    print(f"Manifest successfully generated with {image_count} images mapped to your categories.")
