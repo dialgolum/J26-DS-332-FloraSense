@@ -1,6 +1,9 @@
 
 import pandas as pd
-
+if __package__:
+    from .model_inference import predict_visual_quality
+else:
+    from model_inference import predict_visual_quality
 
 def is_yes(value):
     return str(value).strip().lower() in {"yes", "y", "true", "1"}
@@ -26,7 +29,7 @@ def assessment_status(value):
     return "MANUAL REVIEW"
 
 
-def assess_sample(sheets, sample_id, requirement_id):
+def assess_sample(sheets, sample_id, requirement_id,image_path=None):
     samples = sheets["Samples"]
     plants = sheets["Plant_Types"]
     profiles = sheets["Requirement_Profiles"]
@@ -193,6 +196,34 @@ def assess_sample(sheets, sample_id, requirement_id):
     else:
         overall = "PASS"
 
+    
+    # 5. Optional AI visual-quality assessment.
+    # This result does not change the existing rule-based decision.
+    visual_model_result = None
+
+    if image_path is not None:
+        try:
+            prediction = predict_visual_quality(image_path)
+
+            visual_model_result = {
+                "Image": str(image_path),
+                "Predicted_Quality": prediction["Predicted_Quality"],
+                "Confidence": prediction["Confidence"],
+                "Probabilities": prediction["Probabilities"],
+                "Device": prediction["Device"],
+                "Status": "SUCCESS",
+            }
+
+        except Exception as exc:
+            # Keep the rule-based assessment available if inference fails.
+            visual_model_result = {
+                "Image": str(image_path),
+                "Status": "ERROR",
+                "Error": str(exc),
+            }
+
+
+
     return {
         "Sample_ID": sample_id,
         "Plant_ID": sample["Plant_ID"],
@@ -200,4 +231,5 @@ def assess_sample(sheets, sample_id, requirement_id):
         "Buyer_ID": profile.get("Buyer_ID"),
         "Overall_Result": overall,
         "Checks": results,
+        "Visual_Model": visual_model_result,
     }
