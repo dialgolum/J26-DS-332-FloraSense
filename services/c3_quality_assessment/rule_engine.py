@@ -1,6 +1,9 @@
 
 import pandas as pd
-
+if __package__:
+    from .model_inference import predict_visual_quality
+else:
+    from model_inference import predict_visual_quality
 
 def is_yes(value):
     return str(value).strip().lower() in {"yes", "y", "true", "1"}
@@ -26,7 +29,7 @@ def assessment_status(value):
     return "MANUAL REVIEW"
 
 
-def assess_sample(sheets, sample_id, requirement_id):
+def assess_sample(sheets, sample_id, requirement_id,image_path=None):
     samples = sheets["Samples"]
     plants = sheets["Plant_Types"]
     profiles = sheets["Requirement_Profiles"]
@@ -97,7 +100,8 @@ def assess_sample(sheets, sample_id, requirement_id):
         add_result("Packing mode", "FAIL",
                    "Observed packing mode differs from the requirement.")
 
-    # 3. Height result recorded for this specific profile
+    
+    # 3. Height result based on the percentage of leaves in range
     height_rows = heights[
         (heights["Sample_ID"] == sample_id)
         & (heights["Requirement_ID"] == requirement_id)
@@ -105,15 +109,47 @@ def assess_sample(sheets, sample_id, requirement_id):
 
     if is_yes(plant.get("Height_Check")):
         if len(height_rows) != 1:
-            add_result("Height", "MANUAL REVIEW",
-                       "No unique height assessment exists for this profile.")
-        else:
-            height_result = height_rows.iloc[0]["Height_Result"]
             add_result(
                 "Height",
-                assessment_status(height_result),
-                f"Recorded height assessment: {height_result}"
+                "MANUAL REVIEW",
+                "No unique height assessment exists for this profile."
             )
+        else:
+            height_row = height_rows.iloc[0]
+            leaves_in_range = height_row["Leaves_In_Range"]
+            total_leaves = height_row["Total_Leaves_Assessed"]
+
+            # Validate the recorded counts before calculating the percentage.
+            if (
+                pd.isna(leaves_in_range)
+                or pd.isna(total_leaves)
+                or total_leaves <= 0
+                or leaves_in_range < 0
+                or leaves_in_range > total_leaves
+            ):
+                add_result(
+                    "Height",
+                    "MANUAL REVIEW",
+                    "Missing or invalid leaf height assessment counts."
+                )
+            else:
+                percentage = (leaves_in_range / total_leaves) * 100
+
+                if percentage >= 50:
+                    status = "PASS"
+                elif percentage < 30:
+                    status = "FAIL"
+                else:
+                    status = "MANUAL REVIEW"
+
+                add_result(
+                    "Height",
+                    status,
+                    f"{leaves_in_range}/{total_leaves} leaves "
+                    f"({percentage:.2f}%) are within the buyer's "
+                    f"height range."
+                )
+
 
     # 4. Visual annotations
     annotation_rows = annotations[
@@ -193,6 +229,34 @@ def assess_sample(sheets, sample_id, requirement_id):
     else:
         overall = "PASS"
 
+    
+    # 5. Optional AI visual-quality assessment.
+    # This result does not change the existing rule-based decision.
+    visual_model_result = None
+
+    if image_path is not None:
+        try:
+            prediction = predict_visual_quality(image_path)
+
+            visual_model_result = {
+                "Image": str(image_path),
+                "Predicted_Quality": prediction["Predicted_Quality"],
+                "Confidence": prediction["Confidence"],
+                "Probabilities": prediction["Probabilities"],
+                "Device": prediction["Device"],
+                "Status": "SUCCESS",
+            }
+
+        except Exception as exc:
+            # Keep the rule-based assessment available if inference fails.
+            visual_model_result = {
+                "Image": str(image_path),
+                "Status": "ERROR",
+                "Error": str(exc),
+            }
+
+
+
     return {
         "Sample_ID": sample_id,
         "Plant_ID": sample["Plant_ID"],
@@ -200,4 +264,5 @@ def assess_sample(sheets, sample_id, requirement_id):
         "Buyer_ID": profile.get("Buyer_ID"),
         "Overall_Result": overall,
         "Checks": results,
+        "Visual_Model": visual_model_result,
     }
