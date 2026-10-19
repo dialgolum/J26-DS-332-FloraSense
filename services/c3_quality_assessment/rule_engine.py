@@ -100,7 +100,8 @@ def assess_sample(sheets, sample_id, requirement_id,image_path=None):
         add_result("Packing mode", "FAIL",
                    "Observed packing mode differs from the requirement.")
 
-    # 3. Height result recorded for this specific profile
+    
+    # 3. Height result based on the percentage of leaves in range
     height_rows = heights[
         (heights["Sample_ID"] == sample_id)
         & (heights["Requirement_ID"] == requirement_id)
@@ -108,15 +109,47 @@ def assess_sample(sheets, sample_id, requirement_id,image_path=None):
 
     if is_yes(plant.get("Height_Check")):
         if len(height_rows) != 1:
-            add_result("Height", "MANUAL REVIEW",
-                       "No unique height assessment exists for this profile.")
-        else:
-            height_result = height_rows.iloc[0]["Height_Result"]
             add_result(
                 "Height",
-                assessment_status(height_result),
-                f"Recorded height assessment: {height_result}"
+                "MANUAL REVIEW",
+                "No unique height assessment exists for this profile."
             )
+        else:
+            height_row = height_rows.iloc[0]
+            leaves_in_range = height_row["Leaves_In_Range"]
+            total_leaves = height_row["Total_Leaves_Assessed"]
+
+            # Validate the recorded counts before calculating the percentage.
+            if (
+                pd.isna(leaves_in_range)
+                or pd.isna(total_leaves)
+                or total_leaves <= 0
+                or leaves_in_range < 0
+                or leaves_in_range > total_leaves
+            ):
+                add_result(
+                    "Height",
+                    "MANUAL REVIEW",
+                    "Missing or invalid leaf height assessment counts."
+                )
+            else:
+                percentage = (leaves_in_range / total_leaves) * 100
+
+                if percentage >= 50:
+                    status = "PASS"
+                elif percentage < 30:
+                    status = "FAIL"
+                else:
+                    status = "MANUAL REVIEW"
+
+                add_result(
+                    "Height",
+                    status,
+                    f"{leaves_in_range}/{total_leaves} leaves "
+                    f"({percentage:.2f}%) are within the buyer's "
+                    f"height range."
+                )
+
 
     # 4. Visual annotations
     annotation_rows = annotations[
