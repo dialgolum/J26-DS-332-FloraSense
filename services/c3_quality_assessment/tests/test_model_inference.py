@@ -1,20 +1,26 @@
 
 """Basic smoke test for the trained visual quality model."""
 
+import sys
 from pathlib import Path
+
+COMPONENT_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(COMPONENT_DIR))
 
 from model_inference import predict_visual_quality
 
 
-# This image is expected to exist in the project's image dataset.
-PROJECT_ROOT = Path(__file__).resolve().parents[2]
+# Sample image in the project dataset.
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
+
 IMAGE_PATH = (
     PROJECT_ROOT
     / "data"
     / "quality_assessment"
     / "original"
     / "individual"
-    / "P01_S010_root.jpg"
+    / "P01"
+    / "P01_S005_front.jpg"
 )
 
 
