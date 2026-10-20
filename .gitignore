@@ -81,3 +81,6 @@ mlruns/
 
 # DVC cache
 /.dvc/cache
+
+# Preprocessing & evaluation reports
+services/c2_disease_detection/evaluation/reports/preprocessing_report.json
