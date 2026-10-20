@@ -1,7 +1,8 @@
+import apiClient from "./apiClient.js";
+
 export async function identifyPlant(file) {
-  const fd = new FormData();
-  fd.append("file", file);
-  const res = await fetch("/api/identify", { method: "POST", body: fd });
-  if (!res.ok) throw new Error("Request failed");
-  return res.json();
+  const form = new FormData();
+  form.append("file", file);
+  const { data } = await apiClient.post("/identify", form);
+  return data;
 }
