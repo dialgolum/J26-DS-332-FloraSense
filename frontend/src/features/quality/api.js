@@ -12,6 +12,18 @@ export const getRequirements = (plantId) => readData(apiClient.get(`${PREFIX}/re
 export const getSamples = (plantId) => readData(apiClient.get(`${PREFIX}/samples`, { params: { plant_id: plantId } }));
 export const getSampleImages = (sampleId) => readData(apiClient.get(`${PREFIX}/samples/${encodeURIComponent(sampleId)}/images`));
 export const getHeightSessions = (sampleId) => readData(apiClient.get(`${PREFIX}/samples/${encodeURIComponent(sampleId)}/height-sessions`));
+export const inspectFrontImage = (file, gridProfileConfirmed, signal) => readData(apiClient.post(
+  `${PREFIX}/automatic/front-image`, file, {
+    headers: { "Content-Type": file.type }, signal,
+    params: { grid_profile_confirmed: gridProfileConfirmed },
+  },
+));
+export const getHeightAnnotations = (sampleId, requirementId) => readData(apiClient.get(
+  `${PREFIX}/samples/${encodeURIComponent(sampleId)}/height-assessments`, { params: { requirement_id: requirementId } },
+));
+export const getQualityAnnotations = (sampleId, requirementId) => readData(apiClient.get(
+  `${PREFIX}/samples/${encodeURIComponent(sampleId)}/quality-annotations`, { params: { requirement_id: requirementId } },
+));
 export const reevaluateHeightSession = (sessionId, requirementId) => readData(apiClient.post(
   `${PREFIX}/height-sessions/${encodeURIComponent(sessionId)}/reevaluate`,
   { requirement_id: requirementId },

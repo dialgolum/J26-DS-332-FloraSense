@@ -129,3 +129,88 @@ def test_unknown_ids_and_invalid_session_references_return_json_errors():
         json={"requirement_id": "R999"},
     )
     assert unknown_requirement.status_code == 404
+
+
+def test_all_p01_images_and_annotations_match_workbook():
+    sheets = load_dataset()
+    for sample_id in sheets["Samples"]["Sample_ID"]:
+        images = client.get(f"/api/v1/c3/samples/{sample_id}/images").json()["data"]
+        expected = sheets["Images"][sheets["Images"].Sample_ID == sample_id]
+        assert {row["Image_ID"] for row in images} == set(expected.Image_ID)
+        for row in images:
+            assert client.get(row["preview_url"]).status_code == 200
+        for requirement_id in ("R001", "R002"):
+            heights = client.get(f"/api/v1/c3/samples/{sample_id}/height-assessments",
+                                 params={"requirement_id": requirement_id})
+            assert heights.status_code == 200
+            assert heights.json()["meta"]["source"] == "recorded_manual_annotation"
+            expected_heights = sheets["Height_Assessments"]
+            expected_heights = expected_heights[(expected_heights.Sample_ID == sample_id)
+                                                & (expected_heights.Requirement_ID == requirement_id)]
+            assert heights.json()["data"] == expected_heights.to_dict("records")
+            quality = client.get(f"/api/v1/c3/samples/{sample_id}/quality-annotations",
+                                 params={"requirement_id": requirement_id})
+            assert quality.status_code == 200
+            assert quality.json()["meta"]["scope"] == "sample"
+            expected_quality = sheets["Quality_Annotations"]
+            expected_quality = expected_quality[expected_quality.Sample_ID == sample_id]
+            from services.c3_quality_assessment.api.routes import _records
+            assert quality.json()["data"] == _records(expected_quality)
+
+
+def test_multiple_images_and_missing_views():
+    for sample_id, views in [("S004", {"Front", "Root"}),
+                             ("S005", {"Front", "Root", "Focus"}),
+                             ("S014", {"Front", "Root"})]:
+        rows = client.get(f"/api/v1/c3/samples/{sample_id}/images").json()["data"]
+        assert {row["View_Type"] for row in rows} == views
+    sheets = load_dataset()
+    assert "Side" in set(sheets["Images"].View_Type)
+
+
+def test_missing_sessions_preserve_available_annotations(tmp_path):
+    original = app.dependency_overrides[get_results_dir]
+    app.dependency_overrides[get_results_dir] = lambda: tmp_path
+    try:
+        for sample_id in ("S004", "S014"):
+            assert client.get(f"/api/v1/c3/samples/{sample_id}/height-sessions").json()["data"] == []
+            height = client.get(f"/api/v1/c3/samples/{sample_id}/height-assessments",
+                                params={"requirement_id": "R001"}).json()["data"]
+            assert height[0]["Height_Result"] == "PASS"
+    finally:
+        app.dependency_overrides[get_results_dir] = original
+
+
+def test_missing_annotations_and_sessions_are_empty_not_invented(tmp_path):
+    sheets = load_dataset()
+    for name in ("Height_Assessments", "Quality_Annotations", "Images"):
+        sheets[name] = sheets[name][sheets[name].Sample_ID != "S004"]
+    original_sheets = app.dependency_overrides[get_sheets]
+    original_results = app.dependency_overrides[get_results_dir]
+    app.dependency_overrides[get_sheets] = lambda: sheets
+    app.dependency_overrides[get_results_dir] = lambda: tmp_path
+    try:
+        for endpoint in ("height-assessments", "quality-annotations", "height-sessions", "images"):
+            response = client.get(f"/api/v1/c3/samples/S004/{endpoint}",
+                                  params={"requirement_id": "R001"})
+            assert response.status_code == 200
+            assert response.json()["data"] == []
+    finally:
+        app.dependency_overrides[get_sheets] = original_sheets
+        app.dependency_overrides[get_results_dir] = original_results
+
+
+def test_annotation_validation_and_sample_wide_quality():
+    for endpoint in ("height-assessments", "quality-annotations"):
+        assert client.get(f"/api/v1/c3/samples/S999/{endpoint}",
+                          params={"requirement_id": "R001"}).status_code == 404
+        assert client.get(f"/api/v1/c3/samples/S004/{endpoint}",
+                          params={"requirement_id": "R999"}).status_code == 404
+        assert client.get(f"/api/v1/c3/samples/S004/{endpoint}").status_code == 422
+    r1 = client.get("/api/v1/c3/samples/S005/quality-annotations",
+                    params={"requirement_id": "R001"}).json()["data"]
+    r2 = client.get("/api/v1/c3/samples/S005/quality-annotations",
+                    params={"requirement_id": "R002"}).json()["data"]
+    assert r1 == r2
+    assert r1[0]["Total_Leaf_Count"] == 11
+    assert r1[0]["Leaf_Distribution"] is None

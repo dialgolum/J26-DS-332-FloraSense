@@ -186,6 +186,47 @@ def list_height_sessions(
                                           "invalid_session_files_skipped": invalid_count}}
 
 
+def _annotation_context(sheets: dict, sample_id: str, requirement_id: str) -> pd.Series:
+    sample = _validated_sample(sheets, sample_id)
+    requirement = _find_row(sheets["Requirement_Profiles"], "Requirement_ID",
+                            requirement_id, "Requirement profile")
+    if str(sample["Plant_ID"]).strip() != str(requirement["Plant_ID"]).strip():
+        raise HTTPException(status_code=422, detail="Requirement profile belongs to a different plant type.")
+    return sample
+
+
+@router.get("/samples/{sample_id}/height-assessments")
+def recorded_height_assessments(
+    sample_id: str,
+    requirement_id: str = Query(min_length=1),
+    sheets: dict[str, pd.DataFrame] = Depends(get_sheets),
+) -> dict:
+    _annotation_context(sheets, sample_id, requirement_id)
+    rows = sheets["Height_Assessments"]
+    rows = rows[(rows["Sample_ID"].astype(str).str.strip() == sample_id)
+                & (rows["Requirement_ID"].astype(str).str.strip() == requirement_id)]
+    return {"data": _records(rows), "meta": {
+        "source": "recorded_manual_annotation", "sheet": "Height_Assessments",
+        "sample_id": sample_id, "requirement_id": requirement_id, "count": len(rows),
+    }}
+
+
+@router.get("/samples/{sample_id}/quality-annotations")
+def recorded_quality_annotations(
+    sample_id: str,
+    requirement_id: str = Query(min_length=1),
+    sheets: dict[str, pd.DataFrame] = Depends(get_sheets),
+) -> dict:
+    sample = _annotation_context(sheets, sample_id, requirement_id)
+    rows = sheets["Quality_Annotations"]
+    rows = rows[rows["Sample_ID"].astype(str).str.strip() == sample_id]
+    return {"data": _records(rows), "meta": {
+        "source": "recorded_manual_annotation", "sheet": "Quality_Annotations",
+        "scope": "sample", "sample_id": sample_id, "requirement_id": requirement_id,
+        "count": len(rows), "sample_observations": _records(sample.to_frame().T)[0],
+    }}
+
+
 @router.post("/height-sessions/{session_id}/reevaluate")
 def reevaluate_height_session(
     session_id: str,

@@ -10,6 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .routes import router
+from .automatic_routes import router as automatic_router
 
 app = FastAPI(title="FloraSense C3 Quality Assessment API", version="1.0.0")
 
@@ -56,3 +57,4 @@ def health() -> dict:
 
 
 app.include_router(router)
+app.include_router(automatic_router)
