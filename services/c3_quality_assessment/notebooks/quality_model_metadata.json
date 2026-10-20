@@ -1,0 +1,11 @@
+{
+  "architecture": "resnet18",
+  "classes": [
+    "Acceptable",
+    "Not Acceptable"
+  ],
+  "image_size": 224,
+  "training_records": 27,
+  "test_records": 9,
+  "note": "Initial proof-of-concept model. Evaluation is preliminary because the labelled dataset is small."
+}

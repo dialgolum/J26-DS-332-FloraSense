@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "sample_id": "S005",
+  "image_id": "IMG0009",
+  "requirement_id": "R001",
+  "original_image_path": "E:\\ResearchProject\\J26-DS-332-FloraSense\\data\\quality_assessment\\original\\individual\\P01\\P01_S005_front.jpg",
+  "calibration_points": [
+    [
+      2278,
+      5814
+    ],
+    [
+      2278,
+      5599
+    ]
+  ],
+  "scale_px_per_cm": 215.0,
+  "leaves": [
+    {
+      "leaf_number": 1,
+      "emergence_px": [
+        3276,
+        6585
+      ],
+      "tip_px": [
+        1372,
+        3423
+      ],
+      "height_cm": 17.1674286290297
+    },
+    {
+      "leaf_number": 2,
+      "emergence_px": [
+        3367,
+        6619
+      ],
+      "tip_px": [
+        1156,
+        1995
+      ],
+      "height_cm": 23.839147737405852
+    },
+    {
+      "leaf_number": 3,
+      "emergence_px": [
+        3446,
+        6551
+      ],
+      "tip_px": [
+        1870,
+        1315
+      ],
+      "height_cm": 25.432748676579944
+    },
+    {
+      "leaf_number": 4,
+      "emergence_px": [
+        3503,
+        6641
+      ],
+      "tip_px": [
+        2687,
+        1315
+      ],
+      "height_cm": 25.061150523249037
+    },
+    {
+      "leaf_number": 5,
+      "emergence_px": [
+        3548,
+        6619
+      ],
+      "tip_px": [
+        3695,
+        1269
+      ],
+      "height_cm": 24.89311233341729
+    },
+    {
+      "leaf_number": 6,
+      "emergence_px": [
+        3684,
+        6619
+      ],
+      "tip_px": [
+        3661,
+        1451
+      ],
+      "height_cm": 24.037447349242473
+    },
+    {
+      "leaf_number": 7,
+      "emergence_px": [
+        3775,
+        6630
+      ],
+      "tip_px": [
+        4874,
+        1451
+      ],
+      "height_cm": 24.624751977458068
+    },
+    {
+      "leaf_number": 8,
+      "emergence_px": [
+        3775,
+        6630
+      ],
+      "tip_px": [
+        6031,
+        4148
+      ],
+      "height_cm": 15.600377191706816
+    },
+    {
+      "leaf_number": 9,
+      "emergence_px": [
+        3593,
+        6664
+      ],
+      "tip_px": [
+        4387,
+        2131
+      ],
+      "height_cm": 21.404712309019928
+    }
+  ],
+  "pending_emergence_px": null,
+  "calibration_verified": true,
+  "scale_reliable": true,
+  "timestamp": "2026-10-20T06:18:39.849294+00:00"
+}
