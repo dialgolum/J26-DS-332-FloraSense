@@ -44,6 +44,8 @@ def make_sheets(
             "Sample_ID": "S001",
             "Requirement_ID": "R001",
             "Height_Result": height_result,
+            "Leaves_In_Range": {"PASS": 4, "FAIL": 1, "MANUAL REVIEW": 3}[height_result],
+            "Total_Leaves_Assessed": 8,
         }]),
         "Quality_Annotations": pd.DataFrame([{
             "Sample_ID": "S001",
