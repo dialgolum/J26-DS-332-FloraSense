@@ -35,4 +35,4 @@ def ask(q, k=4):
     for d, m in zip(r["documents"][0], r["metadatas"][0]):
         print(f"[{m['source']} p{m['page']}] {d[:150]}...\n")
 
-ask("How should Aglaonema be packed for export?")
+ask("How much shade does Siam Aurora need?")
