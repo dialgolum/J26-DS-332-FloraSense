@@ -1,11 +1,21 @@
 """C1 plant identification and advisory service API entry point."""
 
-from fastapi import FastAPI
+import io
+from fastapi import FastAPI, UploadFile, File
+from fastapi.staticfiles import StaticFiles
+from PIL import Image
+from services.c1_plant_id_advisory.vision.inference.classifier import PlantIdentifier
 
-app = FastAPI(title="C1 Plant ID & Advisory Service")
-
+app = FastAPI(title="FloraSense C1")
+identifier = PlantIdentifier()
 
 @app.get("/health")
-async def health() -> dict:
-    """Health check endpoint."""
+def health():
     return {"status": "ok"}
+
+@app.post("/identify")
+async def identify(file: UploadFile = File(...)):
+    img = Image.open(io.BytesIO(await file.read()))
+    return identifier.identify(img)
+
+app.mount("/", StaticFiles(directory="frontend", html=True), name="ui")
