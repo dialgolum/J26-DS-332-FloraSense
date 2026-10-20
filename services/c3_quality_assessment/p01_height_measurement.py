@@ -7,8 +7,12 @@ The interactive window requires OpenCV with GUI support (opencv-python).
 from __future__ import annotations
 
 import argparse
+import json
 import math
+import re
+import uuid
 from dataclasses import dataclass
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Sequence
 
@@ -17,6 +21,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 WORKBOOK = ROOT / "data" / "quality_assessment" / "annotations" / "quality_dataset.xlsx"
+RESULTS_DIR = ROOT / "data" / "quality_assessment" / "results" / "height_measurements"
 DEFAULT_DISPLAY_SIZE = (1280, 720)
 
 
@@ -100,6 +105,132 @@ def load_buyer_range(requirement_id: str, workbook: Path = WORKBOOK) -> BuyerRan
     return BuyerRange(requirement_id, str(row["Buyer_ID"]), float(low), float(high))
 
 
+def identify_image(image_path: Path, workbook: Path = WORKBOOK) -> tuple[str | None, str | None]:
+    """Resolve existing sample and image identifiers for a workbook image path."""
+    normalized = image_path.resolve().as_posix().casefold()
+    images = pd.read_excel(workbook, sheet_name="Images")
+    images.columns = images.columns.str.strip()
+    for row in images.itertuples(index=False):
+        relative = (ROOT / str(row.Relative_Path).replace("\\", "/")).resolve().as_posix().casefold()
+        if relative == normalized:
+            return str(row.Sample_ID), str(row.Image_ID)
+    match = re.search(r"P01_(S\d+)_", image_path.name, re.IGNORECASE)
+    return (match.group(1).upper(), None) if match else (None, None)
+
+
+def save_measurement_session(
+    image_path: Path,
+    requirement_id: str,
+    calibration_points: Sequence[tuple[int, int]],
+    scale_px_per_cm: float | None,
+    measurements: Sequence[tuple[tuple[int, int], tuple[int, int]]],
+    *,
+    calibration_verified: bool,
+    scale_reliable: bool,
+    pending_emergence: tuple[int, int] | None = None,
+    results_dir: Path = RESULTS_DIR,
+    workbook: Path = WORKBOOK,
+) -> Path:
+    """Persist a completed measurement session as a uniquely named JSON file."""
+    sample_id, image_id = identify_image(image_path, workbook)
+    leaves = []
+    for index, (emergence, tip) in enumerate(measurements, 1):
+        height = leaf_distance_cm(emergence, tip, scale_px_per_cm) if scale_px_per_cm else None
+        leaves.append({"leaf_number": index, "emergence_px": list(emergence),
+                       "tip_px": list(tip), "height_cm": height})
+    payload = {
+        "schema_version": 1,
+        "sample_id": sample_id,
+        "image_id": image_id,
+        "requirement_id": requirement_id,
+        "original_image_path": str(image_path.resolve()),
+        "calibration_points": [list(point) for point in calibration_points],
+        "scale_px_per_cm": scale_px_per_cm,
+        "leaves": leaves,
+        "pending_emergence_px": list(pending_emergence) if pending_emergence is not None else None,
+        "calibration_verified": bool(calibration_verified),
+        "scale_reliable": bool(scale_reliable),
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+    }
+    results_dir.mkdir(parents=True, exist_ok=True)
+    safe_sample = sample_id or image_path.stem
+    timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    target = results_dir / f"{safe_sample}_{timestamp}_{uuid.uuid4().hex[:8]}.json"
+    target.write_text(json.dumps(payload, indent=2), encoding="utf-8")
+    return target
+
+
+def load_measurement_session(session_path: Path) -> dict:
+    """Load and validate a version 1 saved measurement session."""
+    try:
+        data = json.loads(Path(session_path).read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        raise ValueError(f"Cannot read measurement session: {exc}") from exc
+    required = ("sample_id", "image_id", "requirement_id", "original_image_path",
+                "calibration_points", "scale_px_per_cm", "leaves", "pending_emergence_px",
+                "calibration_verified", "scale_reliable", "timestamp")
+    if not isinstance(data, dict) or data.get("schema_version") != 1:
+        raise ValueError("Unsupported or malformed measurement session schema.")
+    missing = [field for field in required if field not in data]
+    if missing:
+        raise ValueError(f"Measurement session is missing required fields: {', '.join(missing)}")
+    if not isinstance(data["calibration_points"], list) or len(data["calibration_points"]) not in (0, 2):
+        raise ValueError("Session must contain zero or two calibration points.")
+    for point in data["calibration_points"]:
+        if not isinstance(point, list) or len(point) != 2 or not all(
+            isinstance(value, (int, float)) and math.isfinite(value) for value in point
+        ):
+            raise ValueError("Calibration points must be finite [x, y] pairs.")
+    scale = data["scale_px_per_cm"]
+    if scale is not None and (not isinstance(scale, (int, float)) or not math.isfinite(scale) or scale <= 0):
+        raise ValueError("Session scale must be a positive finite number or null.")
+    if not isinstance(data["leaves"], list):
+        raise ValueError("Session leaves must be a list.")
+    for leaf in data["leaves"]:
+        if not isinstance(leaf, dict) or "emergence_px" not in leaf or "tip_px" not in leaf or "height_cm" not in leaf:
+            raise ValueError("Each leaf must contain emergence_px, tip_px, and height_cm.")
+        for field in ("emergence_px", "tip_px"):
+            point = leaf[field]
+            if not isinstance(point, list) or len(point) != 2 or not all(
+                isinstance(value, (int, float)) and math.isfinite(value) for value in point
+            ):
+                raise ValueError(f"{field} must be a finite [x, y] pair.")
+        height = leaf["height_cm"]
+        if height is not None and (
+            not isinstance(height, (int, float)) or not math.isfinite(height) or height <= 0
+        ):
+            raise ValueError("Leaf height must be a positive finite number or null.")
+    if not isinstance(data["calibration_verified"], bool) or not isinstance(data["scale_reliable"], bool):
+        raise ValueError("Calibration confirmation flags must be boolean.")
+    return data
+
+
+def reevaluate_session(
+    session_path: Path,
+    requirement_id: str,
+    *,
+    workbook: Path = WORKBOOK,
+    minimum_measurements: int = 3,
+) -> dict:
+    """Evaluate saved leaf heights against the selected workbook buyer profile."""
+    session = load_measurement_session(session_path)
+    buyer_range = load_buyer_range(requirement_id, workbook)
+    heights = [leaf["height_cm"] for leaf in session["leaves"]]
+    if session.get("pending_emergence_px") is not None:
+        heights.append(None)
+    result = classify_measurements(
+        heights, buyer_range,
+        calibration_verified=session["calibration_verified"] and session["scale_px_per_cm"] is not None,
+        scale_reliable=session["scale_reliable"],
+        minimum_measurements=minimum_measurements,
+    )
+    result.update({"Requirement_ID": buyer_range.requirement_id, "Buyer_ID": buyer_range.buyer_id,
+                   "Range_cm": [buyer_range.minimum_cm, buyer_range.maximum_cm],
+                   "Sample_ID": session["sample_id"], "Image_ID": session.get("image_id"),
+                   "Image": session["original_image_path"], "Session": str(Path(session_path).resolve())})
+    return result
+
+
 def pixels_per_centimetre(
     calibration_pixel_distance: float,
     grid_spacing_cm: float,
@@ -116,15 +247,39 @@ def pixels_per_centimetre(
     return calibration_pixel_distance / grid_spacing_cm
 
 
-def vertical_height_cm(
-    reference_y: float, tip_y: float, scale_px_per_cm: float
+def leaf_distance_cm(
+    emergence: tuple[float, float], tip: tuple[float, float], scale_px_per_cm: float
 ) -> float:
-    """Calculate vertical image-coordinate difference, ignoring horizontal offset."""
-    if not all(math.isfinite(value) for value in (reference_y, tip_y, scale_px_per_cm)):
+    """Calculate straight-line emergence-to-tip distance in the image plane."""
+    if not all(math.isfinite(value) for value in (*emergence, *tip, scale_px_per_cm)):
         raise ValueError("Coordinates and scale must be finite numbers.")
     if scale_px_per_cm <= 0:
         raise ValueError("Scale must be positive.")
-    return abs(reference_y - tip_y) / scale_px_per_cm
+    return math.dist(emergence, tip) / scale_px_per_cm
+
+
+def add_leaf_measurement_point(
+    point: tuple[int, int],
+    measurements: list[tuple[tuple[int, int], tuple[int, int]]],
+    pending_emergence: tuple[int, int] | None,
+) -> tuple[int, int] | None:
+    """Pair successive clicks as emergence then tip, returning pending state."""
+    if pending_emergence is None:
+        return point
+    measurements.append((pending_emergence, point))
+    return None
+
+
+def undo_leaf_measurement(
+    measurements: list[tuple[tuple[int, int], tuple[int, int]]],
+    pending_emergence: tuple[int, int] | None,
+) -> tuple[int, int] | None:
+    """Undo an unfinished emergence click first, otherwise the last leaf pair."""
+    if pending_emergence is not None:
+        return None
+    if measurements:
+        measurements.pop()
+    return None
 
 
 def classify_measurements(
@@ -133,7 +288,6 @@ def classify_measurements(
     *,
     calibration_verified: bool,
     scale_reliable: bool,
-    reference_point: tuple[float, float] | None,
     minimum_measurements: int = 3,
 ) -> dict:
     """Summarize valid heights and apply P01's configured buyer range."""
@@ -142,8 +296,6 @@ def classify_measurements(
         reasons.append("Graph-paper calibration is unverified.")
     if not scale_reliable:
         reasons.append("Tilt or perspective may make the single image scale unreliable.")
-    if reference_point is None:
-        reasons.append("The stem emergence reference point is missing.")
 
     valid = []
     invalid_count = 0
@@ -196,7 +348,7 @@ def run_interactive(image_path: Path, requirement_id: str, grid_spacing_cm: floa
                     minimum_measurements: int = 3,
                     max_display_size: tuple[int, int] = DEFAULT_DISPLAY_SIZE,
                     display_enhancement: bool = True) -> dict:
-    """Use OpenCV clicks to calibrate, set a shared reference, and mark leaf tips."""
+    """Calibrate, then mark each leaf's emergence point and tip in turn."""
     try:
         import cv2
     except ImportError as exc:
@@ -220,12 +372,12 @@ def run_interactive(image_path: Path, requirement_id: str, grid_spacing_cm: floa
         )
     print(f"Displayed image dimensions: {display_width} x {display_height} pixels (full image, aspect-preserved)")
     profile = load_buyer_range(requirement_id)
-    points: list[tuple[int, int]] = []
+    measurements: list[tuple[tuple[int, int], tuple[int, int]]] = []
+    pending_emergence: tuple[int, int] | None = None
     calibration_points: list[tuple[int, int]] = []
-    reference: tuple[int, int] | None = None
     mode = "calibration"
     result: dict = {}
-    window = "P01 leaf height | c calibration, r reference, t tips, u undo, right-click delete, q finish"
+    window = "P01 leaf height | c calibration, m leaf points, u undo, q finish"
 
     def to_display(point: tuple[float, float]) -> tuple[int, int]:
         x = round(point[0] * display_width / original_width)
@@ -239,33 +391,27 @@ def run_interactive(image_path: Path, requirement_id: str, grid_spacing_cm: floa
             visible = to_display(point)
             cv2.drawMarker(canvas, visible, (0, 0, 0), cv2.MARKER_DIAMOND, 18, 4)
             cv2.drawMarker(canvas, visible, (255, 0, 255), cv2.MARKER_DIAMOND, 14, 2)
-        for point in points:
-            visible = to_display(point)
-            cv2.circle(canvas, visible, 7, (0, 0, 0), 3)
-            cv2.circle(canvas, visible, 5, (0, 255, 255), -1)
-        if reference is not None:
-            visible_reference = to_display(reference)
-            cv2.drawMarker(canvas, visible_reference, (255, 255, 255), cv2.MARKER_CROSS, 24, 4)
-            cv2.drawMarker(canvas, visible_reference, (0, 0, 255), cv2.MARKER_CROSS, 20, 2)
-            for index, point in enumerate(points, 1):
-                height = vertical_height_cm(reference[1], point[1], result.get("scale", 1))
-                label_point = to_display(point)
-                cv2.putText(canvas, f"{index}: {height:.1f} cm", (label_point[0] + 8, label_point[1]),
+        scale = result.get("scale", 1)
+        for index, (emergence, tip) in enumerate(measurements, 1):
+            for point, color in ((emergence, (255, 0, 0)), (tip, (0, 255, 255))):
+                visible = to_display(point)
+                cv2.circle(canvas, visible, 6, (0, 0, 0), 3)
+                cv2.circle(canvas, visible, 4, color, -1)
+            height = leaf_distance_cm(emergence, tip, scale)
+            label_point = to_display(tip)
+            cv2.putText(canvas, f"{index}: {height:.1f} cm", (label_point[0] + 8, label_point[1]),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 0, 0), 4)
-                cv2.putText(canvas, f"{index}: {height:.1f} cm", (label_point[0] + 8, label_point[1]),
+            cv2.putText(canvas, f"{index}: {height:.1f} cm", (label_point[0] + 8, label_point[1]),
                             cv2.FONT_HERSHEY_SIMPLEX, 0.55, (0, 255, 0), 2)
+        if pending_emergence is not None:
+            cv2.drawMarker(canvas, to_display(pending_emergence), (255, 0, 0), cv2.MARKER_CROSS, 20, 2)
         title = f"Mode: {mode} | Buyer range: {profile.minimum_cm:g}-{profile.maximum_cm:g} cm"
         cv2.putText(canvas, title, (15, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (0, 0, 0), 4)
         cv2.putText(canvas, title, (15, 28), cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2)
         cv2.imshow(window, canvas)
 
     def on_click(event: int, x: int, y: int, flags: int, param: object) -> None:
-        nonlocal reference
-        if event == cv2.EVENT_RBUTTONDOWN and mode == "tips" and points:
-            nearest = min(range(len(points)), key=lambda index: math.dist(to_display(points[index]), (x, y)))
-            if math.dist(to_display(points[nearest]), (x, y)) <= 15:
-                points.pop(nearest)
-            return
+        nonlocal pending_emergence
         if event != cv2.EVENT_LBUTTONDOWN:
             return
         native_x, native_y = display_to_original(
@@ -282,59 +428,68 @@ def run_interactive(image_path: Path, requirement_id: str, grid_spacing_cm: floa
                 result["calibration_points"] = calibration_points.copy()
                 calibration_points.clear()
                 result["calibrated"] = True
-        elif mode == "reference":
-            reference = native_point
-        elif mode == "tips":
-            if reference is not None:
-                points.append(native_point)
+        elif mode == "measurements":
+            pending_emergence = add_leaf_measurement_point(
+                native_point, measurements, pending_emergence
+            )
 
     cv2.namedWindow(window, cv2.WINDOW_AUTOSIZE)
     cv2.setMouseCallback(window, on_click)
     print("Select two adjacent graph-paper points spanning the configured spacing.")
-    print("Keys: c calibration, r reference point, t leaf tips, u undo, right-click a tip to remove, q finish")
+    print("Keys: c calibration, m leaf points (click emergence then tip for each leaf), u undo, q finish")
     print("Simple scale assumes graph paper and vertical measurement share a plane with negligible perspective.")
     redraw()
     while True:
         key = cv2.waitKey(20) & 0xFF
         if key == ord("c"):
             mode = "calibration"
-            points.clear()
+            measurements.clear()
+            pending_emergence = None
             calibration_points.clear()
             result.pop("calibrated", None)
             result.pop("scale", None)
             result.pop("calibration_points", None)
-        elif key == ord("r"):
-            mode = "reference"
-        elif key == ord("t"):
-            mode = "tips"
-        elif key == ord("u") and points:
-            points.pop()
+        elif key == ord("m"):
+            mode = "measurements"
+        elif key == ord("u"):
+            pending_emergence = undo_leaf_measurement(measurements, pending_emergence)
         elif key == ord("q") or key == 27:
             break
         redraw()
     cv2.destroyAllWindows()
 
     scale = result.get("scale")
-    heights = [vertical_height_cm(reference[1], point[1], scale) for point in points] if reference and scale else []
+    heights = [leaf_distance_cm(emergence, tip, scale) for emergence, tip in measurements] if scale else []
+    if pending_emergence is not None:
+        heights.append(None)
     assessment = classify_measurements(
         heights, profile,
         calibration_verified=calibration_verified and bool(result.get("calibrated")),
         scale_reliable=scale_reliable,
-        reference_point=reference,
         minimum_measurements=minimum_measurements,
     )
     assessment.update({"Requirement_ID": profile.requirement_id, "Buyer_ID": profile.buyer_id,
                        "Range_cm": [profile.minimum_cm, profile.maximum_cm],
                        "Scale_px_per_cm": scale, "Image": str(resolved_image_path)})
+    session_path = save_measurement_session(
+        resolved_image_path, profile.requirement_id,
+        result.get("calibration_points", []), scale, measurements,
+        calibration_verified=calibration_verified and bool(result.get("calibrated")),
+        scale_reliable=scale_reliable,
+        pending_emergence=pending_emergence,
+    )
+    assessment["Session_File"] = str(session_path)
     print(assessment)
     return assessment
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("image", type=Path, help="Existing P01 image path")
+    parser.add_argument("image", type=Path, nargs="?", help="Existing P01 image path")
+    parser.add_argument("--reevaluate-session", type=Path,
+                        help="Evaluate a saved JSON session without opening the image UI")
     parser.add_argument("--requirement", required=True, choices=("R001", "R002"))
-    parser.add_argument("--grid-spacing-cm", type=float, required=True,
+    parser.add_argument("--grid-spacing-cm", type=float,
                         help="Physical spacing selected between calibration points")
     parser.add_argument("--confirm-calibration", action="store_true",
                         help="Confirm grid spacing was checked with a ruler/capture information")
@@ -347,6 +502,16 @@ def main() -> None:
     parser.add_argument("--no-display-enhancement", action="store_true",
                         help="Display the original colours without contrast/sharpening")
     args = parser.parse_args()
+    if args.reevaluate_session:
+        if args.image is not None:
+            parser.error("Do not provide an image when using --reevaluate-session.")
+        print(reevaluate_session(args.reevaluate_session, args.requirement,
+                                 minimum_measurements=args.minimum_leaves))
+        return
+    if args.image is None:
+        parser.error("An image path is required unless --reevaluate-session is used.")
+    if args.grid_spacing_cm is None:
+        parser.error("--grid-spacing-cm is required for a new interactive measurement.")
     run_interactive(args.image, args.requirement, args.grid_spacing_cm,
                     args.confirm_calibration, args.confirm_scale_reliable,
                     args.minimum_leaves,
