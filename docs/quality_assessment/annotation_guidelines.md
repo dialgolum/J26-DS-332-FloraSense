@@ -10,6 +10,11 @@ Keep image IDs, view, original paths, source hashes, annotator, guideline versio
 and adjudication date with future annotation exports. Never overwrite a released
 experiment snapshot when labels are revised.
 
+The researcher-confirmed root corrections are released as
+`c3_features_v2_20261022`; see [dataset_version_history.md](dataset_version_history.md).
+Current workbook labels are corrected ground truth for that release. Remaining
+leaf-origin visibility flags do not reverse or automatically exclude expert labels.
+
 ## Leaf distribution: branch origin relative to the main stem
 
 Applicable plant types are P02–P08 where annotated data exists; this is separate

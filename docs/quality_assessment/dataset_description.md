@@ -8,6 +8,9 @@ sides of the main stem**, not equal leaf counts or balanced foliage. Leaves
 crossing the stem do not establish Both Sides. Occluded origins require expert
 review without automatic annotation changes.
 
+Released datasets and the researcher-confirmed Experiment 2 root corrections are
+recorded in [dataset_version_history.md](dataset_version_history.md).
+
 Current identifiers are P01–P08 with composite `(Plant_ID, Sample_ID)` identity.
 The six current workbook sheets are Plant_Types, Requirement_Profiles, Samples,
 Height_Assessments, Quality_Annotations, and Images. The planned schema and P001
