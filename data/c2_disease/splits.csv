@@ -1,450 +1,450 @@
-path,label,species,plant_id,date,split
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_100848.jpg,abiotic,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_100916.jpg,abiotic,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_101822.jpg,abiotic,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104742.jpg,abiotic,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104835.jpg,abiotic,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104852.jpg,abiotic,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104933.jpg,abiotic,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105026.jpg,abiotic,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105106.jpg,abiotic,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105314.jpg,abiotic,Dracaena surculosa,auto-019,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105630.jpg,abiotic,Dracaena sanderiana,auto-020,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105740.jpg,abiotic,Dracaena sanderiana,auto-021,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_110314.jpg,abiotic,Dracaena sanderiana,auto-022,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_111900.jpg,abiotic,Dracaena surculosa,auto-026,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_111903.jpg,abiotic,Dracaena surculosa,auto-026,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_111911.jpg,abiotic,Dracaena surculosa,auto-026,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_113138.jpg,abiotic,Dracaena sanderiana,auto-037,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_113142.jpg,abiotic,Dracaena sanderiana,auto-037,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_114233.jpg,abiotic,Codiaeum variegatum,auto-042,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_121217.jpg,abiotic,Codiaeum variegatum,auto-045,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_143816.jpg,abiotic,Chlorophytum comosum,auto-053,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_143818.jpg,abiotic,Chlorophytum comosum,auto-053,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_151748.jpg,abiotic,Dracaena sanderiana,auto-061,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_151808.jpg,abiotic,Dracaena sanderiana,auto-061,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_152131.jpg,abiotic,Dracaena sanderiana,auto-062,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_152132.jpg,abiotic,Dracaena sanderiana,auto-062,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100047.jpg,abiotic,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100721.jpg,abiotic,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100849.jpg,abiotic,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100901.jpg,abiotic,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100958.jpg,abiotic,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_101222.jpg,abiotic,Dracaena sanderiana,auto-077,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102035.jpg,abiotic,Aglaonema,auto-087,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102348.jpg,abiotic,Dracaena sanderiana,auto-091,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102446.jpg,abiotic,Dracaena sanderiana,auto-093,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102918.jpg,abiotic,Epipremnum aureum,auto-100,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095043.jpg,bacterial,Aglaonema,auto-001,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095122.jpg,bacterial,Aglaonema,auto-001,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095912.jpg,bacterial,Aglaonema,auto-004,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095920.jpg,bacterial,Aglaonema,auto-004,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100401.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100422.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100513.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100531.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100545.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100555.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100557.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100600.jpg,bacterial,Aglaonema,auto-006,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100705.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100732.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100820.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100944.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101000.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101026.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101041.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101051.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101107.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101127.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101139.jpg,bacterial,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101413.jpg,bacterial,Aglaonema,auto-008,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101521.jpg,bacterial,Aglaonema,auto-009,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101704.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101743.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101755.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101801.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101846.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101901.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101914.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101937.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102001.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102046.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102054.jpg,bacterial,Aglaonema,auto-010,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102942.jpg,bacterial,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103135.jpg,bacterial,Aglaonema,auto-012,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103148.jpg,bacterial,Aglaonema,auto-012,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103200.jpg,bacterial,Aglaonema,auto-012,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103234.jpg,bacterial,Aglaonema,auto-012,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103241.jpg,bacterial,Aglaonema,auto-012,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103401.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103441.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103501.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103543.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103625.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103704.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103720.jpg,bacterial,Aglaonema,auto-013,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104241.jpg,bacterial,Aglaonema,auto-015,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104341.jpg,bacterial,Aglaonema,auto-015,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104422.jpg,bacterial,Aglaonema,auto-017,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104450.jpg,bacterial,Aglaonema,auto-017,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104517.jpg,bacterial,Aglaonema,auto-017,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_111230.jpg,bacterial,Dracaena sanderiana,auto-023,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_111340.jpg,bacterial,Dracaena sanderiana,auto-024,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_111919.jpg,bacterial,Dracaena surculosa,auto-028,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112014.jpg,bacterial,Dracaena sanderiana,auto-029,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112047.jpg,bacterial,Dracaena sanderiana,auto-029,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112054.jpg,bacterial,Dracaena surculosa,auto-030,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112152.jpg,bacterial,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112210.jpg,bacterial,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112838.jpg,bacterial,Dracaena godseffiana,auto-034,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112846.jpg,bacterial,Dracaena surculosa 'Gold Dust',auto-035,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112914.jpg,bacterial,Dracaena godseffiana,auto-036,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113311.jpg,bacterial,Dracaena godseffiana,auto-039,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113313.jpg,bacterial,Dracaena godseffiana,auto-039,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113317.jpg,bacterial,Dracaena sanderiana,auto-040,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113318.jpg,bacterial,Dracaena godseffiana,auto-041,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113320.jpg,bacterial,Dracaena godseffiana,auto-041,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122548.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122550.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122552.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122554.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122604.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122614.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122617.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122630.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122632.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122636.jpg,bacterial,Epipremnum aureum,auto-048,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_123145.jpg,bacterial,Zamioculcas zamifolia,auto-049,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_145154.jpg,bacterial,Aglaonema,auto-056,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_152231.jpg,bacterial,Cordyline fruticosa,auto-064,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_152724.jpg,bacterial,Aglaonema,auto-065,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_095605.jpg,bacterial,Aglaonema,auto-068,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_095935.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100005.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100009.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100014.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100019.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100035.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100039.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100126.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100137.jpg,bacterial,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100225.jpg,bacterial,Aglaonema,auto-071,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100232.jpg,bacterial,Aglaonema,auto-071,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100241.jpg,bacterial,Aglaonema,auto-071,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100256.jpg,bacterial,Aglaonema,auto-071,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100300.jpg,bacterial,Aglaonema,auto-071,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100800.jpg,bacterial,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100944.jpg,bacterial,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101204.jpg,bacterial,Dracaena godseffiana,auto-076,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101209.jpg,bacterial,Dracaena godseffiana,auto-076,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101239.jpg,bacterial,Dracaena godseffiana,auto-078,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101253.jpg,bacterial,Dracaena godseffiana,auto-078,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101258.jpg,bacterial,Dracaena godseffiana,auto-078,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101536.jpg,bacterial,Dracaena godseffiana,auto-083,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101623.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101630.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101638.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101711.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101727.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101734.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101813.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101835.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101839.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101902.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101911.jpg,bacterial,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102015.jpg,bacterial,Aglaonema,auto-085,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102026.jpg,bacterial,Aglaonema,auto-087,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102030.jpg,bacterial,Aglaonema,auto-087,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102040.jpg,bacterial,Aglaonema,auto-087,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102137.jpg,bacterial,Aglaonema,auto-087,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102238.jpg,bacterial,Aglaonema,auto-089,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102550.jpg,bacterial,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102555.jpg,bacterial,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102630.jpg,bacterial,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102648.jpg,bacterial,Epipremnum aureum 'Golden Pothos',auto-095,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102656.jpg,bacterial,Epipremnum aureum 'Golden Pothos',auto-095,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102809.jpg,bacterial,Aglaonema,auto-097,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102840.jpg,bacterial,Epipremnum aureum,auto-098,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102854.jpg,bacterial,Epipremnum aureum,auto-100,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102907.jpg,bacterial,Epipremnum aureum,auto-100,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102927.jpg,bacterial,Epipremnum aureum,auto-100,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103036.jpg,bacterial,Epipremnum aureum 'Golden Pothos',auto-102,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103351.jpg,bacterial,Schefflera arboricola,auto-104,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103400.jpg,bacterial,Schefflera arboricola,auto-104,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103437.jpg,bacterial,Schefflera arboricola,auto-104,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103444.jpg,bacterial,Schefflera arboricola,auto-104,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103544.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103550.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103623.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103630.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103637.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103644.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103654.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103659.jpg,bacterial,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103941.jpg,bacterial,Epipremnum aureum,auto-107,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103951.jpg,bacterial,Epipremnum aureum,auto-107,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_104049.jpg,bacterial,Zamioculcas zamifolia,auto-108,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_104108.jpg,bacterial,Zamioculcas zamifolia,auto-108,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_104114.jpg,bacterial,Zamioculcas zamifolia,auto-108,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_100835.jpg,fungi,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_100947.jpg,fungi,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_101156.jpg,fungi,Aglaonema,auto-007,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_101319.jpg,fungi,Aglaonema,auto-008,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_101338.jpg,fungi,Aglaonema,auto-008,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104120.jpg,fungi,Aglaonema 'Siam Aurora',auto-014,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104148.jpg,fungi,Aglaonema 'Siam Aurora',auto-014,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104156.jpg,fungi,Aglaonema 'Siam Aurora',auto-014,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104222.jpg,fungi,Aglaonema 'Siam Aurora',auto-014,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104226.jpg,fungi,Aglaonema 'Siam Aurora',auto-014,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104408.jpg,fungi,Aglaonema 'Siam Aurora',auto-016,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104815.jpg,fungi,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110320.jpg,fungi,Dracaena sanderiana,auto-022,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110415.jpg,fungi,Dracaena sanderiana,auto-022,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110435.jpg,fungi,Dracaena sanderiana,auto-022,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110447.jpg,fungi,Dracaena sanderiana,auto-022,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111735.jpg,fungi,Dracaena sanderiana,auto-025,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111740.jpg,fungi,Dracaena sanderiana,auto-025,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111807.jpg,fungi,Dracaena sanderiana,auto-025,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111815.jpg,fungi,Dracaena sanderiana,auto-025,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111917.jpg,fungi,Dracaena sanderiana,auto-027,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111938.jpg,fungi,Dracaena sanderiana,auto-029,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112029.jpg,fungi,Dracaena sanderiana,auto-029,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112036.jpg,fungi,Dracaena sanderiana,auto-029,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112116.jpg,fungi,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112123.jpg,fungi,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112134.jpg,fungi,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112140.jpg,fungi,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112157.jpg,fungi,Dracaena sanderiana,auto-031,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112313.jpg,fungi,Dracaena sanderiana,auto-032,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112315.jpg,fungi,Dracaena sanderiana,auto-032,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113007.jpg,fungi,Dracaena godseffiana,auto-036,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113009.jpg,fungi,Dracaena godseffiana,auto-036,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113014.jpg,fungi,Dracaena godseffiana,auto-036,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113015.jpg,fungi,Dracaena godseffiana,auto-036,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113308.jpg,fungi,Dracaena sanderiana 'White',auto-038,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_114053.jpg,fungi,Codiaeum variegatum,auto-042,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_114115.jpg,fungi,Codiaeum variegatum,auto-042,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_114206.jpg,fungi,Codiaeum variegatum,auto-042,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_120236.jpg,fungi,Codiaeum variegatum,auto-044,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121424.jpg,fungi,Codiaeum variegatum,auto-046,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121433.jpg,fungi,Codiaeum variegatum,auto-046,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121443.jpg,fungi,Codiaeum variegatum,auto-046,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121456.jpg,fungi,Codiaeum variegatum,auto-046,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121931.jpg,fungi,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_143654.jpg,fungi,Chlorophytum comosum 'Spider',auto-051,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144858.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144859.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144901.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144941.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144945.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145022.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145025.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145041.jpg,fungi,Philodendron,auto-055,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145423.jpg,fungi,Aglaonema,auto-057,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145427.jpg,fungi,Aglaonema,auto-057,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145429.jpg,fungi,Aglaonema,auto-057,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151224.jpg,fungi,Schefflera arboricola,auto-059,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151227.jpg,fungi,Schefflera arboricola,auto-059,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151318.jpg,fungi,Schefflera arboricola,auto-059,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151409.jpg,fungi,Schefflera arboricola,auto-059,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152134.jpg,fungi,Schefflera arboricola,auto-063,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152228.jpg,fungi,Cordyline fruticosa,auto-064,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152234.jpg,fungi,Cordyline fruticosa,auto-064,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152235.jpg,fungi,Cordyline fruticosa,auto-064,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152309.jpg,fungi,Cordyline fruticosa,auto-064,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152909.jpg,fungi,Cordyline fruticosa,auto-066,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152923.jpg,fungi,Cordyline fruticosa,auto-066,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_153052(0).jpg,fungi,Cordyline fruticosa,auto-067,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095556.jpg,fungi,Aglaonema,auto-068,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095710.jpg,fungi,Codiaeum variegatum,auto-069,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095730.jpg,fungi,Codiaeum variegatum,auto-069,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095741.jpg,fungi,Codiaeum variegatum,auto-069,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095748.jpg,fungi,Codiaeum variegatum,auto-069,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095812.jpg,fungi,Codiaeum variegatum,auto-069,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095818.jpg,fungi,Codiaeum variegatum,auto-069,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095854.jpg,fungi,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095903.jpg,fungi,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100133.jpg,fungi,Dracaena sanderiana,auto-070,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100326.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100333.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100411.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100426.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100441.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100446.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100504.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100509.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100541.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100606.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100620.jpg,fungi,Codiaeum variegatum,auto-072,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100737.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100740.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100757.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100807.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100812.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100832.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100933.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100940.jpg,fungi,Dracaena sanderiana,auto-073,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101039.jpg,fungi,Aglaonema,auto-074,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101121.jpg,fungi,Schefflera arboricola,auto-075,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101129.jpg,fungi,Schefflera arboricola,auto-075,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101136.jpg,fungi,Schefflera arboricola,auto-075,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101245.jpg,fungi,Dracaena godseffiana,auto-078,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101321.jpg,fungi,Cordyline fruticosa,auto-079,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101332.jpg,fungi,Aglaonema,auto-080,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101340.jpg,fungi,Cordyline fruticosa,auto-081,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101510.jpg,fungi,Aglaonema,auto-082,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101514.jpg,fungi,Aglaonema,auto-082,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101801.jpg,fungi,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101822.jpg,fungi,Aglaonema,auto-084,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102243.jpg,fungi,Aglaonema,auto-089,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102308.jpg,fungi,Cordyline fruticosa,auto-090,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102421.jpg,fungi,Cordyline fruticosa,auto-092,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102516.jpg,fungi,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102522.jpg,fungi,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102534.jpg,fungi,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102543.jpg,fungi,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102608.jpg,fungi,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102612.jpg,fungi,Epipremnum aureum,auto-094,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102706.jpg,fungi,Epipremnum aureum 'Golden Pothos',auto-095,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102736.jpg,fungi,Philodendron scandens,auto-096,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102740.jpg,fungi,Philodendron scandens,auto-096,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102844.jpg,fungi,Epipremnum aureum 'Golden Pothos',auto-099,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103021.jpg,fungi,Epipremnum aureum 'Golden Pothos',auto-102,2026-10-02,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103118.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103124.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103132.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103140.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103228.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103234.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103243.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103322.jpg,fungi,Dracaena sanderiana,auto-103,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103417.jpg,fungi,Schefflera arboricola,auto-104,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103424.jpg,fungi,Schefflera arboricola,auto-104,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103537.jpg,fungi,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103610.jpg,fungi,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103616.jpg,fungi,Zamioculcas zamifolia,auto-105,2026-10-02,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103736.jpg,fungi,Philodendron,auto-106,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103744.jpg,fungi,Philodendron,auto-106,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103820.jpg,fungi,Philodendron,auto-106,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103839.jpg,fungi,Philodendron,auto-106,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103844.jpg,fungi,Philodendron,auto-106,2026-10-02,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095701.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095705.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095716.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095736.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095748.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095755.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095804.jpg,healthy,Aglaonema,auto-003,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_100200.jpg,healthy,Aglaonema,auto-005,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_100208.jpg,healthy,Aglaonema,auto-005,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_100221.jpg,healthy,Aglaonema,auto-005,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103002.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103004.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103006.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103008.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103010.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103013.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103018.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103020.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103022.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103023.jpg,healthy,Aglaonema,auto-011,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104745.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104747.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104750.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104755.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104757.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104800.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104803.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104806.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104807.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104809.jpg,healthy,Dracaena sanderiana,auto-018,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112639.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112640.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112642.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112644.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112646.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112648.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112649.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112651.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112653.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112654.jpg,healthy,Dracaena godseffiana,auto-033,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114546.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114549.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114551.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114553.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114557.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114559.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114601.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114603.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114605.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114607.jpg,healthy,Codiaeum variegatum,auto-043,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122003.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122033.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122035.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122038.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122040.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122042.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122046.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122047.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122048.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122049.jpg,healthy,Philodendron,auto-047,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143606.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143611_001.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143611_010.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143617_009.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143628_008.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143628_024.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143628_025.jpg,healthy,Chlorophytum comosum,auto-050,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143711_006.jpg,healthy,Chlorophytum comosum,auto-052,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143711_007.jpg,healthy,Chlorophytum comosum,auto-052,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143711_008.jpg,healthy,Chlorophytum comosum,auto-052,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144204.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144206.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144208.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144209.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144210.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144211.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144212.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144214.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144215.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144216.jpg,healthy,Dracaena godseffiana,auto-054,2026-10-01,train
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150854.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150855.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150856.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150857.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150859.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150901.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150904.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150905.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150906.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150907.jpg,healthy,Schefflera arboricola,auto-058,2026-10-01,test
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151545.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151554.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151557.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151558.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151600.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151602.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151605.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151607.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151609.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151610.jpg,healthy,Cordyline fruticosa,auto-060,2026-10-01,val
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_095232.jpg,unknown,Aglaonema,auto-002,2026-10-01,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_101715.jpg,unknown,Aglaonema,auto-010,2026-10-01,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_104655.jpg,unknown,Dracaena sanderiana,auto-018,2026-10-01,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_120211.jpg,unknown,Codiaeum variegatum,auto-044,2026-10-01,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_145159.jpg,unknown,Aglaonema,auto-056,2026-10-01,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_095735.jpg,unknown,Codiaeum variegatum,auto-069,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100055.jpg,unknown,Dracaena sanderiana,auto-070,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100458.jpg,unknown,Codiaeum variegatum,auto-072,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100614.jpg,unknown,Codiaeum variegatum,auto-072,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100917.jpg,unknown,Dracaena sanderiana,auto-073,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100921.jpg,unknown,Dracaena sanderiana,auto-073,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100952.jpg,unknown,Dracaena sanderiana,auto-073,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_101044.jpg,unknown,Aglaonema,auto-074,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_102019.jpg,unknown,Aglaonema 'Siam Aurora',auto-086,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_102152.jpg,unknown,Aglaonema 'Maria',auto-088,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_102957.jpg,unknown,Aglaonema 'Silver Queen',auto-101,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_103531.jpg,unknown,Zamioculcas zamifolia,auto-105,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_103826.jpg,unknown,Philodendron,auto-106,2026-10-02,ood
-C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_103852.jpg,unknown,Philodendron,auto-106,2026-10-02,ood
+path,label,species,variety,plant_id,date,split
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_100848.jpg,abiotic,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_100916.jpg,abiotic,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_101822.jpg,abiotic,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104742.jpg,abiotic,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104835.jpg,abiotic,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104852.jpg,abiotic,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_104933.jpg,abiotic,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105026.jpg,abiotic,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105106.jpg,abiotic,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105314.jpg,abiotic,Dracaena surculosa,Gold Dust,auto-016,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105630.jpg,abiotic,Dracaena sanderiana,Gold,auto-017,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_105740.jpg,abiotic,Dracaena sanderiana,Gold,auto-018,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_110314.jpg,abiotic,Dracaena sanderiana,White,auto-019,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_111900.jpg,abiotic,Dracaena surculosa,Gold Dust,auto-024,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_111903.jpg,abiotic,Dracaena surculosa,Gold Dust,auto-024,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_111911.jpg,abiotic,Dracaena surculosa,Gold Dust,auto-024,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_113138.jpg,abiotic,Dracaena sanderiana,White,auto-037,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_113142.jpg,abiotic,Dracaena sanderiana,White,auto-037,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_114233.jpg,abiotic,Codiaeum variegatum,Bush And Fire,auto-042,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_121217.jpg,abiotic,Codiaeum variegatum,Bush And Fire,auto-046,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_143816.jpg,abiotic,Chlorophytum comosum,Picturatum,auto-052,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_143818.jpg,abiotic,Chlorophytum comosum,Picturatum,auto-052,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_151748.jpg,abiotic,Dracaena sanderiana,White,auto-060,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_151808.jpg,abiotic,Dracaena sanderiana,White,auto-060,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_152131.jpg,abiotic,Dracaena sanderiana,White,auto-061,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261001_152132.jpg,abiotic,Dracaena sanderiana,White,auto-061,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100047.jpg,abiotic,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100721.jpg,abiotic,Dracaena sanderiana,Gold,auto-073,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100849.jpg,abiotic,Dracaena sanderiana,Gold,auto-075,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100901.jpg,abiotic,Dracaena sanderiana,Gold,auto-075,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_100958.jpg,abiotic,Dracaena sanderiana,Gold,auto-077,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_101222.jpg,abiotic,Dracaena sanderiana,Gold,auto-081,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102035.jpg,abiotic,Aglaonema,Siam Aurora,auto-092,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102348.jpg,abiotic,Dracaena sanderiana,Gold,auto-097,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102446.jpg,abiotic,Dracaena sanderiana,White,auto-099,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\abiotic\20261002_102918.jpg,abiotic,Epipremnum aureum,Golden Pothos,auto-103,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095043.jpg,bacterial,Aglaonema,Maria,auto-001,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095122.jpg,bacterial,Aglaonema,Maria,auto-001,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095912.jpg,bacterial,Aglaonema,Maria,auto-004,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_095920.jpg,bacterial,Aglaonema,Maria,auto-004,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100401.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100422.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100513.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100531.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100545.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100555.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100557.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100600.jpg,bacterial,Aglaonema,Maria,auto-006,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100705.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100732.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100820.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_100944.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101000.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101026.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101041.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101051.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101107.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101127.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101139.jpg,bacterial,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101413.jpg,bacterial,Aglaonema,Maria,auto-008,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101521.jpg,bacterial,Aglaonema,Maria,auto-009,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101704.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101743.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101755.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101801.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101846.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101901.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101914.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_101937.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102001.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102046.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102054.jpg,bacterial,Aglaonema,Maria,auto-010,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_102942.jpg,bacterial,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103135.jpg,bacterial,Aglaonema,Siam Aurora,auto-012,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103148.jpg,bacterial,Aglaonema,Siam Aurora,auto-012,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103200.jpg,bacterial,Aglaonema,Siam Aurora,auto-012,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103234.jpg,bacterial,Aglaonema,Siam Aurora,auto-012,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103241.jpg,bacterial,Aglaonema,Siam Aurora,auto-012,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103401.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103441.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103501.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103543.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103625.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103704.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_103720.jpg,bacterial,Aglaonema,Siam Aurora,auto-013,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104241.jpg,bacterial,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104341.jpg,bacterial,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104422.jpg,bacterial,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104450.jpg,bacterial,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_104517.jpg,bacterial,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_111230.jpg,bacterial,Dracaena sanderiana,Gold,auto-021,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_111340.jpg,bacterial,Dracaena sanderiana,White,auto-022,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_111919.jpg,bacterial,Dracaena surculosa,Gold Dust,auto-026,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112014.jpg,bacterial,Dracaena sanderiana,White,auto-027,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112047.jpg,bacterial,Dracaena sanderiana,White,auto-027,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112054.jpg,bacterial,Dracaena surculosa,Gold Dust,auto-028,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112152.jpg,bacterial,Dracaena sanderiana,Gold,auto-030,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112210.jpg,bacterial,Dracaena sanderiana,White,auto-031,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112838.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-034,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112846.jpg,bacterial,Dracaena surculosa,Gold Dust,auto-035,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_112914.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-036,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113311.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-039,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113313.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-039,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113317.jpg,bacterial,Dracaena sanderiana,White,auto-040,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113318.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-041,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_113320.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-041,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122548.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122550.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122552.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122554.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122604.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122614.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122617.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122630.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122632.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_122636.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-049,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_123145.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-050,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_145154.jpg,bacterial,Aglaonema,Silver Queen,auto-055,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_152231.jpg,bacterial,Cordyline fruticosa,Mike Silver,auto-063,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261001_152724.jpg,bacterial,Aglaonema,Siam Aurora,auto-064,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_095605.jpg,bacterial,Aglaonema,Silver Queen,auto-067,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_095935.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100005.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100009.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100014.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100019.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100035.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100039.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100126.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100137.jpg,bacterial,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100225.jpg,bacterial,Aglaonema,Maria,auto-071,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100232.jpg,bacterial,Aglaonema,Maria,auto-071,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100241.jpg,bacterial,Aglaonema,Maria,auto-071,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100256.jpg,bacterial,Aglaonema,Maria,auto-071,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100300.jpg,bacterial,Aglaonema,Maria,auto-071,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100800.jpg,bacterial,Dracaena sanderiana,Gold,auto-073,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_100944.jpg,bacterial,Dracaena sanderiana,Gold,auto-077,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101204.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-080,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101209.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-080,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101239.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-082,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101253.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-084,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101258.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-084,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101536.jpg,bacterial,Dracaena godseffiana,Milky Way,auto-090,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101623.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101630.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101638.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101711.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101727.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101734.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101813.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101835.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101839.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101902.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_101911.jpg,bacterial,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102015.jpg,bacterial,Aglaonema,Siam Aurora,auto-092,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102026.jpg,bacterial,Aglaonema,Siam Aurora,auto-092,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102030.jpg,bacterial,Aglaonema,Siam Aurora,auto-092,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102040.jpg,bacterial,Aglaonema,Siam Aurora,auto-092,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102137.jpg,bacterial,Aglaonema,Maria,auto-093,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102238.jpg,bacterial,Aglaonema,Siam Aurora,auto-094,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102550.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102555.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102630.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102648.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102656.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102809.jpg,bacterial,Aglaonema,Siam Aurora,auto-102,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102840.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-103,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102854.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-103,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102907.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-103,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_102927.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-103,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103036.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-105,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103351.jpg,bacterial,Schefflera arboricola,Trinette,auto-107,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103400.jpg,bacterial,Schefflera arboricola,Trinette,auto-107,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103437.jpg,bacterial,Schefflera arboricola,Trinette,auto-107,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103444.jpg,bacterial,Schefflera arboricola,Trinette,auto-107,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103544.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103550.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103623.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103630.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103637.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103644.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103654.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103659.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103941.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-110,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_103951.jpg,bacterial,Epipremnum aureum,Golden Pothos,auto-110,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_104049.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-111,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_104108.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-111,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\bacterial\20261002_104114.jpg,bacterial,Zamioculcas zamifolia,Classic Green,auto-111,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_100835.jpg,fungi,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_100947.jpg,fungi,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_101156.jpg,fungi,Aglaonema,Maria,auto-007,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_101319.jpg,fungi,Aglaonema,Maria,auto-008,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_101338.jpg,fungi,Aglaonema,Maria,auto-008,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104120.jpg,fungi,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104148.jpg,fungi,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104156.jpg,fungi,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104222.jpg,fungi,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104226.jpg,fungi,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104408.jpg,fungi,Aglaonema,Siam Aurora,auto-014,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_104815.jpg,fungi,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110320.jpg,fungi,Dracaena sanderiana,White,auto-019,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110415.jpg,fungi,Dracaena sanderiana,Gold,auto-020,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110435.jpg,fungi,Dracaena sanderiana,Gold,auto-020,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_110447.jpg,fungi,Dracaena sanderiana,Gold,auto-020,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111735.jpg,fungi,Dracaena sanderiana,White,auto-023,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111740.jpg,fungi,Dracaena sanderiana,White,auto-023,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111807.jpg,fungi,Dracaena sanderiana,White,auto-023,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111815.jpg,fungi,Dracaena sanderiana,White,auto-023,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111917.jpg,fungi,Dracaena sanderiana,White,auto-025,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_111938.jpg,fungi,Dracaena sanderiana,White,auto-027,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112029.jpg,fungi,Dracaena sanderiana,White,auto-027,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112036.jpg,fungi,Dracaena sanderiana,White,auto-027,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112116.jpg,fungi,Dracaena sanderiana,White,auto-029,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112123.jpg,fungi,Dracaena sanderiana,White,auto-029,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112134.jpg,fungi,Dracaena sanderiana,White,auto-029,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112140.jpg,fungi,Dracaena sanderiana,White,auto-029,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112157.jpg,fungi,Dracaena sanderiana,White,auto-031,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112313.jpg,fungi,Dracaena sanderiana,Gold,auto-032,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_112315.jpg,fungi,Dracaena sanderiana,Gold,auto-032,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113007.jpg,fungi,Dracaena godseffiana,Milky Way,auto-036,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113009.jpg,fungi,Dracaena godseffiana,Milky Way,auto-036,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113014.jpg,fungi,Dracaena godseffiana,Milky Way,auto-036,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113015.jpg,fungi,Dracaena godseffiana,Milky Way,auto-036,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_113308.jpg,fungi,Dracaena sanderiana,White,auto-038,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_114053.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-042,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_114115.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-042,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_114206.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-042,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_120236.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-045,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121424.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-047,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121433.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-047,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121443.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-047,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121456.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-047,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_121931.jpg,fungi,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_143654.jpg,fungi,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144858.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144859.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144901.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144941.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_144945.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145022.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145025.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145041.jpg,fungi,Philodendron,Scandens,auto-054,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145423.jpg,fungi,Aglaonema,Silver Queen,auto-056,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145427.jpg,fungi,Aglaonema,Silver Queen,auto-056,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_145429.jpg,fungi,Aglaonema,Silver Queen,auto-056,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151224.jpg,fungi,Schefflera arboricola,Trinette,auto-058,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151227.jpg,fungi,Schefflera arboricola,Trinette,auto-058,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151318.jpg,fungi,Schefflera arboricola,Trinette,auto-058,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_151409.jpg,fungi,Schefflera arboricola,Trinette,auto-058,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152134.jpg,fungi,Schefflera arboricola,Trinette,auto-062,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152228.jpg,fungi,Cordyline fruticosa,Mike Silver,auto-063,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152234.jpg,fungi,Cordyline fruticosa,Mike Silver,auto-063,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152235.jpg,fungi,Cordyline fruticosa,Mike Silver,auto-063,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152309.jpg,fungi,Cordyline fruticosa,Mike Silver,auto-063,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152909.jpg,fungi,Cordyline fruticosa,John Klass,auto-065,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_152923.jpg,fungi,Cordyline fruticosa,John Klass,auto-065,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261001_153052(0).jpg,fungi,Cordyline fruticosa,John Klass,auto-066,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095556.jpg,fungi,Aglaonema,Silver Queen,auto-067,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095710.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095730.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095741.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095748.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095812.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095818.jpg,fungi,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095854.jpg,fungi,Dracaena sanderiana,Gold,auto-069,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_095903.jpg,fungi,Dracaena sanderiana,Gold,auto-069,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100133.jpg,fungi,Dracaena sanderiana,White,auto-070,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100326.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100333.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100411.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100426.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100441.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100446.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100504.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100509.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100541.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100606.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100620.jpg,fungi,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100737.jpg,fungi,Dracaena sanderiana,Gold,auto-073,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100740.jpg,fungi,Dracaena sanderiana,Gold,auto-073,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100757.jpg,fungi,Dracaena sanderiana,Gold,auto-073,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100807.jpg,fungi,Dracaena sanderiana,Gold,auto-073,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100812.jpg,fungi,Dracaena sanderiana,White,auto-074,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100832.jpg,fungi,Dracaena sanderiana,Gold,auto-075,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100933.jpg,fungi,Dracaena sanderiana,White,auto-076,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_100940.jpg,fungi,Dracaena sanderiana,Gold,auto-077,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101039.jpg,fungi,Aglaonema,Maria,auto-078,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101121.jpg,fungi,Schefflera arboricola,Trinette,auto-079,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101129.jpg,fungi,Schefflera arboricola,Trinette,auto-079,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101136.jpg,fungi,Schefflera arboricola,Trinette,auto-079,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101245.jpg,fungi,Dracaena godseffiana,Florida Beauty,auto-083,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101321.jpg,fungi,Cordyline fruticosa,John Klass,auto-085,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101332.jpg,fungi,Aglaonema,Silver Queen,auto-086,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101340.jpg,fungi,Cordyline fruticosa,John Klass,auto-087,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101510.jpg,fungi,Aglaonema,Silver Queen,auto-088,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101514.jpg,fungi,Aglaonema,Maria,auto-089,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101801.jpg,fungi,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_101822.jpg,fungi,Aglaonema,Siam Aurora,auto-091,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102243.jpg,fungi,Aglaonema,Maria,auto-095,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102308.jpg,fungi,Cordyline fruticosa,John Klass,auto-096,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102421.jpg,fungi,Cordyline fruticosa,John Klass,auto-098,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102516.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102522.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102534.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102543.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102608.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102612.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102706.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-100,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102736.jpg,fungi,Philodendron scandens,Trinette,auto-101,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102740.jpg,fungi,Philodendron scandens,Trinette,auto-101,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_102844.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-103,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103021.jpg,fungi,Epipremnum aureum,Golden Pothos,auto-105,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103118.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103124.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103132.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103140.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103228.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103234.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103243.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103322.jpg,fungi,Dracaena sanderiana,White,auto-106,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103417.jpg,fungi,Schefflera arboricola,Trinette,auto-107,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103424.jpg,fungi,Schefflera arboricola,Trinette,auto-107,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103537.jpg,fungi,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103610.jpg,fungi,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103616.jpg,fungi,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103736.jpg,fungi,Philodendron,Scandens,auto-109,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103744.jpg,fungi,Philodendron,Scandens,auto-109,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103820.jpg,fungi,Philodendron,Scandens,auto-109,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103839.jpg,fungi,Philodendron,Scandens,auto-109,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\fungi\20261002_103844.jpg,fungi,Philodendron,Scandens,auto-109,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095701.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095705.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095716.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095736.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095748.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095755.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_095804.jpg,healthy,Aglaonema,Maria,auto-003,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_100200.jpg,healthy,Aglaonema,Maria,auto-005,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_100208.jpg,healthy,Aglaonema,Maria,auto-005,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_100221.jpg,healthy,Aglaonema,Maria,auto-005,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103002.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103004.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103006.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103008.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103010.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103013.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103018.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103020.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103022.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_103023.jpg,healthy,Aglaonema,Siam Aurora,auto-011,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104745.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104747.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104750.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104755.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104757.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104800.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104803.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104806.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104807.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_104809.jpg,healthy,Dracaena sanderiana,Gold,auto-015,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112639.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112640.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112642.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112644.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112646.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112648.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112649.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112651.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112653.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_112654.jpg,healthy,Dracaena godseffiana,Milky Way,auto-033,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114546.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114549.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114551.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114553.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114557.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114559.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114601.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114603.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114605.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_114607.jpg,healthy,Codiaeum variegatum,Bush And Fire,auto-043,10/1/2026,val
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122003.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122033.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122035.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122038.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122040.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122042.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122046.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122047.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122048.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_122049.jpg,healthy,Philodendron,Scandens,auto-048,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143606.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143611_001.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143611_010.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143617_009.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143628_008.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143628_024.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143628_025.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143711_006.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143711_007.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_143711_008.jpg,healthy,Chlorophytum comosum,Picturatum,auto-051,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144204.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144206.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144208.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144209.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144210.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144211.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144212.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144214.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144215.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_144216.jpg,healthy,Dracaena godseffiana,Florida Beauty,auto-053,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150854.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150855.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150856.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150857.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150859.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150901.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150904.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150905.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150906.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_150907.jpg,healthy,Schefflera arboricola,Trinette,auto-057,10/1/2026,train
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151545.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151554.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151557.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151558.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151600.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151602.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151605.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151607.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151609.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\healthy\20261001_151610.jpg,healthy,Cordyline fruticosa,Mike Silver,auto-059,10/1/2026,test
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_095232.jpg,unknown,Aglaonema,Maria,auto-002,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_101715.jpg,unknown,Aglaonema,Maria,auto-010,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_104655.jpg,unknown,Dracaena sanderiana,Gold,auto-015,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_120211.jpg,unknown,Codiaeum variegatum,Gold Dust,auto-044,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261001_145159.jpg,unknown,Aglaonema,Silver Queen,auto-055,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_095735.jpg,unknown,Codiaeum variegatum,Gold Dust,auto-068,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100055.jpg,unknown,Dracaena sanderiana,White,auto-070,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100458.jpg,unknown,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100614.jpg,unknown,Codiaeum variegatum,Bush And Fire,auto-072,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100917.jpg,unknown,Dracaena sanderiana,Gold,auto-075,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100921.jpg,unknown,Dracaena sanderiana,Gold,auto-075,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_100952.jpg,unknown,Dracaena sanderiana,Gold,auto-077,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_101044.jpg,unknown,Aglaonema,Maria,auto-078,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_102019.jpg,unknown,Aglaonema,Siam Aurora,auto-092,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_102152.jpg,unknown,Aglaonema,Maria,auto-093,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_102957.jpg,unknown,Aglaonema,Silver Queen,auto-104,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_103531.jpg,unknown,Zamioculcas zamifolia,Classic Green,auto-108,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_103826.jpg,unknown,Philodendron,Scandens,auto-109,10/1/2026,ood
+C:\Users\Admin\Desktop\J26-DS-332-FloraSense\data\c2_disease\raw\unknown\20261002_103852.jpg,unknown,Philodendron,Scandens,auto-109,10/1/2026,ood
