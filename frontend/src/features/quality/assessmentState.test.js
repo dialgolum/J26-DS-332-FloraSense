@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { canAssess, checkSummary, measurementAvailability, missingImageViews } from "./assessmentState.js";
+import { canAssess, checkSummary, inspectionReviewReasons, measurementAvailability, missingImageViews } from "./assessmentState.js";
 
 test("saved CV sessions remain usable alongside manual annotations", () => {
   assert.equal(measurementAvailability({ sessions: [{}], heightAnnotations: [{}] }), "Saved image-based measurements available");
@@ -45,4 +45,24 @@ test("assessment requires compatible loaded plant, sample and buyer records", ()
   assert.equal(canAssess({ ...selection, requirements: [] }), false);
   assert.equal(canAssess({ ...selection, plantId: "P03" }), false);
   assert.equal(canAssess({ ...selection, samples: [{ Plant_ID: "P03", Sample_ID: "S001" }] }), false);
+});
+
+
+test("inspection review keeps rule reasons and disagreements without generic AI disclaimers", () => {
+  const result = {
+    Buyer_Rule_Result: "MANUAL REVIEW",
+    Checks: [{ Check: "Height", Status: "MANUAL REVIEW", Reason: "Missing measurement." },
+             { Check: "Packing", Status: "PASS", Reason: "Matches." }],
+    Disagreements: [{ task: "leaf", expert_label: "Both Sides", ai_label: "One Side" }],
+    AI_Observations: { root_B: { task: "root", status: "success" } },
+    Manual_Review: { reasons: ["AI observation requires human review; score is uncalibrated."] },
+  };
+  const original = JSON.stringify(result);
+  const reasons = inspectionReviewReasons(result);
+  assert.equal(reasons.length, 2);
+  assert.match(reasons[0], /Missing measurement/);
+  assert.match(reasons[1], /One Side.*Both Sides/);
+  assert.equal(JSON.stringify(result), original);
+  assert.deepEqual(inspectionReviewReasons(null), []);
+  assert.match(inspectionReviewReasons({ AI_Observations: { root_B: { task: "root", status: "error" } } })[0], /unavailable/);
 });

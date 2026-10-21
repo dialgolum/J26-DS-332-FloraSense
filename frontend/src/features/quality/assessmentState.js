@@ -26,3 +26,20 @@ export function canAssess({ plantId, sampleId, requirementId, samples, requireme
     samples.some((row) => row.Plant_ID === plantId && row.Sample_ID === sampleId) &&
     requirements.some((row) => row.Plant_ID === plantId && row.Requirement_ID === requirementId);
 }
+
+export function inspectionReviewReasons(result) {
+  if (!result) return [];
+  const reasons = (result.Checks || [])
+    .filter((check) => check.Status === "MANUAL REVIEW")
+    .map((check) => `${check.Check}: ${check.Reason}`);
+  for (const difference of result.Disagreements || []) {
+    const feature = difference.task === "root" ? "Root condition" : "Branch distribution";
+    reasons.push(`${feature}: AI finding ${difference.ai_label} differs from expert label ${difference.expert_label}. Review the plant.`);
+  }
+  for (const observation of Object.values(result.AI_Observations || {})) {
+    if (["error", "unavailable"].includes(observation.status)) {
+      reasons.push(`${observation.task === "root" ? "Root condition" : "Branch distribution"}: AI-assisted inspection is unavailable. Request manual inspection if needed.`);
+    }
+  }
+  return [...new Set(reasons)];
+}
