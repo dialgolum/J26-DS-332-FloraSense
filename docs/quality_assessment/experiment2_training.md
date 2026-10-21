@@ -104,13 +104,37 @@ CPU tensors and weights_only-compatible metadata. A synthetic roundtrip test
 loads it through the existing `model_inference.load_quality_model()` with only
 the test's checkpoint path/device patched. No existing real model is changed.
 
-The current inference module still hardcodes the **general-quality** path and
-224x224 direct resizing, so it is **not ready to serve these feature checkpoints
-unchanged**. Future integration must accept explicit feature model paths, read
-task class order, and reproduce EXIF + contain/pad + normalization (including
-documented JPEG decode) from metadata. Keep root/leaf result semantics separate
-from general quality and buyer rules. Do not replace quality_resnet18.pth. API,
-frontend and rule-engine changes remain outside this implementation.
+Local advisory feature inference is now supported in the existing
+`model_inference.py` by `FeatureClassifier(checkpoint_path, task, variant=None,
+device="cpu")`. Reuse an instance for repeated images. `predict_feature(...)`
+provides the same operation with structured error results. Task is root or leaf;
+variant optionally verifies A/B. Paths are explicit and configurable; no fold is
+automatically selected as best or deployed as a final refit. Supply Root views
+for root and Front views for leaf: image content/view is not automatically verified.
+
+The service validates checkpoint task, class mapping (preserving stored order),
+ResNet18 state, V2 version and inspected preprocessing recipe. It exactly follows
+the deterministic Experiment 2 view, with no augmentation. Results include task,
+label, softmax score/probabilities, ResNet18 and A/B identity, dataset version,
+fold, checkpoint path and SHA-256 identifier. Scores are uncalibrated and advisory;
+no annotation or buyer decision changes. Missing/invalid checkpoints and
+missing/corrupt/unsupported images return structured errors through the convenience
+function and CLI. JPEG and single-frame PNG inputs are accepted.
+
+From repository root (choose another fold explicitly if required):
+
+```powershell
+python -B -m services.c3_quality_assessment.model_inference --task root --variant B --checkpoint models/checkpoints/c3_features/experiment2_v2/B/root/fold_1.pth --image data/quality_assessment/original/individual/P02/P02_S001_root.jpg
+python -B -m services.c3_quality_assessment.model_inference --task leaf --variant B --checkpoint models/checkpoints/c3_features/experiment2_v2/B/leaf/fold_1.pth --image data/quality_assessment/original/individual/P02/P02_S001_front.jpg
+python -B -m services.c3_quality_assessment.model_inference --task leaf --variant A --checkpoint models/checkpoints/c3_features/experiment2_v2/A/leaf/fold_1.pth --image data/quality_assessment/original/individual/P02/P02_S001_front.jpg
+python -B -m services.c3_quality_assessment.model_inference --task visual --image data/quality_assessment/original/individual/P01/P01_S005_front.jpg
+```
+
+The legacy general-quality loader/transform/checkpoint remain unchanged and
+separate. Do not use its direct-resize preprocessing for feature models or replace
+quality_resnet18.pth. Feature checkpoints are fold models; smoke predictions on
+existing samples are not new held-out evaluation. API, frontend and rule-engine
+integration remains outside this phase.
 
 ## Local checks (no training)
 
