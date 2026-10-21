@@ -134,7 +134,7 @@ The legacy general-quality loader/transform/checkpoint remain unchanged and
 separate. Do not use its direct-resize preprocessing for feature models or replace
 quality_resnet18.pth. Feature checkpoints are fold models; smoke predictions on
 existing samples are not new held-out evaluation. API, frontend and rule-engine
-integration remains outside this phase.
+changes remain outside this phase; local orchestration is described below.
 
 ## Local checks (no training)
 
@@ -146,3 +146,49 @@ Notebook code cells are syntax/schema validated without execution. Synthetic
 fixtures exercise fixed partitions, tampering, leakage and seed handling. Actual
 V2 archives are validated without a model forward pass. The real CUDA training
 path remains unexecuted until the researcher runs Colab.
+
+## Local buyer-assessment orchestration
+
+`run_assessment.run_assessment(sheets, sample_id, requirement_id, ...)` resolves
+Plant_ID from the requirement profile and selects images by both plant and sample.
+Root B uses Root views; Leaf B and optional Leaf A use Front views. Duplicate
+image records are flagged rather than selecting an arbitrary image. P08 has no
+Experiment 2 evidence; P01 leaf classification is unsupported. Feature flags and
+observed root status also determine applicability.
+
+From repository root, rules only (feature AI disabled by default):
+
+```powershell
+python -B -m services.c3_quality_assessment.run_assessment --sample S001 --requirement R003
+```
+
+With explicitly selected checkpoints (fold 1 is an example, not a best-fold choice):
+
+```powershell
+python -B -m services.c3_quality_assessment.run_assessment --sample S001 --requirement R003 --ai --root-checkpoint models/checkpoints/c3_features/experiment2_v2/B/root/fold_1.pth --leaf-checkpoint models/checkpoints/c3_features/experiment2_v2/B/leaf/fold_1.pth
+```
+
+Optionally append `--leaf-a-checkpoint models/checkpoints/c3_features/experiment2_v2/A/leaf/fold_1.pth`.
+`--visual-quality` enables the separate legacy general-quality observation.
+Interactive invocation without sample/requirement retains the legacy visual check.
+
+JSON preserves legacy rule fields and adds `Rule_Assessment`, `Buyer_Rule_Result`,
+`Requirement_Profile`, `sample_key`, `AI_Observations`, `Disagreements`, and
+`Manual_Review`. Each AI observation retains model metadata and uncalibrated
+softmax scores. Requested inference failures/missing images/checkpoints are
+reported without changing or preventing the rule decision. AI never supplies
+missing expert values; missing/unknown/duplicated annotations keep existing rule
+behavior. All successful AI observations require human review, including agreement.
+
+Leaf distribution means qualifying branch origins on opposite sides of the main
+stem, not equal leaf counts or balanced foliage. The existing engine currently
+maps both `Both Sides` and `One Side` to MANUAL REVIEW; this behavior is preserved.
+Its existing height-count logic is also preserved; incomplete height records can
+therefore keep the buyer assessment in MANUAL REVIEW. No stem-height model is added.
+Existing-sample predictions are smoke checks, not held-out evaluation.
+
+Focused orchestration tests:
+
+```powershell
+python -B -m unittest services.c3_quality_assessment.tests.test_rule_engine_integration -v
+```
