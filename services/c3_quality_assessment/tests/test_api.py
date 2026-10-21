@@ -327,7 +327,7 @@ def test_assessment_ai_enabled_comparison_and_paths(assessment_data, monkeypatch
     response = client.post("/api/v1/c3/assessments", json=assessment_request(ai_enabled=True, compare_leaf_a=True))
     assert response.status_code == 200
     data = response.json()["data"]
-    assert data["Buyer_Rule_Result"] == "MANUAL REVIEW"  # unchanged branch-origin rule
+    assert data["Buyer_Rule_Result"] == "PASS"  # Expert Both Sides passes despite AI disagreement
     assert len(data["Disagreements"]) == 3
     assert data["AI_Observations"]["leaf_B"]["observation_type"] == "branch_origin_distribution"
     assert [call[1] for call in calls] == ["explicit-root.pth", "explicit-leaf.pth", "explicit-leaf-a.pth"]
@@ -443,3 +443,19 @@ def test_frontend_missing_image_returns_safe_error(assessment_data):
     assert missing.status_code == 404
     assert missing.json()["error"]["message"]
     assert str(ROOT) not in missing.text
+
+
+@pytest.mark.parametrize("label,expected,presentation", [
+    ("Both Sides", "PASS", "PASS"), ("One Side", "FAIL", "FAIL"),
+    (None, "MANUAL REVIEW", "REVIEW"), ("", "MANUAL REVIEW", "REVIEW"),
+    ("Unknown", "MANUAL REVIEW", "REVIEW")])
+def test_leaf_rule_api_statuses(assessment_data, label, expected, presentation):
+    assessment_data["Plant_Types"]["Leaf_Distribution_Check"] = "Yes"
+    assessment_data["Quality_Annotations"]["Leaf_Distribution"] = label
+    response = client.post("/api/v1/c3/assessments", json=assessment_request())
+    assert response.status_code == 200
+    result = response.json()["data"]
+    leaf = next(check for check in result["Checks"] if check["Check"] == "Leaf distribution")
+    assert leaf["Status"] == expected
+    assert leaf["Presentation_Status"] == presentation
+    assert result["Buyer_Rule_Result"] == expected

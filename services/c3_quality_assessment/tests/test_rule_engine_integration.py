@@ -214,7 +214,7 @@ class TestAssessmentOrchestration(unittest.TestCase):
         self.sheets["Plant_Types"]["Leaf_Distribution_Check"] = "Yes"
         result = self.assess(ai_enabled=True, root_checkpoint="root.pth",
                              leaf_checkpoint="leaf-b.pth", leaf_a_checkpoint="leaf-a.pth")
-        self.assertEqual(result["Overall_Result"], "MANUAL REVIEW")
+        self.assertEqual(result["Overall_Result"], "PASS")
         observations = result["AI_Observations"]
         self.assertEqual(observations["leaf_B"]["observation_type"], "branch_origin_distribution")
         self.assertEqual(observations["leaf_B"]["image"]["view"], "Front")
@@ -222,6 +222,22 @@ class TestAssessmentOrchestration(unittest.TestCase):
         self.assertEqual([call.args[1] for call in self.predict.call_args_list],
                          ["root.pth", "leaf-b.pth", "leaf-a.pth"])
         self.assertEqual([call.kwargs["variant"] for call in self.predict.call_args_list], ["B", "B", "A"])
+
+    def test_leaf_ai_never_replaces_expert_decision(self):
+        self.sheets["Plant_Types"]["Leaf_Distribution_Check"] = "Yes"
+        for expert, ai, expected in (("Both Sides", "One Side", "PASS"),
+                                     ("One Side", "Both Sides", "FAIL"),
+                                     (None, "Both Sides", "MANUAL REVIEW")):
+            with self.subTest(expert=expert, ai=ai):
+                self.sheets["Quality_Annotations"]["Leaf_Distribution"] = expert
+                self.predict.side_effect = lambda image, checkpoint, task, **kwargs: {
+                    "status": "success", "predicted_label": ai if task == "leaf" else "Acceptable"}
+                without_ai = self.assess()
+                result = self.assess(ai_enabled=True, root_checkpoint="root.pth", leaf_checkpoint="leaf.pth")
+                self.assertEqual(result["Buyer_Rule_Result"], expected)
+                self.assertEqual(result["Checks"], without_ai["Checks"])
+                self.assertEqual(result["AI_Observations"]["leaf_B"]["comparison_status"],
+                                 "disagreement" if expert is not None else "expert_annotation_missing")
 
     def test_inference_errors_do_not_break_buyer_assessment(self):
         for failure in (RuntimeError("unavailable checkpoint"), {"status": "error", "error": {"code": "invalid_metadata"}},
