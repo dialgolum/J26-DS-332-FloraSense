@@ -57,3 +57,6 @@ mlruns/
 
 # DVC cache
 /.dvc/cache
+
+# Temporary files
+~$*.xlsx
