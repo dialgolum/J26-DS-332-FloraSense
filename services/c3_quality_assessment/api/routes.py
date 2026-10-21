@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import mimetypes
+import os
 import re
 from pathlib import Path
 from typing import Any
@@ -13,6 +14,7 @@ from fastapi.responses import FileResponse
 from pydantic import BaseModel, Field
 
 from ..data_loader import ROOT, load_dataset, resolve_image_path
+from ..run_assessment import run_assessment
 from ..p01_height_measurement import (
     RESULTS_DIR,
     load_buyer_range,
@@ -290,3 +292,115 @@ def reevaluate_height_session(
         },
         "meta": {"source": "saved_height_measurement_session"},
     }
+
+
+class AssessmentRequest(BaseModel):
+    # Paths are server configuration, never arbitrary client input.
+    model_config = {"extra": "forbid"}
+    plant_id: str = Field(min_length=1, max_length=100, pattern=r"^[A-Za-z0-9_-]+$")
+    sample_id: str = Field(min_length=1, max_length=100, pattern=r"^[A-Za-z0-9_-]+$")
+    requirement_id: str = Field(min_length=1, max_length=100, pattern=r"^[A-Za-z0-9_-]+$")
+    ai_enabled: bool = False
+    compare_leaf_a: bool = False
+
+
+def get_ai_config() -> dict:
+    """Explicit server-side checkpoints; no default/best-fold selection."""
+    return {"root_checkpoint": os.getenv("C3_ROOT_B_CHECKPOINT") or None,
+            "leaf_checkpoint": os.getenv("C3_LEAF_B_CHECKPOINT") or None,
+            "leaf_a_checkpoint": os.getenv("C3_LEAF_A_CHECKPOINT") or None,
+            "device": os.getenv("C3_INFERENCE_DEVICE", "cpu")}
+
+
+def _presentation_check(check: dict, missing_measurement: bool | None = None) -> dict:
+    """Add presentation fields without changing original status/reason."""
+    status, reason = check["Status"], check["Reason"].casefold()
+    pending = status == "MANUAL REVIEW" and any(
+        token in reason for token in ("missing", "incomplete", "not implemented", "not assessed"))
+    if missing_measurement is not None:
+        pending = status == "MANUAL REVIEW" and missing_measurement
+    return {**check, "Presentation_Status": (
+        status if status in {"PASS", "FAIL"} else "PENDING" if pending else "REVIEW"),
+        "Missing_Measurement": pending and any(
+            token in check["Check"].casefold() for token in ("height", "count", "measurement"))}
+
+
+def _public_assessment(result: dict, sheets: dict) -> dict:
+    """Strip local paths and diagnostic exception text at the HTTP boundary."""
+    def clean(value):
+        if isinstance(value, dict):
+            return {key: clean(item) for key, item in value.items()
+                    if key not in {"image_path", "checkpoint_path", "Relative_Path", "Image"}}
+        if isinstance(value, list):
+            return [clean(item) for item in value]
+        if isinstance(value, str):
+            return re.sub(r"(?<!\S)(?:[A-Za-z]:[\\/]|\\\\|/)[^\s\"'<>]+", "[redacted]", value)
+        return _json_value(value)
+
+    public = clean(result)
+    heights = sheets["Height_Assessments"]
+    heights = heights[heights.Sample_ID.eq(result["Sample_ID"]) & heights.Requirement_ID.eq(result["Requirement_ID"])]
+    missing_height = heights.empty or (len(heights) == 1 and any(
+        pd.isna(heights.iloc[0].get(column)) for column in ("Leaves_In_Range", "Total_Leaves_Assessed")))
+    annotations = sheets["Quality_Annotations"]
+    annotations = annotations[annotations.Sample_ID.eq(result["Sample_ID"]) & annotations.Plant_ID.eq(result["Plant_ID"])]
+    missing_leaf_count = (len(annotations) == 1 and (
+        pd.isna(annotations.iloc[0].get("Total_Leaf_Count")) or
+        pd.isna(result["Requirement_Profile"].get("Min_Total_Leaf_Count"))))
+    missing = {"Height": missing_height, "Leaf count": missing_leaf_count,
+               "Visual quality": False}  # Missing/duplicated annotations need expert review, not a measurement.
+    public["Checks"] = [_presentation_check(check, missing.get(check["Check"])) for check in public["Checks"]]
+    public["Rule_Assessment"]["Checks"] = [dict(check) for check in public["Checks"]]
+    public["Missing_Measurements"] = [check["Check"] for check in public["Checks"]
+                                      if check["Missing_Measurement"]]
+    reasons = [f"Rule {check['Check']}: {check['Reason']}" for check in public["Checks"]
+               if check["Status"] == "MANUAL REVIEW"]
+    for key, observation in public["AI_Observations"].items():
+        if observation["status"] in {"error", "unavailable"}:
+            observation["reason"] = ("Requested AI observation is unavailable; verify server checkpoint and sample image configuration."
+                                     if observation["status"] == "unavailable" else
+                                     "AI inference failed; buyer-rule decision retained.")
+            prediction = observation.get("prediction")
+            if prediction and "error" in prediction:
+                prediction["error"] = {"code": "FEATURE_INFERENCE_ERROR", "message": observation["reason"]}
+        if observation.get("requires_manual_review"):
+            reasons.append(f"{key}: {observation['reason']}")
+            if observation.get("comparison_status", "").startswith("expert_annotation_"):
+                reasons.append(f"{key}: Expert annotation is unavailable or unclear; AI does not replace it.")
+            if observation.get("comparison_status") == "disagreement":
+                reasons.append(f"{key}: AI disagrees with the expert annotation.")
+    public["Manual_Review"]["reasons"] = reasons
+    public["Manual_Review"]["required"] = bool(reasons)
+    return public
+
+
+@router.post("/assessments")
+def assess_selected_sample(
+    request: AssessmentRequest,
+    sheets: dict[str, pd.DataFrame] = Depends(get_sheets),
+    config: dict = Depends(get_ai_config),
+) -> dict:
+    _validated_plant(sheets, request.plant_id)
+    requirement = _find_row(sheets["Requirement_Profiles"], "Requirement_ID",
+                            request.requirement_id, "Requirement profile")
+    if requirement["Plant_ID"] != request.plant_id:
+        raise HTTPException(422, "Requirement profile belongs to a different plant type.")
+    samples = sheets["Samples"]
+    samples = samples[samples.Plant_ID.eq(request.plant_id) & samples.Sample_ID.eq(request.sample_id)]
+    if samples.empty:
+        raise HTTPException(404, "Sample not found for the selected plant type.")
+    if len(samples) != 1:
+        raise HTTPException(409, "Selected composite sample identity is duplicated.")
+    if request.compare_leaf_a and not request.ai_enabled:
+        raise HTTPException(422, "Leaf A comparison requires AI to be enabled.")
+    kwargs = dict(config)
+    kwargs["leaf_a_checkpoint"] = config.get("leaf_a_checkpoint") if request.compare_leaf_a else None
+    if request.compare_leaf_a and not kwargs["leaf_a_checkpoint"]:
+        # Include the requested comparison as an unavailable advisory observation.
+        kwargs["leaf_a_checkpoint"] = ""
+    try:
+        result = run_assessment(sheets, request.sample_id, request.requirement_id,
+                                ai_enabled=request.ai_enabled, **kwargs)
+        return {"data": _public_assessment(result, sheets), "error": None}
+    except Exception as exc:
+        raise HTTPException(503, "C3 assessment data could not be evaluated.") from exc
