@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-import { ClipboardCheck, Image as ImageIcon, Leaf, RefreshCw } from "lucide-react";
+import { ClipboardCheck, Image as ImageIcon } from "lucide-react";
 import Card from "../../components/ui/Card.jsx";
 import PageIntro from "../../components/ui/PageIntro.jsx";
 import Field, { Select } from "../../components/ui/Field.jsx";
@@ -8,29 +8,32 @@ import StatusBadge from "../../components/ui/StatusBadge.jsx";
 import LoadingIndicator from "../../components/ui/LoadingIndicator.jsx";
 import ErrorMessage from "../../components/ui/ErrorMessage.jsx";
 import {
-  getApiErrorMessage, getHeightSessions, getImagePreviewUrl, getPlantTypes,
-  getRequirements, getSampleImages, getSamples, reevaluateHeightSession,
+  assessSample, getApiErrorMessage, getImagePreviewUrl, getPlantTypes,
+  getRequirements, getSampleImages, getSamples,
   getHeightAnnotations, getQualityAnnotations,
 } from "./api.js";
 
-import { measurementAvailability, missingImageViews } from "./assessmentState.js";
-import AutomaticLeafUpload from "./AutomaticLeafUpload.jsx";
+import { canAssess, checkSummary, inspectionReviewReasons } from "./assessmentState.js";
 
 function statusTone(status) {
   if (status === "PASS") return "pass";
   if (status === "FAIL") return "fail";
-  if (status === "MANUAL REVIEW") return "review";
+  if (status === "MANUAL REVIEW" || status === "REVIEW") return "review";
+  if (status === "PENDING") return "pending";
   return "neutral";
 }
 
-function formatDate(value) {
-  if (!value) return "Date unavailable";
-  const parsed = new Date(value);
-  return Number.isNaN(parsed.getTime()) ? value : parsed.toLocaleString();
+function SamplePhoto({ image, sampleId }) {
+  const [failed, setFailed] = useState(false);
+  return failed ? <p role="status" className="grid h-40 place-items-center rounded-xl bg-slate-50 p-4 text-sm text-muted">{image.View_Type} photograph unavailable</p> :
+    <img src={getImagePreviewUrl(image.Image_ID)} onError={() => setFailed(true)} alt={`${sampleId} ${image.View_Type} photograph`} className="max-h-[380px] min-h-[180px] w-full object-contain" />;
 }
 
 export default function QualityPage() {
   const evaluationVersion = useRef(0);
+  const [qualityResult, setQualityResult] = useState(null);
+  const [assessing, setAssessing] = useState(false);
+  const [aiEnabled, setAiEnabled] = useState(true);
   const [plants, setPlants] = useState([]);
   const [plantId, setPlantId] = useState("");
   const [requirements, setRequirements] = useState([]);
@@ -39,9 +42,6 @@ export default function QualityPage() {
   const [sampleId, setSampleId] = useState("");
   const [images, setImages] = useState([]);
   const [imageId, setImageId] = useState("");
-  const [sessions, setSessions] = useState([]);
-  const [sessionId, setSessionId] = useState("");
-  const [result, setResult] = useState(null);
   const [heightAnnotations, setHeightAnnotations] = useState([]);
   const [qualityAnnotations, setQualityAnnotations] = useState([]);
   const [loadingAnnotations, setLoadingAnnotations] = useState(false);
@@ -49,7 +49,6 @@ export default function QualityPage() {
   const [loadingPlants, setLoadingPlants] = useState(true);
   const [loadingReferences, setLoadingReferences] = useState(false);
   const [loadingSampleData, setLoadingSampleData] = useState(false);
-  const [evaluating, setEvaluating] = useState(false);
   const [error, setError] = useState("");
   const [sampleDataError, setSampleDataError] = useState("");
 
@@ -71,9 +70,9 @@ export default function QualityPage() {
       return undefined;
     }
     let active = true;
+    setRequirements([]); setRequirementId(""); setSamples([]); setSampleId("");
     setLoadingReferences(true);
     setError("");
-    setResult(null);
     Promise.all([getRequirements(plantId), getSamples(plantId)]).then(([profiles, sampleRows]) => {
       if (!active) return;
       setRequirements(profiles);
@@ -90,34 +89,29 @@ export default function QualityPage() {
 
   useEffect(() => {
     if (!sampleId) {
-      setImages([]); setImageId(""); setSessions([]); setSessionId("");
+      setImages([]); setImageId(""); setLoadingSampleData(false);
       return undefined;
     }
     let active = true;
-    setImages([]); setImageId(""); setSessions([]); setSessionId("");
+    setImages([]); setImageId("");
     setLoadingSampleData(true);
     setSampleDataError("");
-    setResult(null);
-    Promise.all([getSampleImages(sampleId), getHeightSessions(sampleId)]).then(([imageRows, sessionRows]) => {
+    getSampleImages(sampleId, plantId).then((imageRows) => {
       if (!active) return;
       setImages(imageRows);
-      setSessions(sessionRows);
-      setImageId((current) => imageRows.some((item) => item.Image_ID === current)
-        ? current : imageRows[0]?.Image_ID || "");
-      setSessionId((current) => sessionRows.some((item) => item.session_id === current)
-        ? current : sessionRows[0]?.session_id || "");
+      setImageId(imageRows[0]?.Image_ID || "");
     }).catch((requestError) => {
-      if (active) setSampleDataError(getApiErrorMessage(requestError, "Could not load sample images and height sessions."));
+      if (active) setSampleDataError(getApiErrorMessage(requestError, "Could not load plant photographs."));
     }).finally(() => { if (active) setLoadingSampleData(false); });
     return () => { active = false; };
-  }, [sampleId]);
+  }, [plantId, sampleId]);
 
   useEffect(() => {
     let active = true;
     evaluationVersion.current += 1;
-    setHeightAnnotations([]); setQualityAnnotations([]); setResult(null);
-    setAnnotationError("");
-    if (!sampleId || !requirementId) return undefined;
+    setHeightAnnotations([]); setQualityAnnotations([]); setQualityResult(null); setAssessing(false);
+    setAnnotationError(""); setLoadingAnnotations(false);
+    if (!sampleId || !requirementId || loadingReferences) return undefined;
     setLoadingAnnotations(true);
     Promise.all([getHeightAnnotations(sampleId, requirementId), getQualityAnnotations(sampleId, requirementId)])
       .then(([heights, quality]) => {
@@ -126,111 +120,108 @@ export default function QualityPage() {
         if (active) setAnnotationError(getApiErrorMessage(requestError, "Could not load recorded annotations."));
       }).finally(() => { if (active) setLoadingAnnotations(false); });
     return () => { active = false; };
-  }, [sampleId, requirementId]);
+  }, [plantId, sampleId, requirementId, loadingReferences]);
 
-  const selectedPlant = plants.find((item) => item.Plant_ID === plantId);
   const selectedImage = images.find((item) => item.Image_ID === imageId);
   const selectedRequirement = requirements.find((item) => item.Requirement_ID === requirementId);
-  const selectedSession = sessions.find((item) => item.session_id === sessionId);
   const selectedSample = samples.find((item) => item.Sample_ID === sampleId);
-  const previewUrl = useMemo(() => selectedImage ? getImagePreviewUrl(selectedImage.Image_ID) : "", [selectedImage]);
+  const summary = useMemo(() => checkSummary(qualityResult?.Checks), [qualityResult]);
+  const assessmentReady = canAssess({ plantId, sampleId, requirementId, samples, requirements,
+    loading: loadingReferences || loadingPlants || assessing });
 
-  async function runReevaluation() {
-    if (!sessionId || !requirementId) return;
+  function invalidateSelection() {
+    evaluationVersion.current += 1;
+    setQualityResult(null); setAssessing(false); setError("");
+  }
+
+  async function runQualityAssessment() {
+    if (!assessmentReady) return;
     const version = ++evaluationVersion.current;
-    setEvaluating(true);
-    setError("");
-    setResult(null);
+    setAssessing(true); setQualityResult(null); setError("");
     try {
-      const evaluated = await reevaluateHeightSession(sessionId, requirementId);
-      if (version === evaluationVersion.current) setResult(evaluated);
+      const assessed = await assessSample(plantId, sampleId, requirementId, aiEnabled);
+      if (version === evaluationVersion.current) setQualityResult(assessed);
     } catch (requestError) {
-      if (version === evaluationVersion.current) setError(getApiErrorMessage(requestError, "Could not reevaluate this height session."));
+      if (version === evaluationVersion.current) setError(getApiErrorMessage(requestError, "Quality assessment failed. Please retry."));
     } finally {
-      setEvaluating(false);
+      if (version === evaluationVersion.current) setAssessing(false);
     }
   }
 
+  const reviewReasons = inspectionReviewReasons(qualityResult);
+  const extraImages = images.filter((image) => !["Front", "Root"].includes(image.View_Type));
+
   return <>
-    <PageIntro eyebrow="C3 · Export readiness" title="Buyer-specific quality assessment" description="Browse workbook-backed plant records and reevaluate a saved P01 height-measurement session against a buyer requirement." action={<StatusBadge tone="ready" dot>C3 API connected</StatusBadge>} />
-    <AutomaticLeafUpload />
-    {error && <div className="mb-5"><ErrorMessage title="C3 request failed">{error}</ErrorMessage></div>}
-    {loadingPlants ? <Card className="p-5"><LoadingIndicator label="Loading plant types…" /></Card> : plants.length === 0 ? <Card className="p-5"><p className="text-sm text-muted">No plant types are available.</p></Card> : <>
-      <div className="grid items-start gap-5 xl:grid-cols-[.85fr_1.15fr]">
+    <PageIntro eyebrow="Plant quality control" title="Buyer-specific quality assessment" description="Inspect plant quality against buyer requirements." />
+    {error && <div className="mb-5"><ErrorMessage title="Inspection request failed">{error}</ErrorMessage></div>}
+    {loadingPlants ? <Card className="p-5"><LoadingIndicator label="Loading plant types..." /></Card> : plants.length === 0 ? <Card className="p-5"><p className="text-sm text-muted">No plant types are available.</p></Card> :
+      <div className="mx-auto max-w-5xl space-y-5">
         <Card className="p-5 sm:p-6">
-          <div className="mb-5 flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-mint text-forest"><ClipboardCheck size={19} /></span><div><p className="font-display font-extrabold text-forest">Assessment setup</p><p className="text-xs text-muted">Options loaded from the C3 workbook</p></div></div>
-          <div className="space-y-4">
-            <Field label="Plant type"><Select value={plantId} onChange={(event) => setPlantId(event.target.value)}>{plants.map((plant) => <option key={plant.Plant_ID} value={plant.Plant_ID}>{plant.Plant_ID} · {plant.Plant_Name}</option>)}</Select></Field>
-            <Field label="Buyer requirement"><Select value={requirementId} onChange={(event) => { setRequirementId(event.target.value); setResult(null); }} disabled={loadingReferences || requirements.length === 0}>{requirements.map((profile) => <option key={profile.Requirement_ID} value={profile.Requirement_ID}>{profile.Requirement_ID} · {profile.Buyer_ID} · {profile.Min_Height_cm}–{profile.Max_Height_cm} cm</option>)}</Select></Field>
-            <Field label="Sample"><Select value={sampleId} onChange={(event) => setSampleId(event.target.value)} disabled={loadingReferences || samples.length === 0}>{samples.map((sample) => <option key={sample.Sample_ID} value={sample.Sample_ID}>{sample.Sample_ID}</option>)}</Select></Field>
-            {loadingReferences && <LoadingIndicator compact label="Loading requirements and samples…" />}
-            {!loadingReferences && requirements.length === 0 && <p className="text-xs text-muted">No requirements are configured for this plant.</p>}
+          <h2 className="mb-5 font-display text-lg font-extrabold text-forest">Assessment setup</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            <Field label="Plant type"><Select aria-label="Plant type" value={plantId} onChange={(event) => { invalidateSelection(); setImages([]); setRequirements([]); setSamples([]); setSampleId(""); setRequirementId(""); setPlantId(event.target.value); }}>{plants.map((plant) => <option key={plant.Plant_ID} value={plant.Plant_ID}>{plant.Plant_ID} - {plant.Plant_Name}</option>)}</Select></Field>
+            <Field label="Buyer requirement"><Select aria-label="Buyer requirement" value={requirementId} onChange={(event) => { invalidateSelection(); setRequirementId(event.target.value); }} disabled={loadingReferences || !requirements.length}>{!requirements.length && <option value="">No buyer profiles available</option>}{requirements.map((profile) => <option key={profile.Requirement_ID} value={profile.Requirement_ID}>{profile.Buyer_ID} - {profile.Requirement_ID}</option>)}</Select></Field>
+            <Field label="Sample"><Select aria-label="Sample" value={sampleId} onChange={(event) => { invalidateSelection(); setImages([]); setSampleId(event.target.value); }} disabled={loadingReferences || !samples.length}>{!samples.length && <option value="">No samples available</option>}{samples.map((sample) => <option key={sample.Sample_ID} value={sample.Sample_ID}>{sample.Sample_ID}</option>)}</Select></Field>
           </div>
-          <div className="mt-5 border-t border-line pt-5">
-            <Field label="Saved height session" hint="Sessions are loaded from the C3 height-measurement results directory.">
-              <Select value={sessionId} onChange={(event) => { evaluationVersion.current += 1; setSessionId(event.target.value); setResult(null); }} disabled={loadingSampleData || sessions.length === 0}>
-                {sessions.length === 0 && <option value="">No saved sessions for this sample</option>}
-                {sessions.map((session) => <option key={session.session_id} value={session.session_id}>{formatDate(session.timestamp)} · {session.leaf_count} leaves · {session.session_id}</option>)}
-              </Select>
-            </Field>
-            {selectedSession && <div className="mt-3 flex flex-wrap gap-2"><StatusBadge tone={selectedSession.calibration_verified ? "ready" : "review"}>Calibration {selectedSession.calibration_verified ? "confirmed" : "unconfirmed"}</StatusBadge><StatusBadge tone={selectedSession.scale_reliable ? "ready" : "review"}>Scale {selectedSession.scale_reliable ? "confirmed" : "unreliable"}</StatusBadge></div>}
+          {loadingReferences && <div className="mt-3"><LoadingIndicator compact label="Loading samples and buyer profiles..." /></div>}
+          <div className="mt-5 flex flex-col gap-4 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
+            <label className="flex items-center gap-2 text-sm font-bold"><input type="checkbox" checked={aiEnabled} onChange={(event) => { invalidateSelection(); setAiEnabled(event.target.checked); }} />Include AI-assisted inspection</label>
+            <Button disabled={!assessmentReady} onClick={runQualityAssessment}><ClipboardCheck size={16} />{assessing ? "Assessing sample..." : "Run Quality Assessment"}</Button>
           </div>
-          {loadingSampleData && <LoadingIndicator compact label="Loading images and sessions…" />}
-          {sampleDataError && <div className="mt-4"><ErrorMessage title="Could not load sample data">{sampleDataError}</ErrorMessage></div>}
-          <Button className="mt-5 w-full" disabled={evaluating || loadingSampleData || !sessionId || !requirementId} onClick={runReevaluation}><RefreshCw size={16} className={evaluating ? "animate-spin" : ""} />{evaluating ? "Reevaluating session…" : "Reevaluate height session"}</Button>
+          {assessing && <div className="mt-3" role="status"><LoadingIndicator compact label="Inspecting plant quality..." /></div>}
         </Card>
 
-        <div className="space-y-5">
-          <Card className="p-5 sm:p-6"><div className="mb-4 flex items-center gap-2"><Leaf size={17} className="text-leaf" /><h3 className="font-display font-extrabold text-forest">Workbook-linked images</h3></div>
-            {images.length > 0 ? <>
-              <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">{images.map((image) => <button type="button" key={image.Image_ID} onClick={() => setImageId(image.Image_ID)} aria-pressed={imageId === image.Image_ID} className={`overflow-hidden rounded-xl border p-2 text-xs ${imageId === image.Image_ID ? "border-leaf bg-mint" : "border-line"}`}>
-                <img src={getImagePreviewUrl(image.Image_ID)} alt={`${sampleId} ${image.View_Type} ${image.Image_ID}`} className="h-24 w-full object-contain" />
-                <span className="mt-2 block font-bold">{image.View_Type} ? {image.Image_ID}</span>
-              </button>)}</div>
-              <p className="mb-3 text-xs text-muted">Views without workbook images: {missingImageViews(images).join(", ") || "None"}</p>
-              <Field label="Image view"><Select value={imageId} onChange={(event) => setImageId(event.target.value)}>{images.map((image) => <option key={image.Image_ID} value={image.Image_ID}>{image.View_Type} · {image.Image_ID}</option>)}</Select></Field>
-              {selectedImage && <div className="mt-3 overflow-hidden rounded-xl border border-line bg-[#f7f9f6]"><img src={previewUrl} alt={`${selectedPlant?.Plant_Name || plantId} sample ${sampleId} ${selectedImage.View_Type} view`} className="max-h-[380px] min-h-[180px] w-full object-contain" /><p className="border-t border-line bg-white px-3 py-2 text-xs text-muted">{selectedImage.Relative_Path}</p></div>}
-            </> : loadingSampleData ? <LoadingIndicator label="Loading sample images…" /> : <div className="rounded-xl border border-dashed border-line px-4 py-8 text-center"><ImageIcon size={20} className="mx-auto text-muted" /><p className="mt-2 text-sm font-bold text-muted">No images linked to this sample</p></div>}
-          </Card>
+        <Card className="p-5 sm:p-6">
+          <h2 className="mb-4 font-display text-lg font-extrabold text-forest">Plant photographs</h2>
+          {sampleDataError && <ErrorMessage title="Photographs unavailable">{sampleDataError}</ErrorMessage>}
+          {loadingSampleData ? <LoadingIndicator label="Loading photographs..." /> : <>
+            <div className="grid gap-4 sm:grid-cols-2">{["Front", "Root"].map((view) => {
+              const photo = images.find((image) => image.View_Type === view);
+              return <figure key={view} className="overflow-hidden rounded-xl border border-line bg-[#f7f9f6]"><figcaption className="px-4 py-3 text-sm font-bold">{view}</figcaption>{photo ? <SamplePhoto key={photo.Image_ID} image={photo} sampleId={sampleId} /> : <div className="px-4 py-12 text-center text-sm text-muted"><ImageIcon size={20} className="mx-auto mb-2" />No {view.toLowerCase()} photograph available</div>}</figure>;
+            })}</div>
+            {!!extraImages.length && <details className="mt-4"><summary className="cursor-pointer text-sm font-bold text-forest">Other photographs</summary><div className="mt-3"><Field label="View"><Select aria-label="Other photograph view" value={extraImages.some((image) => image.Image_ID === imageId) ? imageId : ""} onChange={(event) => setImageId(event.target.value)}><option value="">Select a view</option>{extraImages.map((image, index) => <option key={image.Image_ID} value={image.Image_ID}>{image.View_Type}{extraImages.filter((row) => row.View_Type === image.View_Type).length > 1 ? ` (${index + 1})` : ""}</option>)}</Select></Field>{selectedImage && !["Front", "Root"].includes(selectedImage.View_Type) && <SamplePhoto key={selectedImage.Image_ID} image={selectedImage} sampleId={sampleId} />}</div></details>}
+          </>}
+        </Card>
 
-          <Card className="p-5 sm:p-6">
-            <h3 className="font-display text-lg font-extrabold text-forest">Recorded manual annotations</h3>
-            <p className="mt-1 text-xs text-muted">Source: Excel workbook. Quality checks apply to the sample; recorded height compliance applies to the selected buyer requirement.</p>
-            {loadingAnnotations ? <LoadingIndicator label="Loading manual annotations?" /> : annotationError ? <ErrorMessage title="Annotations unavailable">{annotationError}</ErrorMessage> : <>
-              <StatusBadge tone="neutral">Manual Annotation</StatusBadge>
-              {heightAnnotations.length === 0 && <p className="mt-3 text-sm text-muted">No recorded height annotation for this requirement.</p>}
-              {heightAnnotations.map((row, index) => <div key={index} className="mt-3 rounded-xl border border-line p-3 text-sm">
-                <p className="font-bold">Recorded height compliance ? {row.Requirement_ID}</p>
-                <p>Height result: {row.Height_Result ?? "Not recorded"}</p>
-                <p>Leaves in range: {row.Leaves_In_Range ?? "Not recorded"} / {row.Total_Leaves_Assessed ?? "Not recorded"} assessed</p>
-              </div>)}
-              {qualityAnnotations.length === 0 && <p className="mt-3 text-sm text-muted">No recorded quality annotations.</p>}
-              {qualityAnnotations.map((row, index) => <dl key={index} className="mt-3 grid grid-cols-2 gap-3 text-sm">{[
-                ["Leaf count", row.Total_Leaf_Count], ["Leaf distribution", row.Leaf_Distribution],
-                ["Root distribution", row.Root_Distribution], ["Oasis damaged", row.Oasis_Damaged],
-                ["General visual quality", row.General_visual_Quality],
-              ].map(([label, value]) => <div key={label} className="rounded-xl bg-[#f7f9f6] p-3"><dt className="text-xs text-muted">{label}</dt><dd className="font-bold">{value ?? "Not recorded"}</dd></div>)}</dl>)}
-              <p className="mt-3 text-sm">Recorded root condition: {selectedSample?.Observed_Root_Status ?? "Not recorded"}</p>
-              <p className="mt-1 text-sm">Recorded packing mode: {selectedSample?.Observed_Packing_Mode ?? "Not recorded"}</p>
-            </>}
-          </Card>
-          <Card className="p-5 sm:p-6">
-            <h3 className="font-display font-extrabold text-forest">AI visual-quality predictions</h3>
-            <p className="mt-2 text-sm text-muted">No AI prediction generated in this workflow.</p>
-          </Card>
+        <Card className="p-5 sm:p-6">
+          <h2 className="font-display text-lg font-extrabold text-forest">Quality assessment results</h2>
+          {!qualityResult ? <p className="mt-3 text-sm text-muted">Select a sample and buyer requirement, then run the quality assessment.</p> : <div aria-live="polite">
+            <div className="mt-4 flex flex-wrap items-center justify-between gap-3"><p className="text-sm font-bold">Quality assessment decision</p><StatusBadge tone={statusTone(qualityResult.Buyer_Rule_Result)}>{qualityResult.Buyer_Rule_Result}</StatusBadge></div>
+            <p className="mt-3 text-xs text-muted">Plant {qualityResult.Plant_ID} | Sample {qualityResult.Sample_ID} | Buyer {qualityResult.Buyer_ID} | Requirement {qualityResult.Requirement_ID}</p>
+            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">{Object.entries(summary).map(([status, count]) => <div key={status} className="rounded-xl border border-line p-3"><StatusBadge tone={statusTone(status)}>{status}</StatusBadge><p className="mt-2 text-xl font-bold">{count}</p></div>)}</div>
+            {qualityResult.Missing_Measurements?.includes("Height") && <p className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-900">Height measurement is pending. Complete the required measurement before final approval.</p>}
+            {qualityResult.Missing_Measurements?.filter((name) => name !== "Height").length > 0 && <p className="mt-3 text-sm text-amber-900">Required measurements pending: {qualityResult.Missing_Measurements.filter((name) => name !== "Height").join(", ")}.</p>}
+            <ul className="mt-4 divide-y divide-line">{qualityResult.Checks.map((check, index) => <li key={`${check.Check}-${index}`} className="py-4"><div className="flex items-center justify-between gap-3"><h3 className="text-sm font-bold">{check.Check}</h3><StatusBadge tone={statusTone(check.Presentation_Status)}>{check.Presentation_Status}</StatusBadge></div><p className="mt-2 text-sm text-muted">{check.Reason}</p></li>)}</ul>
+            {!!reviewReasons.length && <details className="mt-3 rounded-xl bg-amber-50 p-3 text-sm text-amber-900"><summary className="cursor-pointer font-bold">Review required</summary><ul className="mt-2 list-inside list-disc space-y-2">{reviewReasons.map((reason) => <li key={reason}>{reason}</li>)}</ul></details>}
+          </div>}
+        </Card>
 
-          <Card className="p-5 sm:p-6"><div className="mb-4 flex flex-wrap items-start justify-between gap-3"><div><p className="text-[11px] font-extrabold uppercase tracking-[.15em] text-leaf">Height Assessment</p><h3 className="mt-1 font-display text-lg font-extrabold text-forest">Image-based CV height measurements</h3><p className="mt-1 text-xs text-muted">Saved image measurements with buyer-specific height rule-engine decisions. This is not an overall quality decision.</p></div>{result && <StatusBadge tone={statusTone(result.status)}>{result.status}</StatusBadge>}</div>
-            {!result ? <div className="rounded-xl border border-dashed border-line px-4 py-7 text-center"><p className="text-sm font-bold text-muted">{measurementAvailability({ loading: loadingSampleData || loadingAnnotations, error: sampleDataError || annotationError, sessions, heightAnnotations })}</p><p className="mt-1 text-xs text-muted">{sessions.length ? "Choose a saved session and requirement, then reevaluate." : "Image-based reevaluation requires a saved height session."}</p></div> : <>
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">{[
-                ["Buyer height decision", result.status], ["Source image", result.image_id ?? "Unavailable"], ["Requirement", result.requirement_id], ["Leaves measured", `${result.valid_leaves}/${result.leaf_count}`], ["Leaves in range", result.leaves_in_range], ["In-range share", result.percentage_in_range == null ? "—" : `${result.percentage_in_range.toFixed(1)}%`],
-              ].map(([label, value]) => <div key={label} className="rounded-xl bg-[#f7f9f6] p-3"><p className="text-[10px] font-bold uppercase tracking-wide text-muted">{label}</p><p className="mt-1 text-sm font-extrabold text-forest">{value}</p></div>)}</div>
-              <div className="mt-4 overflow-x-auto rounded-xl border border-line"><table className="w-full min-w-[420px] text-left text-xs"><thead className="bg-[#f7f9f6] text-muted"><tr><th className="px-3 py-2.5 font-bold">Leaf</th><th className="px-3 py-2.5 font-bold">Height</th><th className="px-3 py-2.5 font-bold">Requirement</th></tr></thead><tbody>{result.leaves.map((leaf) => <tr key={leaf.leaf_number} className="border-t border-line"><td className="px-3 py-2.5 font-semibold text-ink">{leaf.leaf_number}</td><td className="px-3 py-2.5 text-ink">{typeof leaf.height_cm === "number" ? `${leaf.height_cm.toFixed(2)} cm` : "Unavailable"}</td><td className="px-3 py-2.5">{leaf.within_requirement == null ? <span className="text-muted">Not evaluated</span> : <StatusBadge tone={leaf.within_requirement ? "pass" : "fail"}>{leaf.within_requirement ? "In range" : "Out of range"}</StatusBadge>}</td></tr>)}</tbody></table></div>
-              {result.reasons.length > 0 && <div className="mt-4 rounded-xl bg-amber-50 p-3"><p className="text-xs font-bold text-amber-900">Review reasons</p><ul className="mt-1 list-inside list-disc space-y-1 text-xs leading-5 text-amber-900/80">{result.reasons.map((reason, index) => <li key={`${reason}-${index}`}>{reason}</li>)}</ul></div>}
-              {selectedRequirement && <p className="mt-3 text-[11px] text-muted">{result.buyer_id} · acceptable range {selectedRequirement.Min_Height_cm}–{selectedRequirement.Max_Height_cm} cm · session {result.session_id}</p>}
-            </>}
-          </Card>
-        </div>
-      </div>
-    </>}
+        <Card className="p-5 sm:p-6">
+          <h2 className="font-display text-lg font-extrabold text-forest">AI-assisted inspection</h2>
+          <p className="mt-2 text-xs text-muted">AI findings support inspection and do not change the quality decision.</p>
+          {!qualityResult ? <p className="mt-3 text-sm text-muted">No AI findings available yet.</p> : <div className="mt-4 grid gap-4 sm:grid-cols-2">{["root_B", "leaf_B"].map((key) => {
+            const observation = qualityResult.AI_Observations[key];
+            const prediction = observation?.prediction;
+            const available = observation?.status === "success";
+            const stateLabel = { disabled: "Not requested", unavailable: "Inspection unavailable", error: "Inspection unavailable", unsupported: "Not supported for this plant type", not_applicable: "Not applicable" }[observation?.status] || "Unavailable";
+            return <div key={key} className="rounded-xl border border-line p-4"><h3 className="text-sm font-bold">{key === "root_B" ? "Root condition" : "Branch distribution"}</h3><p className="mt-2 text-sm font-bold">{available ? prediction.predicted_label : stateLabel}</p>
+              {available && <><p className="mt-2 text-sm">AI model score: {Number.isFinite(prediction.confidence) ? `${(prediction.confidence * 100).toFixed(1)}%` : "Unavailable"} <span className="text-xs text-muted">(uncalibrated)</span></p><p className="mt-2 text-sm">Expert label: {observation.expert_annotation?.label || "Missing or unclear"}</p><div className="mt-2"><StatusBadge tone={observation.comparison_status === "disagreement" ? "review" : "neutral"}>{observation.comparison_status === "agreement" ? "Agrees with expert" : observation.comparison_status === "disagreement" ? "Disagrees - review required" : "Expert comparison unavailable"}</StatusBadge></div></>}
+              {!available && ["unavailable", "error"].includes(observation?.status) && <p className="mt-2 text-xs text-muted">Continue with the recorded inspection checks or request manual review.</p>}
+            </div>;
+          })}</div>}
+          <p className="mt-3 text-xs text-muted">Branch distribution refers to where branches originate on the main stem, not equal foliage on each side.</p>
+        </Card>
+
+        <Card className="p-5 sm:p-6"><details><summary className="cursor-pointer font-display text-lg font-extrabold text-forest">Inspection details</summary>
+          {loadingAnnotations ? <LoadingIndicator label="Loading inspection details..." /> : annotationError ? <div className="mt-4"><ErrorMessage title="Inspection details unavailable">{annotationError}</ErrorMessage></div> : <div className="mt-4 space-y-4">
+            <p className="text-sm">Root condition: {selectedSample?.Observed_Root_Status ?? "Not recorded"} | Packing: {selectedSample?.Observed_Packing_Mode ?? "Not recorded"}</p>
+            {selectedRequirement && <p className="text-sm">Buyer {selectedRequirement.Buyer_ID} - Requirement {selectedRequirement.Requirement_ID}{selectedRequirement.Min_Height_cm != null && selectedRequirement.Max_Height_cm != null ? ` | Height range: ${selectedRequirement.Min_Height_cm}-${selectedRequirement.Max_Height_cm} cm` : ""}</p>}
+            {!heightAnnotations.length && <p className="text-sm text-muted">No height measurement recorded for this buyer requirement.</p>}
+            {heightAnnotations.map((row, index) => <div key={index} className="rounded-xl border border-line p-3 text-sm"><p className="font-bold">Recorded height assessment: {row.Height_Result ?? "Not recorded"}</p><p className="mt-1">Leaves in range: {row.Leaves_In_Range ?? "Not recorded"} / {row.Total_Leaves_Assessed ?? "Not recorded"} assessed</p>{row.Measured_Stem_Height != null && <p>Stem height: {row.Measured_Stem_Height} cm</p>}</div>)}
+            {!qualityAnnotations.length && <p className="text-sm text-muted">No quality inspection details recorded.</p>}
+            {qualityAnnotations.map((row, index) => <dl key={index} className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{[["Leaf count", row.Total_Leaf_Count], ["Branch distribution", row.Leaf_Distribution], ["Root distribution", row.Root_Distribution], ["Oasis damaged", row.Oasis_Damaged], ["Visual quality", row.General_visual_Quality]].map(([label, value]) => <div key={label} className="rounded-xl bg-[#f7f9f6] p-3"><dt className="text-xs text-muted">{label}</dt><dd className="mt-1 text-sm font-bold">{value ?? "Not recorded"}</dd></div>)}</dl>)}
+          </div>}
+        </details></Card>
+      </div>}
   </>;
 }

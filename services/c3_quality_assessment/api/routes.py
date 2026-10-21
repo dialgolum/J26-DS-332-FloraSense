@@ -72,8 +72,12 @@ def _validated_plant(sheets: dict[str, pd.DataFrame], plant_id: str) -> None:
     _find_row(sheets["Plant_Types"], "Plant_ID", plant_id, "Plant type")
 
 
-def _validated_sample(sheets: dict[str, pd.DataFrame], sample_id: str) -> pd.Series:
-    return _find_row(sheets["Samples"], "Sample_ID", sample_id, "Sample")
+def _validated_sample(sheets: dict[str, pd.DataFrame], sample_id: str, plant_id: str | None = None) -> pd.Series:
+    rows = sheets["Samples"]
+    if plant_id is not None:
+        _validated_plant(sheets, plant_id)
+        rows = rows[rows.Plant_ID.eq(plant_id)]
+    return _find_row(rows, "Sample_ID", sample_id, "Sample")
 
 
 def _session_path(results_dir: Path, session_id: str) -> Path:
@@ -115,20 +119,22 @@ def list_samples(
     return {"data": _records(result), "meta": {"count": len(result), "plant_id": plant_id}}
 
 
-def _sample_images(sheets: dict[str, pd.DataFrame], sample_id: str) -> pd.DataFrame:
-    _validated_sample(sheets, sample_id)
+def _sample_images(sheets: dict[str, pd.DataFrame], sample_id: str, plant_id: str | None = None) -> pd.DataFrame:
+    sample = _validated_sample(sheets, sample_id, plant_id)
     images = sheets["Images"]
-    return images[images["Sample_ID"].astype(str).str.strip() == sample_id]
+    return images[images.Sample_ID.eq(sample_id) & images.Plant_ID.eq(sample.Plant_ID)]
 
 
 @router.get("/samples/{sample_id}/images")
 def list_sample_images(
     sample_id: str,
+    plant_id: str | None = Query(default=None, min_length=1),
     sheets: dict[str, pd.DataFrame] = Depends(get_sheets),
 ) -> dict:
-    rows = _sample_images(sheets, sample_id)
+    rows = _sample_images(sheets, sample_id, plant_id)
     data = []
     for image in _records(rows):
+        image.pop("Relative_Path", None)
         image_id = str(image["Image_ID"])
         image["preview_url"] = f"/api/v1/c3/images/{image_id}/preview"
         data.append(image)
@@ -159,10 +165,14 @@ def preview_image(image_id: str, sheets: dict[str, pd.DataFrame] = Depends(get_s
 @router.get("/samples/{sample_id}/height-sessions")
 def list_height_sessions(
     sample_id: str,
+    plant_id: str | None = Query(default=None, min_length=1),
     sheets: dict[str, pd.DataFrame] = Depends(get_sheets),
     results_dir: Path = Depends(get_results_dir),
 ) -> dict:
-    _validated_sample(sheets, sample_id)
+    sample = _validated_sample(sheets, sample_id, plant_id)
+    # Saved click-measurement sessions belong to the existing P01 workflow.
+    if sample.Plant_ID != "P01":
+        return {"data": [], "meta": {"count": 0, "sample_id": sample_id}}
     sessions = []
     invalid_count = 0
     if results_dir.is_dir():
@@ -189,9 +199,9 @@ def list_height_sessions(
 
 
 def _annotation_context(sheets: dict, sample_id: str, requirement_id: str) -> pd.Series:
-    sample = _validated_sample(sheets, sample_id)
     requirement = _find_row(sheets["Requirement_Profiles"], "Requirement_ID",
                             requirement_id, "Requirement profile")
+    sample = _validated_sample(sheets, sample_id, requirement.Plant_ID)
     if str(sample["Plant_ID"]).strip() != str(requirement["Plant_ID"]).strip():
         raise HTTPException(status_code=422, detail="Requirement profile belongs to a different plant type.")
     return sample
@@ -221,7 +231,7 @@ def recorded_quality_annotations(
 ) -> dict:
     sample = _annotation_context(sheets, sample_id, requirement_id)
     rows = sheets["Quality_Annotations"]
-    rows = rows[rows["Sample_ID"].astype(str).str.strip() == sample_id]
+    rows = rows[rows.Sample_ID.eq(sample_id) & rows.Plant_ID.eq(sample.Plant_ID)]
     return {"data": _records(rows), "meta": {
         "source": "recorded_manual_annotation", "sheet": "Quality_Annotations",
         "scope": "sample", "sample_id": sample_id, "requirement_id": requirement_id,
@@ -243,9 +253,9 @@ def reevaluate_height_session(
         raise HTTPException(status_code=422, detail=str(exc)) from exc
 
     sample_id = str(session.get("sample_id", "")).strip()
-    sample = _validated_sample(sheets, sample_id)
     requirement = _find_row(sheets["Requirement_Profiles"], "Requirement_ID",
                             request.requirement_id.strip(), "Requirement profile")
+    sample = _validated_sample(sheets, sample_id, "P01")
     if str(requirement["Plant_ID"]).strip() != str(sample["Plant_ID"]).strip():
         raise HTTPException(status_code=422, detail="Requirement profile belongs to a different plant type.")
 
