@@ -11,3 +11,18 @@ export function missingImageViews(images) {
     (view) => !images.some((image) => image.View_Type === view),
   );
 }
+
+export function checkSummary(checks = []) {
+  const counts = { PASS: 0, FAIL: 0, PENDING: 0, REVIEW: 0 };
+  for (const check of checks) {
+    const status = Object.hasOwn(counts, check.Presentation_Status) ? check.Presentation_Status : "REVIEW";
+    counts[status] += 1;
+  }
+  return counts;
+}
+
+export function canAssess({ plantId, sampleId, requirementId, samples, requirements, loading }) {
+  return !loading && Boolean(plantId && sampleId && requirementId) &&
+    samples.some((row) => row.Plant_ID === plantId && row.Sample_ID === sampleId) &&
+    requirements.some((row) => row.Plant_ID === plantId && row.Requirement_ID === requirementId);
+}

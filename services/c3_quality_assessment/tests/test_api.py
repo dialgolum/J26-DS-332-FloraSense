@@ -407,3 +407,39 @@ def test_assessment_current_workbook_and_missing_measurements(assessment_data):
     height = next(row for row in data["Checks"] if row["Check"] == "Height")
     assert height["Presentation_Status"] == "PENDING"
     assert data["Missing_Measurements"] == ["Height"]
+
+
+def test_frontend_composite_image_and_annotation_delivery(assessment_data):
+    app.dependency_overrides[get_sheets] = _load_dataset
+    for plant_id, requirement_id in (("P01", "R001"), ("P02", "R003")):
+        images = client.get("/api/v1/c3/samples/S001/images", params={"plant_id": plant_id})
+        assert images.status_code == 200
+        rows = images.json()["data"]
+        assert rows and all(row["Plant_ID"] == plant_id for row in rows)
+        assert "Relative_Path" not in images.text
+        for row in rows:
+            assert client.get(row["preview_url"]).status_code == 200
+        quality = client.get("/api/v1/c3/samples/S001/quality-annotations",
+                             params={"requirement_id": requirement_id})
+        assert quality.status_code == 200
+        assert all(row["Plant_ID"] == plant_id for row in quality.json()["data"])
+        height = client.get("/api/v1/c3/samples/S001/height-assessments",
+                            params={"requirement_id": requirement_id})
+        assert height.status_code == 200
+        assert client.get("/api/v1/c3/samples/S001/height-sessions",
+                          params={"plant_id": plant_id}).status_code == 200
+    # P01 sessions must never be offered for a different plant with the same local ID.
+    assert client.get("/api/v1/c3/samples/S001/height-sessions",
+                      params={"plant_id": "P02"}).json()["data"] == []
+    assert client.get("/api/v1/c3/samples/S001/images", params={"plant_id": "P99"}).status_code == 404
+
+
+def test_frontend_missing_image_returns_safe_error(assessment_data):
+    assessment_data["Images"].loc[0, "Relative_Path"] = "data/quality_assessment/original/absent.jpg"
+    images = client.get("/api/v1/c3/samples/S001/images", params={"plant_id": "P02"})
+    assert images.status_code == 200
+    url = images.json()["data"][0]["preview_url"]
+    missing = client.get(url)
+    assert missing.status_code == 404
+    assert missing.json()["error"]["message"]
+    assert str(ROOT) not in missing.text

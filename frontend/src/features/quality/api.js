@@ -10,8 +10,8 @@ async function readData(request) {
 export const getPlantTypes = () => readData(apiClient.get(`${PREFIX}/plants`));
 export const getRequirements = (plantId) => readData(apiClient.get(`${PREFIX}/requirements`, { params: { plant_id: plantId } }));
 export const getSamples = (plantId) => readData(apiClient.get(`${PREFIX}/samples`, { params: { plant_id: plantId } }));
-export const getSampleImages = (sampleId) => readData(apiClient.get(`${PREFIX}/samples/${encodeURIComponent(sampleId)}/images`));
-export const getHeightSessions = (sampleId) => readData(apiClient.get(`${PREFIX}/samples/${encodeURIComponent(sampleId)}/height-sessions`));
+export const getSampleImages = (sampleId, plantId) => readData(apiClient.get(`${PREFIX}/samples/${encodeURIComponent(sampleId)}/images`, { params: { plant_id: plantId } }));
+export const getHeightSessions = (sampleId, plantId) => readData(apiClient.get(`${PREFIX}/samples/${encodeURIComponent(sampleId)}/height-sessions`, { params: { plant_id: plantId } }));
 export const inspectFrontImage = (file, gridProfileConfirmed, signal) => readData(apiClient.post(
   `${PREFIX}/automatic/front-image`, file, {
     headers: { "Content-Type": file.type }, signal,
@@ -36,3 +36,9 @@ export const getImagePreviewUrl = (imageId) => apiClient.getUri({
 export function getApiErrorMessage(error, fallback) {
   return error?.response?.data?.error?.message || error?.message || fallback;
 }
+
+export const assessSample = (plantId, sampleId, requirementId, aiEnabled) => readData(apiClient.post(
+  `${PREFIX}/assessments`,
+  { plant_id: plantId, sample_id: sampleId, requirement_id: requirementId, ai_enabled: aiEnabled },
+  { timeout: 120_000 },
+));
