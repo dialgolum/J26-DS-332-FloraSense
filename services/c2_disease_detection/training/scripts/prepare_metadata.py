@@ -1,4 +1,4 @@
-"""
+﻿"""
 Preprocessing step 1: clean your manifest and check every photo.
 Output: metadata.csv + evaluation/reports/preprocessing_report.json
 """
@@ -91,10 +91,18 @@ def main() -> None:
             return Path(p).resolve().relative_to(config.DATA_DIR.resolve()).as_posix()
         except ValueError:
             return p
+
     out = pd.DataFrame({
-        "filepath": df["path"].map(rel), "label": df["label"], "species": df["species"],
-        "plant_id": df["plant_id"], "date": df["date"], "width": df["width"], "height": df["height"],
-        "brightness": df["brightness"].round(1), "blur_score": df["blur_score"].round(1),
+        "filepath": df["path"].map(rel),
+        "label": df["label"],
+        "species": df["species"],
+        "variety": df["variety"],
+        "plant_id": df["plant_id"],
+        "date": df["date"],
+        "width": df["width"],
+        "height": df["height"],
+        "brightness": df["brightness"].round(1),
+        "blur_score": df["blur_score"].round(1),
         "flags": df["flags"]
     })
     args.out.parent.mkdir(parents=True, exist_ok=True)
@@ -102,6 +110,10 @@ def main() -> None:
 
     per_class = df["label"].value_counts().reindex(list(config.CORE_CLASSES) + [config.OOD_FOLDER], fill_value=0)
     per_species = df.groupby("species")["label"].count().sort_values(ascending=False)
+    per_variety = df.groupby("variety")["label"].count().sort_values(ascending=False)
+    taxon = df["species"] + " | " + df["variety"]
+    per_taxon = taxon.value_counts()
+
     flagged = df[df["flags"] != ""]
     advice = []
     for c, n in per_class.items():
@@ -109,13 +121,20 @@ def main() -> None:
         if n < target:
             advice.append(f"'{c}' has {n} photos; aim for at least {target}.")
     report = {
-        "photos_kept": int(len(df)), "photos_per_class": {k: int(v) for k, v in per_class.items()},
+        "photos_kept": int(len(df)),
+        "photos_per_class": {k: int(v) for k, v in per_class.items()},
         "species_clean": {k: int(v) for k, v in per_species.items()},
+        "varieties_clean": {k: int(v) for k, v in per_variety.items()},
+        "taxa_clean": {k: int(v) for k, v in per_taxon.items()},
         "pseudo_plant_groups": int(df["plant_id"].nunique()),
-        "image_size_px": {"min_side_median": float(np.median(np.minimum(df["width"], df["height"]))),
-                          "min_side_smallest": int(np.minimum(df["width"], df["height"]).min())},
+        "image_size_px": {
+            "min_side_median": float(np.median(np.minimum(df["width"], df["height"]))),
+            "min_side_smallest": int(np.minimum(df["width"], df["height"]).min())
+        },
         "flag_counts": {f: int(df["flags"].str.contains(f).sum()) for f in ("small", "too_dark", "too_bright", "blurry", "near_duplicate")},
-        "near_duplicate_pairs": near_pairs, "problems": problems, "advice": advice,
+        "near_duplicate_pairs": near_pairs,
+        "problems": problems,
+        "advice": advice,
         "flagged_files": flagged.assign(file=flagged["path"].map(lambda p: Path(p).name))[["file", "label", "flags"]].head(60).to_dict("records"),
     }
     config.REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -124,6 +143,8 @@ def main() -> None:
     print(f"\nmetadata.csv written: {args.out}  ({len(out)} photos, {report['pseudo_plant_groups']} plant groups)")
     print("\nPhotos per class:\n" + per_class.to_string())
     print(f"\nClean species list ({len(per_species)}):\n" + per_species.to_string())
+    print(f"\nClean variety list ({len(per_variety)}):\n" + per_variety.to_string())
+    print(f"\nPlant taxa breakdown (species | variety) ({len(per_taxon)}):\n" + per_taxon.to_string())
     print("\nFlag counts:", report["flag_counts"], "| near-duplicate pairs:", near_pairs)
     for p in problems:
         print("WARNING:", p)

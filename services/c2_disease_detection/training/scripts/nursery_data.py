@@ -1,5 +1,5 @@
-"""
-Read metadata, validate it, and create plant-level train/val/test splits.
+﻿"""
+Read metadata, validate it, clean species/variety, and create plant-level train/val/test splits.
 """
 from __future__ import annotations
 
@@ -17,9 +17,10 @@ from services.c2_disease_detection import config
 
 PATH_COLS = ("filepath", "relative_path", "path", "image_path", "file_path", "filename", "file", "image", "image_name")
 LABEL_COLS = ("label", "disease_class", "class", "category", "condition")
-SPECIES_COLS = ("species", "plant_species", "plant")
+SPECIES_COLS = ("plant_species", "species", "plant")
+VARIETY_COLS = ("plant_variety", "variety", "cultivar")
 PLANT_COLS = ("plant_id", "plantid", "plant_tag", "tag", "batch_id", "batch")
-DATE_COLS = ("date", "date_taken", "captured")
+DATE_COLS = ("date", "date_taken", "captured", "capture_date")
 
 LABEL_ALIASES = {
     "healthy": "healthy", "normal": "healthy",
@@ -30,17 +31,26 @@ LABEL_ALIASES = {
 }
 TS_PATTERN = re.compile(r"(20\d{2})(\d{2})(\d{2})[_\-]?(\d{2})(\d{2})(\d{2})")
 
-def clean_species(raw: str) -> tuple[str, str]:
-    s = (raw or "").strip().replace("\u2019", "'").replace("\u2018", "'")
-    s = re.sub(r"(?i)cholrophytum", "Chlorophytum", s)
-    if not s:
-        return "", ""
-    base, _, cultivar = s.partition("'")
-    words = base.split()
-    base = " ".join(w.capitalize() if i == 0 else w.lower() for i, w in enumerate(words))
-    cultivar = " ".join(cultivar.replace("'", " ").split()).title()
-    name = f"{base} '{cultivar}'" if cultivar else base
-    return name, f"{base.lower()}|{cultivar.lower()}"
+def clean_plant_taxonomy(raw_species, raw_variety) -> Tuple[str, str, str]:
+    sp = str(raw_species or "").strip() if pd.notna(raw_species) else ""
+    sp = sp.replace("\u2019", "'").replace("\u2018", "'")
+    sp = re.sub(r"(?i)cholrophytum", "Chlorophytum", sp)
+
+    var = str(raw_variety or "").strip() if pd.notna(raw_variety) else ""
+    var = var.replace("\u2019", "'").replace("\u2018", "'")
+
+    if "'" in sp:
+        base, _, cultivar = sp.partition("'")
+        sp = base.strip()
+        if not var:
+            var = cultivar.replace("'", "").strip()
+
+    sp_words = sp.split()
+    sp = " ".join(w.capitalize() if i == 0 else w.lower() for i, w in enumerate(sp_words))
+    var = " ".join(var.replace("_", " ").split()).title()
+
+    key = f"{sp.lower()}|{var.lower()}"
+    return sp, var, key
 
 def parse_timestamp(name: str):
     m = TS_PATTERN.search(name)
@@ -56,7 +66,7 @@ def derive_session_ids(df: pd.DataFrame, gap_seconds: float = 60.0) -> pd.Series
     sub = df[df["ts"].notna()].sort_values("ts")
     if sub.empty:
         return ids
-    new = (sub["species_key"] != sub["species_key"].shift()) | (sub["ts"].diff().dt.total_seconds() > gap_seconds)
+    new = (sub["taxonomy_key"] != sub["taxonomy_key"].shift()) | (sub["ts"].diff().dt.total_seconds() > gap_seconds)
     ids.loc[sub.index] = ["auto-%03d" % n for n in new.cumsum()]
     return ids
 
@@ -90,10 +100,17 @@ def load_metadata(csv_path: Path, data_dir: Path = config.DATA_DIR,
     problems: List[str] = []
     df = pd.read_csv(csv_path, dtype=str, keep_default_na=False, encoding="utf-8-sig")
     df.columns = [re.sub(r"[\s\-]+", "_", c.strip().lower()) for c in df.columns]
-    pcol, lcol = _first_col(df, PATH_COLS), _first_col(df, LABEL_COLS)
+
+    pcol = _first_col(df, PATH_COLS)
+    lcol = _first_col(df, LABEL_COLS)
     if not pcol or not lcol:
-        raise SystemExit(f"metadata needs a path column {PATH_COLS[:3]}... and a label column {LABEL_COLS}. Found: {list(df.columns)}")
-    scol, icol, dcol = _first_col(df, SPECIES_COLS), _first_col(df, PLANT_COLS), _first_col(df, DATE_COLS)
+        raise SystemExit(f"Metadata requires a path column {PATH_COLS[:3]} and a label column {LABEL_COLS}. Found: {list(df.columns)}")
+
+    scol = _first_col(df, SPECIES_COLS)
+    vcol = _first_col(df, VARIETY_COLS)
+    icol = _first_col(df, PLANT_COLS)
+    dcol = _first_col(df, DATE_COLS)
+
     if "relative_path" in df.columns and df["relative_path"].str.strip().ne("").any():
         pcol = "relative_path"
 
@@ -111,19 +128,28 @@ def load_metadata(csv_path: Path, data_dir: Path = config.DATA_DIR,
         if path is None:
             missing.append(raw_path)
             continue
-        species, key = clean_species(r[scol]) if scol else ("", "")
+
+        raw_sp = r[scol] if scol else ""
+        raw_var = r[vcol] if vcol else ""
+        species, variety, tax_key = clean_plant_taxonomy(raw_sp, raw_var)
+
         ts = parse_timestamp(path.name)
         date = r[dcol].strip() if dcol else ""
         if not date and pd.notna(ts):
             date = ts.date().isoformat()
-        rows.append(dict(path=str(path), label=label, species=species, species_key=key,
-                         plant_id=r[icol].strip() if icol else "", date=date, ts=ts))
+        rows.append(dict(
+            path=str(path), label=label, species=species, variety=variety,
+            taxonomy_key=tax_key, plant_id=r[icol].strip() if icol else "",
+            date=date, ts=ts
+        ))
+
     if blank:
         problems.append(f"{blank} empty rows ignored.")
     if bad_label:
         problems.append(f"{len(bad_label)} rows have an unrecognised label (skipped).")
     if missing:
         problems.append(f"{len(missing)} rows point to files that do not exist (skipped).")
+
     out = pd.DataFrame(rows)
     if out.empty:
         return out, problems + ["No usable rows."]
@@ -148,12 +174,13 @@ def load_metadata(csv_path: Path, data_dir: Path = config.DATA_DIR,
         out.loc[need, "plant_id"] = derived.fillna("")
         n_auto = int(derived.notna().sum())
         if n_auto:
-            problems.append(f"Built {derived.nunique()} pseudo plant ids from timestamps + species.")
+            problems.append(f"Built {derived.nunique()} pseudo plant ids from timestamps + taxonomy.")
+
     out["group"] = [
-        f"plant:{pid}" if pid else f"day:{sp}|{d}" if (sp and d) else f"img:{path}"
-        for pid, sp, d, path in zip(out["plant_id"], out["species"], out["date"], out["path"])
+        f"plant:{pid}" if pid else f"day:{tax}|{d}" if (tax and d) else f"img:{path}"
+        for pid, tax, d, path in zip(out["plant_id"], out["taxonomy_key"], out["date"], out["path"])
     ]
-    return out.drop(columns=["md5", "species_key", "ts"]), problems
+    return out.drop(columns=["md5", "taxonomy_key", "ts"]), problems
 
 def make_splits(df: pd.DataFrame, val_fraction: float = 0.15, test_fraction: float = 0.25,
                 seed: int = 42) -> Tuple[pd.DataFrame, List[str]]:
@@ -221,7 +248,8 @@ def main() -> None:
         raise SystemExit("Nothing usable in the metadata file.")
     df, notes = make_splits(df, args.val_fraction, args.test_fraction, args.seed)
     print("\nImages per class and split (plant-level):\n" + summarise(df))
-    print(f"\nSpecies: {sorted(set(df['species']) - {''})}")
+    print(f"\nSpecies ({df['species'].nunique()}): {sorted(set(df['species']) - {''})}")
+    print(f"Varieties ({df['variety'].nunique()}): {sorted(set(df['variety']) - {''})}")
     for n in notes:
         print("NOTE:", n)
     if not args.no_save:
