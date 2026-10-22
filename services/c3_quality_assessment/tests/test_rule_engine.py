@@ -44,6 +44,8 @@ def make_sheets(
             "Sample_ID": "S001",
             "Requirement_ID": "R001",
             "Height_Result": height_result,
+            "Leaves_In_Range": {"PASS": 4, "FAIL": 1, "MANUAL REVIEW": 3}[height_result],
+            "Total_Leaves_Assessed": 8,
         }]),
         "Quality_Annotations": pd.DataFrame([{
             "Sample_ID": "S001",
@@ -95,6 +97,57 @@ class TestQualityRuleEngine(unittest.TestCase):
             make_sheets(oasis_damaged="Yes"), "S001", "R001"
         )
         self.assertEqual(result["Overall_Result"], "FAIL")
+
+
+    def test_leaf_distribution_policy_for_p02_through_p07(self):
+        for plant_id in ("P02", "P03", "P04", "P05", "P06", "P07"):
+            for label, expected in (("Both Sides", "PASS"), ("One Side", "FAIL"),
+                                    ("  bOtH  SiDeS  ", "PASS"), (" one SIDE ", "FAIL"),
+                                    (None, "MANUAL REVIEW"), (float("nan"), "MANUAL REVIEW"),
+                                    ("", "MANUAL REVIEW"), ("  ", "MANUAL REVIEW"),
+                                    ("Unknown", "MANUAL REVIEW"), ("Acceptable", "MANUAL REVIEW")):
+                with self.subTest(plant=plant_id, label=label):
+                    sheets = make_sheets()
+                    for frame in sheets.values():
+                        if "Plant_ID" in frame:
+                            frame["Plant_ID"] = plant_id
+                    sheets["Plant_Types"]["Leaf_Distribution_Check"] = "Yes"
+                    sheets["Quality_Annotations"]["Leaf_Distribution"] = label
+                    result = assess_sample(sheets, "S001", "R001")
+                    leaf = next(check for check in result["Checks"] if check["Check"] == "Leaf distribution")
+                    self.assertEqual(leaf["Status"], expected)
+                    self.assertEqual(leaf["Reason"], f"Observed: {label}")
+                    self.assertEqual(result["Overall_Result"], expected)
+                    self.assertTrue(all(check["Status"] == "PASS" for check in result["Checks"] if check != leaf))
+
+    def test_p01_and_other_plant_leaf_behavior_unchanged(self):
+        for plant_id in ("P01", "P08"):
+            for enabled in ("No", "Yes"):
+                for label, legacy_status in (("Both Sides", "MANUAL REVIEW"), ("One Side", "MANUAL REVIEW"),
+                                             (None, "MANUAL REVIEW"), ("Acceptable", "PASS"), ("Not Acceptable", "FAIL")):
+                    with self.subTest(plant=plant_id, enabled=enabled, label=label):
+                        sheets = make_sheets()
+                        for frame in sheets.values():
+                            if "Plant_ID" in frame:
+                                frame["Plant_ID"] = plant_id
+                        sheets["Plant_Types"]["Leaf_Distribution_Check"] = enabled
+                        sheets["Quality_Annotations"]["Leaf_Distribution"] = label
+                        result = assess_sample(sheets, "S001", "R001")
+                        leaf = [check for check in result["Checks"] if check["Check"] == "Leaf distribution"]
+                        self.assertEqual(len(leaf), int(enabled == "Yes"))
+                        self.assertEqual(result["Overall_Result"], legacy_status if enabled == "Yes" else "PASS")
+
+    def test_leaf_pass_does_not_mask_other_failures_or_missing_height(self):
+        for height, root, expected in (("FAIL", "Acceptable", "FAIL"),
+                                       ("MANUAL REVIEW", "Acceptable", "MANUAL REVIEW"),
+                                       ("PASS", "Not Acceptable", "FAIL")):
+            sheets = make_sheets(height_result=height, root_distribution=root)
+            for frame in sheets.values():
+                if "Plant_ID" in frame:
+                    frame["Plant_ID"] = "P02"
+            sheets["Plant_Types"]["Leaf_Distribution_Check"] = "Yes"
+            sheets["Quality_Annotations"]["Leaf_Distribution"] = "Both Sides"
+            self.assertEqual(assess_sample(sheets, "S001", "R001")["Overall_Result"], expected)
 
 
 if __name__ == "__main__":
