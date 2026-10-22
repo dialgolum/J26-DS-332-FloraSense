@@ -181,11 +181,17 @@ def assess_sample(sheets, sample_id, requirement_id,image_path=None):
                 add_result("Leaf count", "FAIL",
                            f"{count} leaves; minimum is {minimum}.")
 
-        # Leaf distribution applies only when enabled for the plant type.
+        # Distribution concerns branch origins on the main stem, not foliage symmetry.
         if is_yes(plant.get("Leaf_Distribution_Check")):
+            leaf_distribution = annotation.get("Leaf_Distribution")
+            if plant["Plant_ID"] in {"P02", "P03", "P04", "P05", "P06", "P07"}:
+                leaf_status = {"bothsides": "PASS", "oneside": "FAIL"}.get(
+                    normalize(leaf_distribution), "MANUAL REVIEW")
+            else:
+                leaf_status = assessment_status(leaf_distribution)
             add_result(
                 "Leaf distribution",
-                assessment_status(annotation.get("Leaf_Distribution")),
+                leaf_status,
                 f"Observed: {annotation.get('Leaf_Distribution')}"
             )
 

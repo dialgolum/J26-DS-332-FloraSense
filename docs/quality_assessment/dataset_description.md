@@ -1,5 +1,23 @@
 # Buyer-Specific Export Quality Assessment — Dataset Description
 
+## Current C3 annotation clarification
+
+Use [annotation_guidelines.md](annotation_guidelines.md) for current feature-label
+interpretation. Leaf distribution means **qualifying branch origins on opposite
+sides of the main stem**, not equal leaf counts or balanced foliage. Leaves
+crossing the stem do not establish Both Sides. Occluded origins require expert
+review without automatic annotation changes.
+
+Released datasets and the researcher-confirmed Experiment 2 root corrections are
+recorded in [dataset_version_history.md](dataset_version_history.md).
+
+Current identifiers are P01–P08 with composite `(Plant_ID, Sample_ID)` identity.
+The six current workbook sheets are Plant_Types, Requirement_Profiles, Samples,
+Height_Assessments, Quality_Annotations, and Images. The planned schema and P001
+examples below describe the historical design, not the current exact workbook.
+Root and leaf labels must be versioned separately from overall quality; preserve
+released experiment snapshots and grouped split assignments when labels change.
+
 ## 1. Dataset Overview
 
 The dataset supports the development and experimental evaluation of Component 3: AI-Based Buyer-Specific Export Quality Assessment.
