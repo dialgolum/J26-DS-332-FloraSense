@@ -16,7 +16,7 @@ REVIEW_UPLOAD_DIR: Path = DATA_DIR / "review_uploads"
 MANIFEST_PATH: Path = DATA_DIR / "dataset_manifest1.csv"
 TELEMETRY_PATH: Path = DATA_DIR / "telemetry.jsonl"
 METADATA_PATH: Path = DATA_DIR / "metadata.csv"
-SPLITS_PATH: Path = DATA_DIR / "splits.csv"
+SPLITS_PATH: Path = DATA_DIR / "splits2.csv"
 
 # --------------------------------------------------------------- model paths
 MODEL_DIR: Path = Path(os.getenv("C2_MODEL_DIR", REPO_ROOT / "models" / "c2_disease"))
@@ -33,9 +33,9 @@ ABIOTIC_LABELS = frozenset({"abiotic"})
 IMAGE_EXTS = (".jpg", ".jpeg", ".png", ".bmp", ".webp")
 
 # ------------------------------------------------------------------- tunables
-TAU: float = float(os.getenv("C2_TAU", "0.60"))
+TAU: float = float(os.getenv("C2_TAU", "0.50"))
 MIN_ENROLL_IMAGES: int = int(os.getenv("C2_MIN_ENROLL", "5"))
-DEFAULT_TEMPERATURE: float = 0.10
+DEFAULT_TEMPERATURE: float = 0.01
 EMBEDDING_DIM: int = 128
 
 # -------------------------------------------------------------- integrations
