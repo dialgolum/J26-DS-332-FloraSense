@@ -31,6 +31,7 @@ Thumbs.db
 data/raw/*
 data/interim/*
 data/processed/*
+data/incoming/*
 !data/**/.gitkeep
 
 # Component 2 Specific Data Rules
@@ -55,6 +56,11 @@ data/c2_disease/telemetry.jsonl
 !data/c2_disease/dataset_manifest.csv
 
 # Models and Weights
+/data/quality_assessment/original/
+/data/quality_assessment/processed/
+/data/quality_assessment/annotations/quality_dataset.xlsx
+
+# Models and weights
 models/checkpoints/*
 *.pt
 *.pth
@@ -84,3 +90,5 @@ mlruns/
 
 # Preprocessing & evaluation reports
 services/c2_disease_detection/evaluation/reports/preprocessing_report.json
+# Temporary files
+~$*.xlsx

@@ -1,0 +1,398 @@
+[
+  {
+    "sample_id": "S001",
+    "image_id": "IMG0001",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S001_front.jpg",
+    "stored_dimensions": [
+      5862,
+      8134
+    ],
+    "bytes": 5684082
+  },
+  {
+    "sample_id": "S001",
+    "image_id": "IMG0002",
+    "view": "Side",
+    "path": "data/quality_assessment/original/individual/P01//P01_S001_side.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9804628
+  },
+  {
+    "sample_id": "S002",
+    "image_id": "IMG0003",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S002_front.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9068040
+  },
+  {
+    "sample_id": "S002",
+    "image_id": "IMG0004",
+    "view": "Side",
+    "path": "data/quality_assessment/original/individual/P01/P01_S002_side.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9272338
+  },
+  {
+    "sample_id": "S003",
+    "image_id": "IMG0005",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S003.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 8476475
+  },
+  {
+    "sample_id": "S004",
+    "image_id": "IMG0006",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S004.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 8840153
+  },
+  {
+    "sample_id": "S004",
+    "image_id": "IMG0007",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S004_root.jpg",
+    "stored_dimensions": [
+      2172,
+      1908
+    ],
+    "bytes": 553393
+  },
+  {
+    "sample_id": "S005",
+    "image_id": "IMG0008",
+    "view": "Focus",
+    "path": "data/quality_assessment/original/individual/P01/P01_S005_focus.jpg",
+    "stored_dimensions": [
+      5367,
+      6977
+    ],
+    "bytes": 5357834
+  },
+  {
+    "sample_id": "S005",
+    "image_id": "IMG0009",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S005_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 8968115
+  },
+  {
+    "sample_id": "S005",
+    "image_id": "IMG0010",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S005_root.jpg",
+    "stored_dimensions": [
+      2196,
+      1543
+    ],
+    "bytes": 463729
+  },
+  {
+    "sample_id": "S006",
+    "image_id": "IMG0011",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S006_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9684678
+  },
+  {
+    "sample_id": "S006",
+    "image_id": "IMG0012",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S006_root.jpg",
+    "stored_dimensions": [
+      2336,
+      1444
+    ],
+    "bytes": 443834
+  },
+  {
+    "sample_id": "S007",
+    "image_id": "IMG0013",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S006_root.jpg",
+    "stored_dimensions": [
+      2336,
+      1444
+    ],
+    "bytes": 443834
+  },
+  {
+    "sample_id": "S007",
+    "image_id": "IMG0014",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S007_root.jpg",
+    "stored_dimensions": [
+      3117,
+      1960
+    ],
+    "bytes": 760786
+  },
+  {
+    "sample_id": "S008",
+    "image_id": "IMG0015",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S008_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9371622
+  },
+  {
+    "sample_id": "S008",
+    "image_id": "IMG0016",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S008_root.jpg",
+    "stored_dimensions": [
+      2530,
+      1575
+    ],
+    "bytes": 485225
+  },
+  {
+    "sample_id": "S009",
+    "image_id": "IMG0017",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S009_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9186710
+  },
+  {
+    "sample_id": "S009",
+    "image_id": "IMG0018",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S009_root.jpg",
+    "stored_dimensions": [
+      2936,
+      1556
+    ],
+    "bytes": 673334
+  },
+  {
+    "sample_id": "S010",
+    "image_id": "IMG0019",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S010_front.jpg",
+    "stored_dimensions": [
+      4080,
+      3072
+    ],
+    "bytes": 3520659
+  },
+  {
+    "sample_id": "S010",
+    "image_id": "IMG0020",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S010_root.jpg",
+    "stored_dimensions": [
+      899,
+      764
+    ],
+    "bytes": 141954
+  },
+  {
+    "sample_id": "S011",
+    "image_id": "IMG0021",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S011_front.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9380214
+  },
+  {
+    "sample_id": "S011",
+    "image_id": "IMG0022",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S011_root.jpg",
+    "stored_dimensions": [
+      2366,
+      1508
+    ],
+    "bytes": 459843
+  },
+  {
+    "sample_id": "S012",
+    "image_id": "IMG0023",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S012_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9597864
+  },
+  {
+    "sample_id": "S013",
+    "image_id": "IMG0024",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S013_front.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9116542
+  },
+  {
+    "sample_id": "S014",
+    "image_id": "IMG0025",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S014_front.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9285663
+  },
+  {
+    "sample_id": "S014",
+    "image_id": "IMG0026",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S014_root.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 7628917
+  },
+  {
+    "sample_id": "S015",
+    "image_id": "IMG0027",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S015_front.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9858769
+  },
+  {
+    "sample_id": "S015",
+    "image_id": "IMG0028",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S015_root.jpg",
+    "stored_dimensions": [
+      2036,
+      1000
+    ],
+    "bytes": 266800
+  },
+  {
+    "sample_id": "S016",
+    "image_id": "IMG0029",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S016_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9590808
+  },
+  {
+    "sample_id": "S016",
+    "image_id": "IMG0030",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S016_root.jpg",
+    "stored_dimensions": [
+      2515,
+      1336
+    ],
+    "bytes": 430725
+  },
+  {
+    "sample_id": "S017",
+    "image_id": "IMG0031",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S017_front.jpg",
+    "stored_dimensions": [
+      8160,
+      6144
+    ],
+    "bytes": 9567201
+  },
+  {
+    "sample_id": "S017",
+    "image_id": "IMG0032",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S017_root.jpg",
+    "stored_dimensions": [
+      2371,
+      1493
+    ],
+    "bytes": 420470
+  },
+  {
+    "sample_id": "S018",
+    "image_id": "IMG0033",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S018_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9461612
+  },
+  {
+    "sample_id": "S018",
+    "image_id": "IMG0034",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S018_root.jpg",
+    "stored_dimensions": [
+      3275,
+      2022
+    ],
+    "bytes": 816867
+  },
+  {
+    "sample_id": "S019",
+    "image_id": "IMG0035",
+    "view": "Front",
+    "path": "data/quality_assessment/original/individual/P01/P01_S019_front.jpg",
+    "stored_dimensions": [
+      6144,
+      8160
+    ],
+    "bytes": 9806559
+  },
+  {
+    "sample_id": "S019",
+    "image_id": "IMG0036",
+    "view": "Root",
+    "path": "data/quality_assessment/original/individual/P01/P01_S019_root.jpg",
+    "stored_dimensions": [
+      2890,
+      1489
+    ],
+    "bytes": 527503
+  }
+]
