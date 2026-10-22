@@ -24,25 +24,22 @@ sales_df['YEAR'] = 2023 + (week_seq // 52)
 sales_df['WEEK'] = 1 + (week_seq % 52)
 sales_df = sales_df.drop(columns=['Dispatch_Date_dt'])
 
-# 3. Extend weekly weather table through Weeks 40-43 of 2026 so October 2026 shipments
-# receive exact 2-week and 4-week lagged September weather (Weeks 36-39) with 0 NaNs
+# 3. Extend the calendar through the last sales week. Weather for weeks 40-43 is
+# unavailable, so keep those values missing instead of carrying week 39 forward.
 w_df = weather_df.sort_values(['YEAR', 'WEEK']).reset_index(drop=True).copy()
-last_w = w_df.iloc[-1]
 ext_rows = []
 for add_wk in [40, 41, 42, 43]:
     if not ((w_df['YEAR'] == 2026) & (w_df['WEEK'] == add_wk)).any():
-        r_copy = last_w.copy()
-        r_copy['YEAR'] = 2026
-        r_copy['WEEK'] = add_wk
-        ext_rows.append(r_copy)
+        ext_rows.append({'YEAR': 2026, 'WEEK': add_wk})
 if ext_rows:
     w_df = pd.concat([w_df, pd.DataFrame(ext_rows)], ignore_index=True)
+w_df = w_df.sort_values(['YEAR', 'WEEK']).reset_index(drop=True)
 
 # 4. Engineer 2-Week (14-day) and 4-Week (28-day) Agronomic Weather Lags
 for lag in [2, 4]:
-    w_df[f'Avg_Max_Temp_C_Lag{lag}W'] = w_df['Avg_Max_Temp_C'].shift(lag).bfill()
-    w_df[f'Weekly_Rainfall_mm_Lag{lag}W'] = w_df['Weekly_Rainfall_mm'].shift(lag).bfill()
-    w_df[f'Growing_Degree_Days_Weekly_Lag{lag}W'] = w_df['Growing_Degree_Days_Weekly'].shift(lag).bfill()
+    w_df[f'Avg_Max_Temp_C_Lag{lag}W'] = w_df['Avg_Max_Temp_C'].shift(lag)
+    w_df[f'Weekly_Rainfall_mm_Lag{lag}W'] = w_df['Weekly_Rainfall_mm'].shift(lag)
+    w_df[f'Growing_Degree_Days_Weekly_Lag{lag}W'] = w_df['Growing_Degree_Days_Weekly'].shift(lag)
 
 # 5. Merge Sales with Weather Lags and Compute Supply_Demand_Gap
 master_df = pd.merge(sales_df, w_df, on=['YEAR', 'WEEK'], how='left')
