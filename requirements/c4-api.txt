@@ -1,0 +1,7 @@
+# Runtime dependencies for the C4 FastAPI inference service.
+# Install together with requirements/base.txt.
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.4
+xgboost>=2.0
+joblib>=1.3

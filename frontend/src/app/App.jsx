@@ -5,7 +5,7 @@ import IdentificationPage from "../features/identification/IdentificationPage.js
 import ChatbotPage from "../features/chatbot/ChatbotPage.jsx";
 import DiseasePage from "../features/disease/DiseasePage.jsx";
 import QualityPage from "../features/quality/QualityPage.jsx";
-import ForecastPage from "../features/forecast/ForecastPage.jsx";
+import C4SupplyDemandForecast from "../components/c4_forecasting/C4SupplyDemandForecast.jsx";
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
           <Route path="/c1/chat" element={<ChatbotPage />} />
           <Route path="/c2/disease" element={<DiseasePage />} />
           <Route path="/c3/quality" element={<QualityPage />} />
-          <Route path="/c4/forecast" element={<ForecastPage />} />
+          <Route path="/c4/forecast" element={<C4SupplyDemandForecast />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
