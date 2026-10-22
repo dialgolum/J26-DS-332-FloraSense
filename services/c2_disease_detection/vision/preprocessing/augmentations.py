@@ -19,6 +19,7 @@ IMAGENET_STD = (0.229, 0.224, 0.225)
 
 ImageSource = Union[str, Path, bytes, Image.Image]
 
+
 def get_inference_transform(image_size: int = IMAGE_SIZE) -> T.Compose:
     return T.Compose(
         [
@@ -28,24 +29,27 @@ def get_inference_transform(image_size: int = IMAGE_SIZE) -> T.Compose:
         ]
     )
 
+
 def get_train_transform(image_size: int = IMAGE_SIZE) -> T.Compose:
+    # Aggressive close-up cropping forces focus onto leaf lesions rather than pots or greenhouse benches
     return T.Compose(
         [
             T.RandomResizedCrop(
                 image_size,
-                scale=(0.6, 1.0),
-                ratio=(0.85, 1.15),
+                scale=(0.35, 0.85),
+                ratio=(0.8, 1.25),
                 interpolation=T.InterpolationMode.BILINEAR,
             ),
             T.RandomHorizontalFlip(p=0.5),
-            T.RandomVerticalFlip(p=0.3),
-            T.RandomRotation(degrees=25),
-            T.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.2, hue=0.02),
-            T.RandomApply([T.GaussianBlur(kernel_size=5, sigma=(0.1, 1.5))], p=0.2),
+            T.RandomVerticalFlip(p=0.5),
+            T.RandomRotation(degrees=45),
+            T.ColorJitter(brightness=0.3, contrast=0.3, saturation=0.25, hue=0.03),
+            T.RandomApply([T.GaussianBlur(kernel_size=5, sigma=(0.1, 1.2))], p=0.25),
             T.ToTensor(),
             T.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
         ]
     )
+
 
 def load_image(source: ImageSource) -> Image.Image:
     try:
@@ -60,14 +64,7 @@ def load_image(source: ImageSource) -> Image.Image:
     except (UnidentifiedImageError, OSError) as exc:
         raise ValueError(f"Could not decode image: {exc}") from exc
 
+
 def preprocess_image(source: ImageSource, image_size: int = IMAGE_SIZE) -> torch.Tensor:
     tensor = get_inference_transform(image_size)(load_image(source))
     return tensor.unsqueeze(0)
-
-if __name__ == "__main__":
-    dummy = Image.new("RGB", (640, 480), color=(34, 139, 34))
-    x = preprocess_image(dummy)
-    assert x.shape == (1, 3, 224, 224), x.shape
-    aug = get_train_transform()(dummy)
-    assert aug.shape == (3, 224, 224), aug.shape
-    print("augmentations OK ->", tuple(x.shape), tuple(aug.shape))
