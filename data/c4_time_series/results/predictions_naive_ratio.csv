@@ -1,0 +1,657 @@
+Dispatch_Date,Customer,Plant_Variety,Size,Mode,YEAR,WEEK,Actual,Predicted,Residual
+2026-01-01,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,1,1030.0,1020,10.0
+2026-01-01,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,1,545.0,534,11.0
+2026-01-01,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,1,1800.0,1747,53.0
+2026-01-01,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,1,11720.0,11418,302.0
+2026-01-01,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,1,112.0,107,5.0
+2026-01-03,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,1,3225.0,3158,67.0
+2026-01-03,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,1,34023.0,32585,1438.0
+2026-01-03,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,1,1740.0,1719,21.0
+2026-01-03,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,1,9920.0,9722,198.0
+2026-01-03,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,1,9685.0,9715,-30.0
+2026-01-03,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,1,1505.0,1473,32.0
+2026-01-03,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,1,810.0,787,23.0
+2026-01-03,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,1,480.0,492,-12.0
+2026-01-08,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,2,1065.0,1020,45.0
+2026-01-08,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,2,565.0,534,31.0
+2026-01-08,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,2,1820.0,1747,73.0
+2026-01-08,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,2,11575.0,11418,157.0
+2026-01-08,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,2,110.0,107,3.0
+2026-01-10,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,2,9995.0,9715,280.0
+2026-01-10,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,2,3345.0,3219,126.0
+2026-01-10,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,2,2855.0,2727,128.0
+2026-01-10,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,2,5030.0,4866,164.0
+2026-01-10,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,2,6660.0,6474,186.0
+2026-01-10,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,2,6720.0,6440,280.0
+2026-01-15,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,3,1025.0,1020,5.0
+2026-01-15,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,3,540.0,534,6.0
+2026-01-15,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,3,1790.0,1747,43.0
+2026-01-15,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,3,11605.0,11418,187.0
+2026-01-15,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,3,110.0,107,3.0
+2026-01-16,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,3,3315.0,3158,157.0
+2026-01-16,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,3,32863.0,32585,278.0
+2026-01-16,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,3,1720.0,1719,1.0
+2026-01-16,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,3,9925.0,9722,203.0
+2026-01-16,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,3,9915.0,9715,200.0
+2026-01-16,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,3,1520.0,1473,47.0
+2026-01-16,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,3,785.0,787,-2.0
+2026-01-16,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,3,500.0,492,8.0
+2026-01-17,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,3,1255.0,1251,4.0
+2026-01-17,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,3,4290.0,4168,122.0
+2026-01-17,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,3,1990.0,1936,54.0
+2026-01-17,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,3,540.0,538,2.0
+2026-01-17,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,3,6040.0,5803,237.0
+2026-01-17,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,3,3590.0,3557,33.0
+2026-01-17,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,3,3660.0,3563,97.0
+2026-01-17,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,3,197.0,195,2.0
+2026-01-17,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,3,302.0,293,9.0
+2026-01-17,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,3,4660.0,4563,97.0
+2026-01-17,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,3,500.0,487,13.0
+2026-01-19,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,4,810.0,782,28.0
+2026-01-19,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,4,249.0,244,5.0
+2026-01-19,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,4,4415.0,4252,163.0
+2026-01-19,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,4,1950.0,1951,-1.0
+2026-01-22,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,4,1060.0,1020,40.0
+2026-01-22,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,4,565.0,534,31.0
+2026-01-22,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,4,1840.0,1747,93.0
+2026-01-22,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,4,12030.0,11418,612.0
+2026-01-22,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,4,110.0,107,3.0
+2026-01-24,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,4,10300.0,9715,585.0
+2026-01-24,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,4,3345.0,3219,126.0
+2026-01-24,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,4,2815.0,2727,88.0
+2026-01-24,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,4,5005.0,4866,139.0
+2026-01-24,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,4,6675.0,6474,201.0
+2026-01-24,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,4,6635.0,6440,195.0
+2026-01-29,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,5,1040.0,1020,20.0
+2026-01-29,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,5,545.0,534,11.0
+2026-01-29,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,5,1765.0,1747,18.0
+2026-01-29,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,5,11520.0,11418,102.0
+2026-01-29,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,5,107.0,107,0.0
+2026-01-30,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,5,3240.0,3158,82.0
+2026-01-30,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,5,32921.0,32585,336.0
+2026-01-30,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,5,1745.0,1719,26.0
+2026-01-30,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,5,9865.0,9722,143.0
+2026-01-30,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,5,9615.0,9715,-100.0
+2026-01-30,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,5,1500.0,1473,27.0
+2026-01-30,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,5,805.0,787,18.0
+2026-01-30,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,5,490.0,492,-2.0
+2026-02-02,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,6,815.0,782,33.0
+2026-02-02,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,6,257.0,244,13.0
+2026-02-02,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,6,4390.0,4252,138.0
+2026-02-02,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,6,2035.0,1951,84.0
+2026-02-05,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,6,1040.0,1020,20.0
+2026-02-05,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,6,550.0,534,16.0
+2026-02-05,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,6,1765.0,1747,18.0
+2026-02-05,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,6,11740.0,11418,322.0
+2026-02-05,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,6,109.0,107,2.0
+2026-02-07,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,6,9830.0,9715,115.0
+2026-02-07,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,6,3280.0,3219,61.0
+2026-02-07,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,6,2885.0,2727,158.0
+2026-02-07,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,6,5075.0,4866,209.0
+2026-02-07,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,6,6640.0,6474,166.0
+2026-02-07,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,6,6645.0,6440,205.0
+2026-02-12,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,7,1040.0,1020,20.0
+2026-02-12,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,7,555.0,534,21.0
+2026-02-12,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,7,1755.0,1747,8.0
+2026-02-12,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,7,11775.0,11418,357.0
+2026-02-12,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,7,112.0,107,5.0
+2026-02-13,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,7,3225.0,3158,67.0
+2026-02-13,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,7,33025.0,32585,440.0
+2026-02-13,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,7,1710.0,1719,-9.0
+2026-02-13,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,7,10085.0,9722,363.0
+2026-02-13,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,7,9945.0,9715,230.0
+2026-02-13,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,7,1495.0,1473,22.0
+2026-02-13,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,7,775.0,787,-12.0
+2026-02-13,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,7,505.0,492,13.0
+2026-02-14,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,7,1290.0,1251,39.0
+2026-02-14,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,7,4235.0,4168,67.0
+2026-02-14,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,7,1960.0,1936,24.0
+2026-02-14,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,7,545.0,538,7.0
+2026-02-14,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,7,5960.0,5803,157.0
+2026-02-14,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,7,3610.0,3557,53.0
+2026-02-14,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,7,3665.0,3563,102.0
+2026-02-14,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,7,200.0,195,5.0
+2026-02-14,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,7,297.0,293,4.0
+2026-02-14,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,7,4660.0,4563,97.0
+2026-02-14,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,7,500.0,487,13.0
+2026-02-14,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,7,1000.0,980,20.0
+2026-02-14,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,7,3720.0,3668,52.0
+2026-02-14,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,7,490.0,488,2.0
+2026-02-14,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,7,198.0,196,2.0
+2026-02-19,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,8,1080.0,1020,60.0
+2026-02-19,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,8,560.0,534,26.0
+2026-02-19,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,8,1825.0,1747,78.0
+2026-02-19,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,8,11970.0,11418,552.0
+2026-02-19,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,8,110.0,107,3.0
+2026-02-21,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,8,10100.0,9715,385.0
+2026-02-21,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,8,3275.0,3219,56.0
+2026-02-21,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,8,2775.0,2727,48.0
+2026-02-21,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,8,5005.0,4866,139.0
+2026-02-21,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,8,6740.0,6474,266.0
+2026-02-21,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,8,6645.0,6440,205.0
+2026-02-26,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,9,1030.0,1020,10.0
+2026-02-26,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,9,555.0,534,21.0
+2026-02-26,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,9,1790.0,1747,43.0
+2026-02-26,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,9,11420.0,11418,2.0
+2026-02-26,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,9,110.0,107,3.0
+2026-02-27,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,9,3175.0,3158,17.0
+2026-02-27,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,9,33062.0,32585,477.0
+2026-02-27,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,9,1740.0,1719,21.0
+2026-02-27,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,9,9835.0,9722,113.0
+2026-02-27,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,9,9905.0,9715,190.0
+2026-02-27,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,9,1455.0,1473,-18.0
+2026-02-27,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,9,785.0,787,-2.0
+2026-02-27,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,9,485.0,492,-7.0
+2026-03-05,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,10,1065.0,1020,45.0
+2026-03-05,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,10,535.0,534,1.0
+2026-03-05,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,10,1785.0,1747,38.0
+2026-03-05,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,10,11685.0,11418,267.0
+2026-03-05,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,10,111.0,107,4.0
+2026-03-07,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,10,1280.0,1251,29.0
+2026-03-07,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,10,4245.0,4168,77.0
+2026-03-07,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,10,1990.0,1936,54.0
+2026-03-07,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,10,555.0,538,17.0
+2026-03-07,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,10,5935.0,5803,132.0
+2026-03-07,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,10,3665.0,3557,108.0
+2026-03-07,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,10,3700.0,3563,137.0
+2026-03-07,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,10,198.0,195,3.0
+2026-03-07,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,10,298.0,293,5.0
+2026-03-07,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,10,4765.0,4563,202.0
+2026-03-07,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,10,505.0,487,18.0
+2026-03-09,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,11,815.0,782,33.0
+2026-03-09,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,11,247.0,244,3.0
+2026-03-09,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,11,4395.0,4252,143.0
+2026-03-09,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,11,2020.0,1951,69.0
+2026-03-12,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,11,1030.0,1020,10.0
+2026-03-12,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,11,535.0,534,1.0
+2026-03-12,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,11,1760.0,1747,13.0
+2026-03-12,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,11,11625.0,11418,207.0
+2026-03-12,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,11,110.0,107,3.0
+2026-03-15,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,11,3250.0,3158,92.0
+2026-03-15,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,11,32589.0,32585,4.0
+2026-03-15,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,11,1765.0,1719,46.0
+2026-03-15,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,11,9945.0,9722,223.0
+2026-03-15,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,11,9950.0,9715,235.0
+2026-03-15,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,11,1530.0,1473,57.0
+2026-03-15,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,11,785.0,787,-2.0
+2026-03-15,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,11,505.0,492,13.0
+2026-03-19,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,12,990.0,1020,-30.0
+2026-03-19,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,12,515.0,534,-19.0
+2026-03-19,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,12,1715.0,1747,-32.0
+2026-03-19,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,12,11105.0,11418,-313.0
+2026-03-19,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,12,101.0,107,-6.0
+2026-03-21,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,12,9295.0,9715,-420.0
+2026-03-21,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,12,3255.0,3219,36.0
+2026-03-21,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,12,2810.0,2727,83.0
+2026-03-21,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,12,4980.0,4866,114.0
+2026-03-21,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,12,6440.0,6474,-34.0
+2026-03-21,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,12,6460.0,6440,20.0
+2026-03-21,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,12,1000.0,980,20.0
+2026-03-21,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,12,3760.0,3668,92.0
+2026-03-21,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,12,500.0,488,12.0
+2026-03-21,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,12,197.0,196,1.0
+2026-03-26,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,13,1005.0,1020,-15.0
+2026-03-26,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,13,530.0,534,-4.0
+2026-03-26,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,13,1750.0,1747,3.0
+2026-03-26,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,13,11240.0,11418,-178.0
+2026-03-26,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,13,107.0,107,0.0
+2026-03-27,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,13,3185.0,3158,27.0
+2026-03-27,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,13,32400.0,32585,-185.0
+2026-03-27,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,13,1700.0,1719,-19.0
+2026-03-27,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,13,9920.0,9722,198.0
+2026-03-27,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,13,9650.0,9715,-65.0
+2026-03-27,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,13,1480.0,1473,7.0
+2026-03-27,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,13,775.0,787,-12.0
+2026-03-27,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,13,480.0,492,-12.0
+2026-04-02,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,14,940.0,1020,-80.0
+2026-04-02,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,14,480.0,534,-54.0
+2026-04-02,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,14,1620.0,1747,-127.0
+2026-04-02,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,14,10200.0,11418,-1218.0
+2026-04-02,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,14,101.0,107,-6.0
+2026-04-04,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,14,8985.0,9715,-730.0
+2026-04-04,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,14,3040.0,3219,-179.0
+2026-04-04,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,14,2605.0,2727,-122.0
+2026-04-04,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,14,4700.0,4866,-166.0
+2026-04-04,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,14,6155.0,6474,-319.0
+2026-04-04,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,14,6065.0,6440,-375.0
+2026-04-04,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,14,1205.0,1251,-46.0
+2026-04-04,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,14,3850.0,4168,-318.0
+2026-04-04,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,14,1770.0,1936,-166.0
+2026-04-04,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,14,515.0,538,-23.0
+2026-04-04,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,14,5470.0,5803,-333.0
+2026-04-04,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,14,3355.0,3557,-202.0
+2026-04-04,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,14,3410.0,3563,-153.0
+2026-04-04,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,14,182.0,195,-13.0
+2026-04-04,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,14,4340.0,4563,-223.0
+2026-04-04,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,14,465.0,487,-22.0
+2026-04-07,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,15,785.0,782,3.0
+2026-04-07,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,15,252.0,244,8.0
+2026-04-07,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,15,4325.0,4252,73.0
+2026-04-07,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,15,1945.0,1951,-6.0
+2026-04-09,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,15,1070.0,1020,50.0
+2026-04-09,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,15,565.0,534,31.0
+2026-04-09,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,15,1830.0,1747,83.0
+2026-04-09,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,15,11925.0,11418,507.0
+2026-04-09,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,15,112.0,107,5.0
+2026-04-10,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,15,3350.0,3158,192.0
+2026-04-10,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,15,33750.0,32585,1165.0
+2026-04-10,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,15,1705.0,1719,-14.0
+2026-04-10,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,15,10050.0,9722,328.0
+2026-04-10,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,15,1500.0,1473,27.0
+2026-04-10,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,15,790.0,787,3.0
+2026-04-10,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,15,500.0,492,8.0
+2026-04-11,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,15,980.0,980,0.0
+2026-04-11,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,15,3705.0,3668,37.0
+2026-04-11,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,15,510.0,488,22.0
+2026-04-11,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,15,198.0,196,2.0
+2026-04-16,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,16,1050.0,1020,30.0
+2026-04-16,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,16,535.0,534,1.0
+2026-04-16,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,16,1845.0,1747,98.0
+2026-04-16,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,16,11815.0,11418,397.0
+2026-04-16,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,16,113.0,107,6.0
+2026-04-18,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,16,10040.0,9715,325.0
+2026-04-18,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,16,3110.0,3219,-109.0
+2026-04-18,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,16,2600.0,2727,-127.0
+2026-04-18,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,16,4690.0,4866,-176.0
+2026-04-18,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,16,6315.0,6474,-159.0
+2026-04-18,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,16,6315.0,6440,-125.0
+2026-04-23,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,17,1060.0,1020,40.0
+2026-04-23,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,17,555.0,534,21.0
+2026-04-23,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,17,1825.0,1747,78.0
+2026-04-23,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,17,11810.0,11418,392.0
+2026-04-23,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,17,111.0,107,4.0
+2026-04-24,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,17,3335.0,3158,177.0
+2026-04-24,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,17,33282.0,32585,697.0
+2026-04-24,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,17,1750.0,1719,31.0
+2026-04-24,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,17,10235.0,9722,513.0
+2026-04-24,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,17,10000.0,9715,285.0
+2026-04-24,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,17,1545.0,1473,72.0
+2026-04-24,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,17,780.0,787,-7.0
+2026-04-24,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,17,510.0,492,18.0
+2026-04-30,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,18,960.0,1020,-60.0
+2026-04-30,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,18,515.0,534,-19.0
+2026-04-30,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,18,1675.0,1747,-72.0
+2026-04-30,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,18,10900.0,11418,-518.0
+2026-04-30,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,18,103.0,107,-4.0
+2026-05-07,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,19,970.0,1020,-50.0
+2026-05-07,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,19,495.0,534,-39.0
+2026-05-07,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,19,1660.0,1747,-87.0
+2026-05-07,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,19,10855.0,11418,-563.0
+2026-05-07,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,19,101.0,107,-6.0
+2026-05-08,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,19,2995.0,3158,-163.0
+2026-05-08,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,19,30234.0,32585,-2351.0
+2026-05-08,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,19,1735.0,1719,16.0
+2026-05-08,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,19,8975.0,9722,-747.0
+2026-05-08,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,19,8940.0,9715,-775.0
+2026-05-08,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,19,1455.0,1473,-18.0
+2026-05-08,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,19,795.0,787,8.0
+2026-05-08,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,19,490.0,492,-2.0
+2026-05-09,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,19,995.0,980,15.0
+2026-05-09,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,19,3690.0,3668,22.0
+2026-05-09,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,19,490.0,488,2.0
+2026-05-09,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,19,199.0,196,3.0
+2026-05-14,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,20,910.0,1020,-110.0
+2026-05-14,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,20,490.0,534,-44.0
+2026-05-14,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,20,1600.0,1747,-147.0
+2026-05-14,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,20,10585.0,11418,-833.0
+2026-05-14,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,20,98.0,107,-9.0
+2026-05-16,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,20,8960.0,9715,-755.0
+2026-05-16,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,20,3010.0,3219,-209.0
+2026-05-16,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,20,2580.0,2727,-147.0
+2026-05-16,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,20,4580.0,4866,-286.0
+2026-05-16,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,20,6065.0,6474,-409.0
+2026-05-16,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,20,6075.0,6440,-365.0
+2026-05-16,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,20,1160.0,1251,-91.0
+2026-05-16,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,20,3920.0,4168,-248.0
+2026-05-16,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,20,1800.0,1936,-136.0
+2026-05-16,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,20,505.0,538,-33.0
+2026-05-16,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,20,5375.0,5803,-428.0
+2026-05-16,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,20,3420.0,3557,-137.0
+2026-05-16,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,20,3370.0,3563,-193.0
+2026-05-16,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,20,181.0,195,-14.0
+2026-05-16,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,20,274.0,293,-19.0
+2026-05-16,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,20,4230.0,4563,-333.0
+2026-05-16,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,20,460.0,487,-27.0
+2026-05-18,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,21,765.0,782,-17.0
+2026-05-18,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,21,242.0,244,-2.0
+2026-05-18,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,21,4285.0,4252,33.0
+2026-05-18,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,21,1965.0,1951,14.0
+2026-05-21,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,21,965.0,1020,-55.0
+2026-05-21,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,21,515.0,534,-19.0
+2026-05-21,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,21,1685.0,1747,-62.0
+2026-05-21,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,21,11135.0,11418,-283.0
+2026-05-21,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,21,103.0,107,-4.0
+2026-05-22,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,21,2995.0,3158,-163.0
+2026-05-22,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,21,31321.0,32585,-1264.0
+2026-05-22,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,21,1685.0,1719,-34.0
+2026-05-22,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,21,9480.0,9722,-242.0
+2026-05-22,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,21,9505.0,9715,-210.0
+2026-05-22,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,21,1470.0,1473,-3.0
+2026-05-22,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,21,775.0,787,-12.0
+2026-05-22,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,21,485.0,492,-7.0
+2026-05-28,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,22,1005.0,1020,-15.0
+2026-05-28,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,22,525.0,534,-9.0
+2026-05-28,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,22,1715.0,1747,-32.0
+2026-05-28,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,22,11355.0,11418,-63.0
+2026-05-28,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,22,106.0,107,-1.0
+2026-05-29,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,22,3105.0,3158,-53.0
+2026-05-29,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,22,32194.0,32585,-391.0
+2026-05-29,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,22,1640.0,1719,-79.0
+2026-05-29,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,22,9790.0,9722,68.0
+2026-05-29,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,22,9670.0,9715,-45.0
+2026-05-29,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,22,1405.0,1473,-68.0
+2026-05-29,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,22,740.0,787,-47.0
+2026-05-29,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,22,460.0,492,-32.0
+2026-06-04,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,23,1030.0,1020,10.0
+2026-06-04,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,23,540.0,534,6.0
+2026-06-04,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,23,1780.0,1747,33.0
+2026-06-04,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,23,11450.0,11418,32.0
+2026-06-04,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,23,108.0,107,1.0
+2026-06-05,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,23,3215.0,3158,57.0
+2026-06-05,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,23,32726.0,32585,141.0
+2026-06-05,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,23,1705.0,1719,-14.0
+2026-06-05,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,23,9720.0,9722,-2.0
+2026-06-05,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,23,9800.0,9715,85.0
+2026-06-05,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,23,1455.0,1473,-18.0
+2026-06-05,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,23,770.0,787,-17.0
+2026-06-05,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,23,480.0,492,-12.0
+2026-06-06,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,23,970.0,980,-10.0
+2026-06-06,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,23,3635.0,3668,-33.0
+2026-06-06,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,23,495.0,488,7.0
+2026-06-06,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,23,193.0,196,-3.0
+2026-06-08,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,24,800.0,782,18.0
+2026-06-08,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,24,248.0,244,4.0
+2026-06-08,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,24,4275.0,4252,23.0
+2026-06-08,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,24,1995.0,1951,44.0
+2026-06-11,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,24,1015.0,1020,-5.0
+2026-06-11,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,24,535.0,534,1.0
+2026-06-11,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,24,1785.0,1747,38.0
+2026-06-11,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,24,11890.0,11418,472.0
+2026-06-11,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,24,109.0,107,2.0
+2026-06-13,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,24,9945.0,9715,230.0
+2026-06-13,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,24,3195.0,3219,-24.0
+2026-06-13,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,24,2780.0,2727,53.0
+2026-06-13,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,24,4965.0,4866,99.0
+2026-06-13,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,24,6660.0,6474,186.0
+2026-06-13,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,24,6605.0,6440,165.0
+2026-06-13,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,24,1265.0,1251,14.0
+2026-06-13,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,24,4220.0,4168,52.0
+2026-06-13,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,24,2025.0,1936,89.0
+2026-06-13,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,24,545.0,538,7.0
+2026-06-13,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,24,5955.0,5803,152.0
+2026-06-13,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,24,3585.0,3557,28.0
+2026-06-13,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,24,3660.0,3563,97.0
+2026-06-13,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,24,203.0,195,8.0
+2026-06-13,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,24,296.0,293,3.0
+2026-06-13,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,24,4665.0,4563,102.0
+2026-06-13,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,24,505.0,487,18.0
+2026-06-18,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,25,1050.0,1020,30.0
+2026-06-18,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,25,565.0,534,31.0
+2026-06-18,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,25,1790.0,1747,43.0
+2026-06-18,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,25,11555.0,11418,137.0
+2026-06-18,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,25,111.0,107,4.0
+2026-06-19,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,25,3295.0,3158,137.0
+2026-06-19,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,25,33592.0,32585,1007.0
+2026-06-19,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,25,1760.0,1719,41.0
+2026-06-19,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,25,9970.0,9722,248.0
+2026-06-19,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,25,9865.0,9715,150.0
+2026-06-19,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,25,1525.0,1473,52.0
+2026-06-19,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,25,800.0,787,13.0
+2026-06-19,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,25,510.0,492,18.0
+2026-06-25,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,26,1070.0,1020,50.0
+2026-06-25,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,26,555.0,534,21.0
+2026-06-25,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,26,1820.0,1747,73.0
+2026-06-25,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,26,11855.0,11418,437.0
+2026-06-25,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,26,110.0,107,3.0
+2026-07-02,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,27,1075.0,1020,55.0
+2026-07-02,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,27,550.0,534,16.0
+2026-07-02,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,27,1805.0,1747,58.0
+2026-07-02,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,27,11895.0,11418,477.0
+2026-07-02,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,27,111.0,107,4.0
+2026-07-04,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,27,1290.0,1251,39.0
+2026-07-04,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,27,4280.0,4168,112.0
+2026-07-04,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,27,1980.0,1936,44.0
+2026-07-04,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,27,550.0,538,12.0
+2026-07-04,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,27,5960.0,5803,157.0
+2026-07-04,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,27,3670.0,3557,113.0
+2026-07-04,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,27,3590.0,3563,27.0
+2026-07-04,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,27,202.0,195,7.0
+2026-07-04,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,27,301.0,293,8.0
+2026-07-04,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,27,4610.0,4563,47.0
+2026-07-04,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,27,490.0,487,3.0
+2026-07-05,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,27,3300.0,3158,142.0
+2026-07-05,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,27,34514.0,32585,1929.0
+2026-07-05,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,27,1760.0,1719,41.0
+2026-07-05,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,27,10045.0,9722,323.0
+2026-07-05,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,27,10020.0,9715,305.0
+2026-07-05,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,27,1495.0,1473,22.0
+2026-07-05,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,27,790.0,787,3.0
+2026-07-05,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,27,510.0,492,18.0
+2026-07-06,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,28,825.0,782,43.0
+2026-07-06,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,28,256.0,244,12.0
+2026-07-06,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,28,4450.0,4252,198.0
+2026-07-06,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,28,2055.0,1951,104.0
+2026-07-09,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,28,1065.0,1020,45.0
+2026-07-09,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,28,545.0,534,11.0
+2026-07-09,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,28,1815.0,1747,68.0
+2026-07-09,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,28,11625.0,11418,207.0
+2026-07-09,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,28,110.0,107,3.0
+2026-07-11,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,28,10085.0,9715,370.0
+2026-07-11,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,28,3330.0,3219,111.0
+2026-07-11,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,28,2885.0,2727,158.0
+2026-07-11,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,28,5150.0,4866,284.0
+2026-07-11,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,28,6850.0,6474,376.0
+2026-07-11,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,28,6800.0,6440,360.0
+2026-07-16,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,29,1070.0,1020,50.0
+2026-07-16,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,29,560.0,534,26.0
+2026-07-16,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,29,1835.0,1747,88.0
+2026-07-16,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,29,11945.0,11418,527.0
+2026-07-16,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,29,113.0,107,6.0
+2026-07-17,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,29,3325.0,3158,167.0
+2026-07-17,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,29,34268.0,32585,1683.0
+2026-07-17,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,29,1750.0,1719,31.0
+2026-07-17,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,29,10300.0,9722,578.0
+2026-07-17,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,29,9985.0,9715,270.0
+2026-07-17,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,29,1545.0,1473,72.0
+2026-07-17,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,29,815.0,787,28.0
+2026-07-17,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,29,505.0,492,13.0
+2026-07-23,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,30,1060.0,1020,40.0
+2026-07-23,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,30,565.0,534,31.0
+2026-07-23,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,30,1840.0,1747,93.0
+2026-07-23,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,30,11785.0,11418,367.0
+2026-07-23,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,30,111.0,107,4.0
+2026-07-30,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,31,1080.0,1020,60.0
+2026-07-30,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,31,565.0,534,31.0
+2026-07-30,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,31,1855.0,1747,108.0
+2026-07-30,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,31,11925.0,11418,507.0
+2026-07-30,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,31,110.0,107,3.0
+2026-07-31,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,31,3300.0,3158,142.0
+2026-07-31,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,31,34514.0,32585,1929.0
+2026-07-31,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,31,1800.0,1719,81.0
+2026-07-31,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,31,10255.0,9722,533.0
+2026-07-31,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,31,10300.0,9715,585.0
+2026-07-31,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,31,1520.0,1473,47.0
+2026-07-31,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,31,825.0,787,38.0
+2026-07-31,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,31,500.0,492,8.0
+2026-08-01,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,31,1285.0,1251,34.0
+2026-08-01,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,31,4385.0,4168,217.0
+2026-08-01,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,31,2050.0,1936,114.0
+2026-08-01,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,31,565.0,538,27.0
+2026-08-01,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,31,6115.0,5803,312.0
+2026-08-01,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,31,3740.0,3557,183.0
+2026-08-01,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,31,3760.0,3563,197.0
+2026-08-01,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,31,203.0,195,8.0
+2026-08-01,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,31,307.0,293,14.0
+2026-08-01,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,31,4800.0,4563,237.0
+2026-08-01,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,31,510.0,487,23.0
+2026-08-01,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,31,1030.0,980,50.0
+2026-08-01,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,31,3825.0,3668,157.0
+2026-08-01,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,31,510.0,488,22.0
+2026-08-01,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,31,202.0,196,6.0
+2026-08-06,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,32,1065.0,1020,45.0
+2026-08-06,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,32,555.0,534,21.0
+2026-08-06,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,32,1835.0,1747,88.0
+2026-08-06,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,32,11840.0,11418,422.0
+2026-08-06,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,32,111.0,107,4.0
+2026-08-08,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,32,10040.0,9715,325.0
+2026-08-08,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,32,3330.0,3219,111.0
+2026-08-08,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,32,2825.0,2727,98.0
+2026-08-08,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,32,4995.0,4866,129.0
+2026-08-08,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,32,6670.0,6474,196.0
+2026-08-08,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,32,6690.0,6440,250.0
+2026-08-13,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,33,1060.0,1020,40.0
+2026-08-13,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,33,545.0,534,11.0
+2026-08-13,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,33,1790.0,1747,43.0
+2026-08-13,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,33,12000.0,11418,582.0
+2026-08-13,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,33,112.0,107,5.0
+2026-08-14,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,33,3350.0,3158,192.0
+2026-08-14,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,33,32530.0,32585,-55.0
+2026-08-14,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,33,1775.0,1719,56.0
+2026-08-14,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,33,10220.0,9722,498.0
+2026-08-14,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,33,10115.0,9715,400.0
+2026-08-14,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,33,1490.0,1473,17.0
+2026-08-14,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,33,810.0,787,23.0
+2026-08-14,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,33,510.0,492,18.0
+2026-08-20,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,34,1055.0,1020,35.0
+2026-08-20,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,34,565.0,534,31.0
+2026-08-20,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,34,1785.0,1747,38.0
+2026-08-20,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,34,11635.0,11418,217.0
+2026-08-20,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,34,112.0,107,5.0
+2026-08-27,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,35,1055.0,1020,35.0
+2026-08-27,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,35,565.0,534,31.0
+2026-08-27,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,35,1840.0,1747,93.0
+2026-08-27,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,35,11955.0,11418,537.0
+2026-08-27,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,35,111.0,107,4.0
+2026-08-28,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,35,3350.0,3158,192.0
+2026-08-28,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,35,34223.0,32585,1638.0
+2026-08-28,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,35,1755.0,1719,36.0
+2026-08-28,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,35,10015.0,9722,293.0
+2026-08-28,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,35,10250.0,9715,535.0
+2026-08-28,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,35,1535.0,1473,62.0
+2026-08-28,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,35,805.0,787,18.0
+2026-08-28,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,35,505.0,492,13.0
+2026-08-29,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,35,1000.0,980,20.0
+2026-08-29,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,35,3775.0,3668,107.0
+2026-08-29,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,35,510.0,488,22.0
+2026-08-29,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,35,202.0,196,6.0
+2026-09-03,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,36,565.0,534,31.0
+2026-09-03,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,36,1855.0,1747,108.0
+2026-09-03,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,36,11795.0,11418,377.0
+2026-09-03,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,36,112.0,107,5.0
+2026-09-05,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,36,9985.0,9715,270.0
+2026-09-05,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,36,3400.0,3219,181.0
+2026-09-05,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,36,2885.0,2727,158.0
+2026-09-05,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,36,5150.0,4866,284.0
+2026-09-05,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,36,6850.0,6474,376.0
+2026-09-05,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,36,6680.0,6440,240.0
+2026-09-10,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,37,975.0,1020,-45.0
+2026-09-10,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,37,515.0,534,-19.0
+2026-09-10,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,37,1685.0,1747,-62.0
+2026-09-10,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,37,11225.0,11418,-193.0
+2026-09-10,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,37,103.0,107,-4.0
+2026-09-11,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,37,3020.0,3158,-138.0
+2026-09-11,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,37,32389.0,32585,-196.0
+2026-09-11,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,37,1750.0,1719,31.0
+2026-09-11,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,37,9535.0,9722,-187.0
+2026-09-11,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,37,9435.0,9715,-280.0
+2026-09-11,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,37,1535.0,1473,62.0
+2026-09-11,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,37,810.0,787,23.0
+2026-09-11,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,37,515.0,492,23.0
+2026-09-12,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,37,1320.0,1251,69.0
+2026-09-12,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,37,4400.0,4168,232.0
+2026-09-12,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,37,1885.0,1936,-51.0
+2026-09-12,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,37,560.0,538,22.0
+2026-09-12,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,37,5660.0,5803,-143.0
+2026-09-12,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,37,3690.0,3557,133.0
+2026-09-12,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,37,3620.0,3563,57.0
+2026-09-12,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,37,206.0,195,11.0
+2026-09-12,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,37,306.0,293,13.0
+2026-09-12,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,37,4780.0,4563,217.0
+2026-09-12,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,37,515.0,487,28.0
+2026-09-14,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,38,800.0,782,18.0
+2026-09-14,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,38,252.0,244,8.0
+2026-09-14,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,38,4305.0,4252,53.0
+2026-09-14,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,38,2010.0,1951,59.0
+2026-09-17,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,38,995.0,1020,-25.0
+2026-09-17,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,38,520.0,534,-14.0
+2026-09-17,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,38,1670.0,1747,-77.0
+2026-09-17,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,38,10775.0,11418,-643.0
+2026-09-17,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,38,104.0,107,-3.0
+2026-09-19,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,38,9505.0,9715,-210.0
+2026-09-19,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,38,3265.0,3219,46.0
+2026-09-19,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,38,2715.0,2727,-12.0
+2026-09-19,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,38,4945.0,4866,79.0
+2026-09-19,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,38,6630.0,6474,156.0
+2026-09-19,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,38,6510.0,6440,70.0
+2026-09-24,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,39,1060.0,1020,40.0
+2026-09-24,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,39,560.0,534,26.0
+2026-09-24,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,39,1795.0,1747,48.0
+2026-09-24,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,39,11975.0,11418,557.0
+2026-09-24,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,39,113.0,107,6.0
+2026-09-25,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,39,3235.0,3158,77.0
+2026-09-25,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,39,34074.0,32585,1489.0
+2026-09-25,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,39,1730.0,1719,11.0
+2026-09-25,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,39,9990.0,9722,268.0
+2026-09-25,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,39,10220.0,9715,505.0
+2026-09-25,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,39,1415.0,1473,-58.0
+2026-09-25,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,39,785.0,787,-2.0
+2026-09-25,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,39,475.0,492,-17.0
+2026-09-26,CUSTOMER-E,Codiaeum spp.,20/25cm,1p-oasis-rooted,2026,39,965.0,980,-15.0
+2026-09-26,CUSTOMER-E,Dracaena spp.,20/25cm,5p-oasis-rooted,2026,39,3630.0,3668,-38.0
+2026-09-26,CUSTOMER-E,Monstera spp.,6x4/8x5cm,5p-oasis-rooted,2026,39,475.0,488,-13.0
+2026-09-26,CUSTOMER-E,Plumeria spp.,30cm,1cpn-rooted,2026,39,194.0,196,-2.0
+2026-10-01,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,40,1030.0,1020,10.0
+2026-10-01,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,40,560.0,534,26.0
+2026-10-01,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,40,1750.0,1747,3.0
+2026-10-01,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,40,11895.0,11418,477.0
+2026-10-01,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,40,110.0,107,3.0
+2026-10-03,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,40,9880.0,9715,165.0
+2026-10-03,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,40,3200.0,3219,-19.0
+2026-10-03,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,40,2720.0,2727,-7.0
+2026-10-03,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,40,4780.0,4866,-86.0
+2026-10-03,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,40,6405.0,6474,-69.0
+2026-10-03,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,40,6280.0,6440,-160.0
+2026-10-03,CUSTOMER-D,Aglaonema maria,30/35cm,3p-oasis-rooted,2026,40,1265.0,1251,14.0
+2026-10-03,CUSTOMER-D,Codiaeum spp.,10cm,1cp-oasis-rooted,2026,40,4145.0,4168,-23.0
+2026-10-03,CUSTOMER-D,Cordyline spp.,20/22cm,Un-rooted,2026,40,1975.0,1936,39.0
+2026-10-03,CUSTOMER-D,Cordyline spp.,8cm,1cpn-rooted,2026,40,525.0,538,-13.0
+2026-10-03,CUSTOMER-D,Dracaena sanderiana spp.,20cm,Un-rooted,2026,40,6030.0,5803,227.0
+2026-10-03,CUSTOMER-D,Dracaena spp.,20/24cm,3p-oasis-rooted,2026,40,3500.0,3557,-57.0
+2026-10-03,CUSTOMER-D,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,40,3525.0,3563,-38.0
+2026-10-03,CUSTOMER-D,Monstera spp.,6x4/8x5cm,3p-oasis-rooted,2026,40,192.0,195,-3.0
+2026-10-03,CUSTOMER-D,Philodendron spp.,6x4/8x5cm,5p-oasis-rooted,2026,40,290.0,293,-3.0
+2026-10-03,CUSTOMER-D,Polyscias spp.,10cm,1cp-oasis-rooted,2026,40,4490.0,4563,-73.0
+2026-10-03,CUSTOMER-D,Zamioculcas spp.,15/20cm,1p-bare-rooted,2026,40,490.0,487,3.0
+2026-10-08,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,41,1065.0,1020,45.0
+2026-10-08,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,41,550.0,534,16.0
+2026-10-08,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,41,1820.0,1747,73.0
+2026-10-08,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,41,11780.0,11418,362.0
+2026-10-08,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,41,110.0,107,3.0
+2026-10-09,CUSTOMER-C,Aglaonema spp.,20/25cm,Un-rooted,2026,41,3270.0,3158,112.0
+2026-10-09,CUSTOMER-C,Codiaeum spp.,15/17cm,Un-rooted,2026,41,33393.0,32585,808.0
+2026-10-09,CUSTOMER-C,Dracaena spp.,20/25cm,5p-jiffy-pellet-rooted,2026,41,1660.0,1719,-59.0
+2026-10-09,CUSTOMER-C,Epipremnum spp.,6x4/8x5cm,Un-rooted,2026,41,9885.0,9722,163.0
+2026-10-09,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,Un-rooted,2026,41,10130.0,9715,415.0
+2026-10-09,CUSTOMER-C,Philodendron spp.,6x4/8x5cm,5p-jiffy-pellet-rooted,2026,41,1445.0,1473,-28.0
+2026-10-09,CUSTOMER-C,Plumeria spp.,20cm,1cpn-rooted,2026,41,765.0,787,-22.0
+2026-10-09,CUSTOMER-C,Schefflera spp.,15/20cm,1p-jiffy-pellet-rooted,2026,41,485.0,492,-7.0
+2026-10-15,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,42,1065.0,1020,45.0
+2026-10-15,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,42,540.0,534,6.0
+2026-10-15,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,42,1825.0,1747,78.0
+2026-10-15,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,42,11900.0,11418,482.0
+2026-10-15,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,42,111.0,107,4.0
+2026-10-17,CUSTOMER-B,Codiaeum spp.,15/17cm,Un-rooted,2026,42,10110.0,9715,395.0
+2026-10-17,CUSTOMER-B,Codiaeum spp.,10cm,1cpn-rooted,2026,42,3160.0,3219,-59.0
+2026-10-17,CUSTOMER-B,Cordyline spp.,10cm,1cpn-rooted,2026,42,2640.0,2727,-87.0
+2026-10-17,CUSTOMER-B,Epipremnum spp.,6x4/8x5cm,3p-oasis-rooted,2026,42,4840.0,4866,-26.0
+2026-10-17,CUSTOMER-B,Philodendron spp.,6x4/8x5cm,3p-oasis-rooted,2026,42,6375.0,6474,-99.0
+2026-10-17,CUSTOMER-B,Polyscias spp.,10cm,1cpn-rooted,2026,42,6235.0,6440,-205.0
+2026-10-19,CUSTOMER-F,Aglaonema spp.,40/45cm,1p-oasis-rooted,2026,43,770.0,782,-12.0
+2026-10-19,CUSTOMER-F,Codiaeum spp.,20/25cm,1ppn-rooted,2026,43,244.0,244,0.0
+2026-10-19,CUSTOMER-F,Dracaena spp.,12/15cm,1p-bare-rooted,2026,43,4230.0,4252,-22.0
+2026-10-19,CUSTOMER-F,Epipremnum spp.,6x4/8x5cm,5p-oasis-rooted,2026,43,1920.0,1951,-31.0
+2026-10-22,CUSTOMER-A,Cordyline spp.,50cm,Un-rooted,2026,43,1050.0,1020,30.0
+2026-10-22,CUSTOMER-A,Dracaena godseffiana spp.,50cm,Un-rooted,2026,43,555.0,534,21.0
+2026-10-22,CUSTOMER-A,Dracaena reflexa variegata spp.,50cm,Un-rooted,2026,43,1795.0,1747,48.0
+2026-10-22,CUSTOMER-A,Dracaena sanderiana spp.,50/55cm,Un-rooted,2026,43,11955.0,11418,537.0
+2026-10-22,CUSTOMER-A,Livistona spp.,20/25cm,Leaf,2026,43,111.0,107,4.0

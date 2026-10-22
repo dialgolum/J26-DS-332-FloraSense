@@ -1,0 +1,9 @@
+Rank,Model,MAE,RMSE,MAPE_%,R2,n_weeks
+1,XGBoost,834.67,1365.63,1.25,0.9969,43
+2,Random Forest,1250.37,1830.74,1.74,0.9944,43
+3,Naive: Historical Dispatch/Order Ratio,1827.21,2310.28,2.8,0.9911,43
+4,Naive: Ordered Quantity,1464.33,2319.07,2.2,0.9911,43
+5,Stacked Bi-LSTM,2005.21,2521.54,2.99,0.9894,43
+6,SARIMAX (weekly agg.),2131.19,2614.21,3.27,0.9886,43
+7,TFT,2444.67,3322.7,3.86,0.9816,43
+8,Naive: Last Training Dispatch,9235.58,10265.51,14.44,0.8247,43

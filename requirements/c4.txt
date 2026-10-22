@@ -1,0 +1,26 @@
+# C4 Time Series Forecasting — Dependencies
+# Install with: pip install -r requirements/c4.txt
+
+# Data handling
+pandas>=2.2
+numpy>=1.26
+openpyxl>=3.1        # Excel reading for meteorological data
+
+# Machine learning
+scikit-learn>=1.4
+xgboost>=2.0
+
+# Statistical modelling
+statsmodels>=0.14    # SARIMAX
+
+# Deep learning (LSTM + TFT)
+torch>=2.2
+pytorch-forecasting>=1.0
+pytorch-lightning>=2.3
+
+# Serialisation
+joblib>=1.3
+
+# Visualisation
+matplotlib>=3.8
+seaborn>=0.13

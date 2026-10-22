@@ -1,0 +1,28 @@
+=================================================================
+  FLORASENSE C4 -- FORECASTING EVALUATION REPORT
+  Generated: 2026-10-22 15:49
+=================================================================
+
+MODELS EVALUATED:
+  1. XGBoost                        MAE=    92.3  RMSE=   239.2  MAPE=  2.4%  R2=0.9986
+  2. Naive: Ordered Quantity        MAE=   112.8  RMSE=   273.7  MAPE=  2.6%  R2=0.9982
+  3. Naive: Historical Dispatch/Order Ratio MAE=   134.0  RMSE=   276.7  MAPE=  3.1%  R2=0.9981
+  4. Random Forest                  MAE=   106.4  RMSE=   315.9  MAPE=  2.1%  R2=0.9976
+  5. TFT                            MAE=   199.6  RMSE=   426.8  MAPE=  6.4%  R2=0.9956
+  6. Stacked Bi-LSTM                MAE=   206.8  RMSE=   436.3  MAPE= 15.4%  R2=0.9954
+  7. Naive: Last Training Dispatch  MAE=   609.8  RMSE=   958.4  MAPE= 17.8%  R2=0.9777
+
+BEST MODEL : XGBoost
+RMSE       : 239.16
+MAE        : 92.26
+MAPE       : 2.37%
+R2         : 0.9986
+
+FILES GENERATED:
+  data\c4_time_series\results\final_report\final_model_comparison.csv
+  data\c4_time_series\results\final_report\weekly_model_comparison.csv
+  data\c4_time_series\results\final_report\model_comparison_bars.png
+  data\c4_time_series\results\final_report\all_models_actual_vs_predicted.png
+  data\c4_time_series\results\final_report\residual_analysis.png
+  data\c4_time_series\results\final_report\per_customer_metrics.csv
+=================================================================
