@@ -7,6 +7,7 @@ import Button from "../../components/ui/Button.jsx";
 import StatusBadge from "../../components/ui/StatusBadge.jsx";
 import IntegrationNotice from "../../components/ui/IntegrationNotice.jsx";
 import { identifyPlant } from "../../api/identify.js";
+import ChatPanel from "./ChatPanel.jsx";
 
 const nice = (s) => s.replace(" | ", " - ").replace(/_/g, " ");
 
@@ -101,6 +102,9 @@ export default function IdentificationPage() {
           </div>
         )}
       </Card>
+      </div>
+    <div className="mt-5">
+      <ChatPanel variety={result && !result.is_unknown ? result.label : null} />
     </div>
   </>;
 }
