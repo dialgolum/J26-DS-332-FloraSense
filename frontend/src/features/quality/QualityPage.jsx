@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ClipboardCheck, Image as ImageIcon } from "lucide-react";
 import Card from "../../components/ui/Card.jsx";
 import PageIntro from "../../components/ui/PageIntro.jsx";
@@ -10,10 +10,10 @@ import ErrorMessage from "../../components/ui/ErrorMessage.jsx";
 import {
   assessSample, getApiErrorMessage, getImagePreviewUrl, getPlantTypes,
   getRequirements, getSampleImages, getSamples,
-  getHeightAnnotations, getQualityAnnotations,
+  getHeightAnnotations,
 } from "./api.js";
 
-import { canAssess, checkSummary, inspectionReviewReasons } from "./assessmentState.js";
+import { assessmentPresentation, canAssess, usesBranchDistribution } from "./assessmentState.js";
 
 function statusTone(status) {
   if (status === "PASS") return "pass";
@@ -43,7 +43,6 @@ export default function QualityPage() {
   const [images, setImages] = useState([]);
   const [imageId, setImageId] = useState("");
   const [heightAnnotations, setHeightAnnotations] = useState([]);
-  const [qualityAnnotations, setQualityAnnotations] = useState([]);
   const [loadingAnnotations, setLoadingAnnotations] = useState(false);
   const [annotationError, setAnnotationError] = useState("");
   const [loadingPlants, setLoadingPlants] = useState(true);
@@ -109,13 +108,13 @@ export default function QualityPage() {
   useEffect(() => {
     let active = true;
     evaluationVersion.current += 1;
-    setHeightAnnotations([]); setQualityAnnotations([]); setQualityResult(null); setAssessing(false);
+    setHeightAnnotations([]); setQualityResult(null); setAssessing(false);
     setAnnotationError(""); setLoadingAnnotations(false);
     if (!sampleId || !requirementId || loadingReferences) return undefined;
     setLoadingAnnotations(true);
-    Promise.all([getHeightAnnotations(sampleId, requirementId), getQualityAnnotations(sampleId, requirementId)])
-      .then(([heights, quality]) => {
-        if (active) { setHeightAnnotations(heights); setQualityAnnotations(quality); }
+    getHeightAnnotations(sampleId, requirementId)
+      .then((heights) => {
+        if (active) setHeightAnnotations(heights);
       }).catch((requestError) => {
         if (active) setAnnotationError(getApiErrorMessage(requestError, "Could not load recorded annotations."));
       }).finally(() => { if (active) setLoadingAnnotations(false); });
@@ -125,7 +124,7 @@ export default function QualityPage() {
   const selectedImage = images.find((item) => item.Image_ID === imageId);
   const selectedRequirement = requirements.find((item) => item.Requirement_ID === requirementId);
   const selectedSample = samples.find((item) => item.Sample_ID === sampleId);
-  const summary = useMemo(() => checkSummary(qualityResult?.Checks), [qualityResult]);
+  const presentation = assessmentPresentation(plantId, qualityResult);
   const assessmentReady = canAssess({ plantId, sampleId, requirementId, samples, requirements,
     loading: loadingReferences || loadingPlants || assessing });
 
@@ -148,7 +147,6 @@ export default function QualityPage() {
     }
   }
 
-  const reviewReasons = inspectionReviewReasons(qualityResult);
   const extraImages = images.filter((image) => !["Front", "Root"].includes(image.View_Type));
 
   return <>
@@ -185,43 +183,38 @@ export default function QualityPage() {
 
         <Card className="p-5 sm:p-6">
           <h2 className="font-display text-lg font-extrabold text-forest">Quality assessment results</h2>
-          <p className="mt-2 text-xs leading-5 text-muted">Recorded inspection uses expert annotations or recorded measurements. Buyer rules compare recorded sample information with buyer requirements.</p>
+          <p className="mt-2 text-xs text-muted">Based on recorded expert observations and measurements.</p>
           {!qualityResult ? <p className="mt-3 text-sm text-muted">Select a sample and buyer requirement, then run the quality assessment.</p> : <div aria-live="polite">
-            <div className="mt-4 flex flex-wrap items-center justify-between gap-3"><div className="flex flex-wrap items-center gap-2"><p className="text-sm font-bold">Quality assessment decision</p><StatusBadge tone="neutral">Buyer rule</StatusBadge></div><StatusBadge tone={statusTone(qualityResult.Buyer_Rule_Result)}>{qualityResult.Buyer_Rule_Result}</StatusBadge></div>
-            <p className="mt-3 text-xs text-muted">Plant {qualityResult.Plant_ID} | Sample {qualityResult.Sample_ID} | Buyer {qualityResult.Buyer_ID} | Requirement {qualityResult.Requirement_ID}</p>
-            <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">{Object.entries(summary).map(([status, count]) => <div key={status} className="rounded-xl border border-line p-3"><StatusBadge tone={statusTone(status)}>{status}</StatusBadge><p className="mt-2 text-xl font-bold">{count}</p></div>)}</div>
-            {qualityResult.Missing_Measurements?.includes("Height") && <p className="mt-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-900">Height measurement is pending. Complete the required measurement before final approval.</p>}
-            {qualityResult.Missing_Measurements?.filter((name) => name !== "Height").length > 0 && <p className="mt-3 text-sm text-amber-900">Required measurements pending: {qualityResult.Missing_Measurements.filter((name) => name !== "Height").join(", ")}.</p>}
-            <ul className="mt-4 divide-y divide-line">{qualityResult.Checks.map((check, index) => <li key={`${check.Check}-${index}`} className="py-4"><div className="flex items-center justify-between gap-3"><div className="flex flex-wrap items-center gap-2"><h3 className="text-sm font-bold">{check.Check}</h3><StatusBadge tone="neutral">Recorded inspection</StatusBadge>{["Root status", "Packing mode", "Height", "Leaf count"].includes(check.Check) && <StatusBadge tone="neutral">Buyer rule</StatusBadge>}</div><StatusBadge tone={statusTone(check.Presentation_Status)}>{check.Presentation_Status}</StatusBadge></div><p className="mt-2 text-sm text-muted">{check.Reason}</p></li>)}</ul>
-            {!!reviewReasons.length && <details className="mt-3 rounded-xl bg-amber-50 p-3 text-sm text-amber-900"><summary className="cursor-pointer font-bold">Review required</summary><ul className="mt-2 list-inside list-disc space-y-2">{reviewReasons.map((reason) => <li key={reason}>{reason}</li>)}</ul></details>}
+            <div className="mt-4 flex items-center justify-between gap-3"><p className="text-sm font-bold">Overall buyer assessment result</p><StatusBadge tone={statusTone(qualityResult.Buyer_Rule_Result)}>{qualityResult.Buyer_Rule_Result === "MANUAL REVIEW" ? "REVIEW" : qualityResult.Buyer_Rule_Result}</StatusBadge></div>
+            {presentation.additionalRequirements && <p className="mt-3 text-sm text-muted">Additional buyer requirements affect this result.</p>}
+            <ul className="mt-4 divide-y divide-line">{presentation.checks.map((check) => <li key={check.label} className="py-4"><div className="flex items-center justify-between gap-3"><h3 className="text-sm font-bold">{check.label}</h3><StatusBadge tone={statusTone(check.status)}>{check.status}</StatusBadge></div>{check.explanation && <p className="mt-2 text-sm text-muted">{check.explanation}</p>}</li>)}</ul>
           </div>}
         </Card>
 
         <Card className="p-5 sm:p-6">
           <h2 className="font-display text-lg font-extrabold text-forest">AI-assisted inspection</h2>
           <p className="mt-2 text-xs text-muted">AI findings support inspection and do not change the quality decision.</p>
-          {!qualityResult ? <p className="mt-3 text-sm text-muted">No AI findings available yet.</p> : <div className="mt-4 grid gap-4 sm:grid-cols-2">{["root_B", "leaf_B"].map((key) => {
-            const observation = qualityResult.AI_Observations[key];
+          {!qualityResult ? <p className="mt-3 text-sm text-muted">No AI findings available yet.</p> : <div className="mt-4 grid gap-4 sm:grid-cols-2">{(usesBranchDistribution(plantId) ? ["root_B", "leaf_B"] : ["root_B"]).map((key) => {
+            const observation = qualityResult.AI_Observations?.[key];
             const prediction = observation?.prediction;
-            const available = observation?.status === "success";
+            const available = observation?.status === "success" && Boolean(prediction?.predicted_label);
             const stateLabel = { disabled: "Not requested", unavailable: "Inspection unavailable", error: "Inspection unavailable", unsupported: "Not supported for this plant type", not_applicable: "Not applicable" }[observation?.status] || "Unavailable";
-            return <div key={key} className="rounded-xl border border-line p-4"><div className="flex flex-wrap items-center gap-2"><h3 className="text-sm font-bold">{key === "root_B" ? "Root condition" : "Branch distribution"}</h3><StatusBadge tone="neutral">AI-assisted</StatusBadge></div><p className="mt-2 text-sm font-bold">{available ? prediction.predicted_label : stateLabel}</p>
-              {available && <><p className="mt-2 text-sm">AI model score: {Number.isFinite(prediction.confidence) ? `${(prediction.confidence * 100).toFixed(1)}%` : "Unavailable"} <span className="text-xs text-muted">(uncalibrated)</span></p><p className="mt-2 text-sm">Expert label: {observation.expert_annotation?.label || "Missing or unclear"}</p><div className="mt-2"><StatusBadge tone={observation.comparison_status === "disagreement" ? "review" : "neutral"}>{observation.comparison_status === "agreement" ? "Agrees with expert" : observation.comparison_status === "disagreement" ? "Disagrees - review required" : "Expert comparison unavailable"}</StatusBadge></div></>}
+            return <div key={key} className="rounded-xl border border-line p-4"><div className="flex flex-wrap items-center gap-2"><h3 className="text-sm font-bold">{key === "root_B" ? "Root distribution prediction" : "Branch distribution prediction"}</h3><StatusBadge tone="neutral">AI-assisted</StatusBadge></div><p className="mt-2 text-sm font-bold">{available ? prediction.predicted_label : stateLabel}</p>
+              {available && ["agreement", "disagreement"].includes(observation.comparison_status) && <div className="mt-2"><StatusBadge tone={observation.comparison_status === "disagreement" ? "review" : "neutral"}>{observation.comparison_status === "agreement" ? "Agrees with expert" : "Disagrees with expert"}</StatusBadge></div>}
               {!available && ["unavailable", "error"].includes(observation?.status) && <p className="mt-2 text-xs text-muted">Continue with the recorded inspection checks or request manual review.</p>}
             </div>;
           })}</div>}
-          <p className="mt-3 text-xs text-muted">Branch distribution refers to where branches originate on the main stem, not equal foliage on each side.</p>
+
         </Card>
 
         <Card className="p-5 sm:p-6"><details><summary className="cursor-pointer font-display text-lg font-extrabold text-forest">Inspection details</summary>
           {loadingAnnotations ? <LoadingIndicator label="Loading inspection details..." /> : annotationError ? <div className="mt-4"><ErrorMessage title="Inspection details unavailable">{annotationError}</ErrorMessage></div> : <div className="mt-4 space-y-4">
             <StatusBadge tone="neutral">Recorded inspection</StatusBadge>
-            <p className="text-sm">Root condition: {selectedSample?.Observed_Root_Status ?? "Not recorded"} | Packing: {selectedSample?.Observed_Packing_Mode ?? "Not recorded"}</p>
+            <p className="text-sm">Root status: {selectedSample?.Observed_Root_Status ?? "Not recorded"}</p>
             {selectedRequirement && <p className="text-sm">Buyer {selectedRequirement.Buyer_ID} - Requirement {selectedRequirement.Requirement_ID}{selectedRequirement.Min_Height_cm != null && selectedRequirement.Max_Height_cm != null ? ` | Height range: ${selectedRequirement.Min_Height_cm}-${selectedRequirement.Max_Height_cm} cm` : ""}</p>}
             {!heightAnnotations.length && <p className="text-sm text-muted">No height measurement recorded for this buyer requirement.</p>}
             {heightAnnotations.map((row, index) => <div key={index} className="rounded-xl border border-line p-3 text-sm"><p className="font-bold">Recorded height assessment: {row.Height_Result ?? "Not recorded"}</p><p className="mt-1">Leaves in range: {row.Leaves_In_Range ?? "Not recorded"} / {row.Total_Leaves_Assessed ?? "Not recorded"} assessed</p>{row.Measured_Stem_Height != null && <p>Stem height: {row.Measured_Stem_Height} cm</p>}</div>)}
-            {!qualityAnnotations.length && <p className="text-sm text-muted">No quality inspection details recorded.</p>}
-            {qualityAnnotations.map((row, index) => <dl key={index} className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">{[["Leaf count", row.Total_Leaf_Count], ["Branch distribution", row.Leaf_Distribution], ["Root distribution", row.Root_Distribution], ["Oasis damaged", row.Oasis_Damaged], ["Visual quality", row.General_visual_Quality]].map(([label, value]) => <div key={label} className="rounded-xl bg-[#f7f9f6] p-3"><dt className="text-xs text-muted">{label}</dt><dd className="mt-1 text-sm font-bold">{value ?? "Not recorded"}</dd></div>)}</dl>)}
+
           </div>}
         </details></Card>
       </div>}

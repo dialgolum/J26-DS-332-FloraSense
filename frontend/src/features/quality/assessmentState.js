@@ -21,6 +21,44 @@ export function checkSummary(checks = []) {
   return counts;
 }
 
+export function usesBranchDistribution(plantId) {
+  return ["P02", "P03", "P04", "P05", "P06", "P07"].includes(plantId);
+}
+
+export function assessmentPresentation(plantId, result) {
+  const definitions = [
+    ["Root distribution", ["Root distribution"]],
+    usesBranchDistribution(plantId)
+      ? ["Branch distribution", ["Leaf distribution", "Branch distribution"]]
+      : null,
+    ["Height", ["Height"]],
+    ["P01", "P08"].includes(plantId) ? ["Leaf count", ["Leaf count"]] : null,
+    ["Overall visual quality", ["Overall visual quality", "Visual quality"]],
+  ].filter(Boolean);
+  const checks = result?.Checks || [];
+  const visibleNames = definitions.flatMap(([, names]) => names);
+  return {
+    checks: definitions.map(([label, names]) => {
+      const check = checks.find((item) => names.includes(item.Check));
+      const status = check?.Presentation_Status || check?.Status;
+      const presentationStatus = check?.Missing_Measurement || result?.Missing_Measurements?.some((name) => names.includes(name))
+        ? "PENDING" : ["PASS", "FAIL", "PENDING", "REVIEW"].includes(status) ? status : "REVIEW";
+      return {
+        label,
+        status: check ? presentationStatus : "PENDING",
+        explanation: !check ? "Inspection not recorded."
+          : presentationStatus === "PENDING" ? "Required inspection or measurement is missing."
+          : presentationStatus === "REVIEW" ? "Recorded inspection needs review."
+          : label === "Leaf count" || label === "Height" ? check.Reason : "",
+      };
+    }),
+    additionalRequirements: ["FAIL", "MANUAL REVIEW", "REVIEW"].includes(result?.Buyer_Rule_Result) &&
+      checks.some((check) => !visibleNames.includes(check.Check) &&
+        (["FAIL", "MANUAL REVIEW", "REVIEW"].includes(check.Status) ||
+          ["FAIL", "REVIEW", "PENDING"].includes(check.Presentation_Status))),
+  };
+}
+
 export function canAssess({ plantId, sampleId, requirementId, samples, requirements, loading }) {
   return !loading && Boolean(plantId && sampleId && requirementId) &&
     samples.some((row) => row.Plant_ID === plantId && row.Sample_ID === sampleId) &&

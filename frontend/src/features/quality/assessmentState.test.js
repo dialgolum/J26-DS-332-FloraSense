@@ -1,6 +1,40 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { canAssess, checkSummary, inspectionReviewReasons, measurementAvailability, missingImageViews } from "./assessmentState.js";
+import { assessmentPresentation, usesBranchDistribution } from "./assessmentState.js";
+
+test("plant-specific presentation shows four checks and keeps missing checks pending", () => {
+  for (const plant of ["P01", "P02", "P03", "P04", "P05", "P06", "P07", "P08"]) {
+    const branch = !["P01", "P08"].includes(plant);
+    assert.equal(usesBranchDistribution(plant), branch);
+    const rows = assessmentPresentation(plant, {}).checks;
+    assert.deepEqual(rows.map((row) => row.label), branch
+      ? ["Root distribution", "Branch distribution", "Height", "Overall visual quality"]
+      : ["Root distribution", "Height", "Leaf count", "Overall visual quality"]);
+    assert.ok(rows.every((row) => row.status === "PENDING"));
+  }
+});
+
+test("presentation aliases existing fields without changing rule results", () => {
+  const result = { Buyer_Rule_Result: "FAIL", Checks: [
+    { Check: "Leaf distribution", Status: "PASS", Presentation_Status: "PASS" },
+    { Check: "Packing mode", Status: "FAIL", Presentation_Status: "FAIL" },
+    { Check: "Height", Status: "MANUAL REVIEW", Presentation_Status: "PENDING", Missing_Measurement: true },
+    { Check: "Visual quality", Status: "MANUAL REVIEW" },
+  ] };
+  const original = JSON.stringify(result);
+  const view = assessmentPresentation("P02", result);
+  assert.equal(view.checks[1].status, "PASS");
+  assert.equal(view.checks[2].status, "PENDING");
+  assert.equal(view.checks[3].status, "REVIEW");
+  assert.equal(view.additionalRequirements, true);
+  assert.equal(JSON.stringify(result), original);
+  result.Buyer_Rule_Result = "MANUAL REVIEW";
+  result.Checks[1].Status = "MANUAL REVIEW";
+  assert.equal(assessmentPresentation("P02", result).additionalRequirements, true);
+  result.Checks.splice(1, 1);
+  assert.equal(assessmentPresentation("P02", result).additionalRequirements, false);
+});
 
 test("saved CV sessions remain usable alongside manual annotations", () => {
   assert.equal(measurementAvailability({ sessions: [{}], heightAnnotations: [{}] }), "Saved image-based measurements available");
