@@ -3,8 +3,8 @@ import Card from "../../components/ui/Card.jsx";
 import Button from "../../components/ui/Button.jsx";
 import StatusBadge from "../../components/ui/StatusBadge.jsx";
 import ErrorMessage from "../../components/ui/ErrorMessage.jsx";
-import { getApiErrorMessage, inspectFrontImage } from "./api.js";
-import { validateFrontImage } from "./uploadValidation.js";
+import { getApiErrorMessage, inspectFrontImage, inspectUploadedPlant } from "./api.js";
+import { validateFrontImage, validateInspectionImages } from "./uploadValidation.js";
 
 export default function AutomaticLeafUpload() {
   const [file, setFile] = useState(null);
@@ -84,4 +84,72 @@ export default function AutomaticLeafUpload() {
       {result.leaf_regions.length > 0 && <details className="mt-3 text-sm"><summary className="cursor-pointer font-bold">Region details and ambiguity flags</summary><ul className="mt-2 space-y-1">{result.leaf_regions.map((region) => <li key={region.region_id}>Region {region.region_id}: box [{region.bbox_px.join(", ")}]; {region.ambiguity_flags.join(", ") || "No local flag; leaf identity remains unverified"}</li>)}</ul></details>}
     </div>}
   </Card>;
+}
+
+
+function UploadPhoto({ file, view }) {
+  const [url, setUrl] = useState("");
+  useEffect(() => {
+    if (!file) { setUrl(""); return undefined; }
+    const next = URL.createObjectURL(file);
+    setUrl(next);
+    return () => URL.revokeObjectURL(next);
+  }, [file]);
+  return url ? <img src={url} alt={`Uploaded ${view.toLowerCase()} view`} className="mt-3 h-52 w-full rounded-xl border border-line object-contain" /> : null;
+}
+
+export function UploadPlantInspection({ plantId, requirementId, ready }) {
+  const [files, setFiles] = useState({ Front: null, Root: null, Stem: null });
+  const [result, setResult] = useState(null);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+  const request = useRef(null);
+  useEffect(() => () => request.current?.abort(), []);
+
+  function invalidate() {
+    request.current?.abort(); request.current = null;
+    setResult(null); setBusy(false); setError("");
+  }
+  async function inspect() {
+    const validation = validateInspectionImages(files);
+    if (validation) { setError(validation); return; }
+    if (!ready) return;
+    const controller = new AbortController();
+    request.current = controller;
+    setBusy(true); setResult(null); setError("");
+    try {
+      const response = await inspectUploadedPlant(plantId, requirementId, files, controller.signal);
+      if (request.current === controller) setResult(response);
+    } catch (failure) {
+      if (request.current === controller && !controller.signal.aborted) setError(getApiErrorMessage(failure, "Inspection failed. Please retry."));
+    } finally {
+      if (request.current === controller) { setBusy(false); request.current = null; }
+    }
+  }
+  return <>
+    <Card className="p-5 sm:p-6">
+      <h2 className="font-display text-lg font-extrabold text-forest">Upload plant photographs</h2>
+      <p className="mt-2 text-sm text-muted">Front and Root images are required. Stem is optional and reserved for later checks. JPEG/PNG, up to 25 MiB per image. Uploads are temporary.</p>
+      <div className="mt-4 grid gap-4 sm:grid-cols-3">{["Front", "Root", "Stem"].map((view) => <div key={view}>
+        <label className="block text-sm font-bold">{view} image{view === "Stem" ? " (optional)" : " (required)"}<input type="file" accept="image/jpeg,image/png" className="mt-2 block w-full text-sm" onChange={(event) => {
+          invalidate();
+          const file = event.target.files?.[0] || null;
+          const message = file ? validateFrontImage(file) : "";
+          setFiles((current) => ({ ...current, [view]: message ? null : file })); setError(message);
+        }} /></label>
+        <UploadPhoto file={files[view]} view={view} />
+      </div>)}</div>
+      {error && <div className="mt-4"><ErrorMessage title="Inspection unavailable">{error}</ErrorMessage></div>}
+      <div className="mt-5"><Button disabled={!ready || busy || Boolean(validateInspectionImages(files))} onClick={inspect}>{busy ? "Inspecting plant..." : "Run Inspection"}</Button></div>
+      {busy && <p role="status" className="mt-3 text-sm text-muted">Running experimental classifiers...</p>}
+    </Card>
+    {result && <Card className="p-5 sm:p-6" aria-live="polite">
+      <div className="flex items-center justify-between gap-3"><h2 className="font-bold text-forest">Overall buyer assessment result</h2><StatusBadge tone="review">REVIEW</StatusBadge></div>
+      <p className="mt-3 text-sm text-muted">Experimental AI predictions require human review. Buyer approval remains pending until required measurements and checks are completed.</p>
+      <ul className="mt-4 divide-y divide-line">{Object.entries(result.AI_Observations).map(([key, observation]) => <li key={key} className="py-4">
+        <div className="flex items-center justify-between gap-3"><h3 className="text-sm font-bold">{key === "root_B" ? "Root distribution" : "Branch distribution"}</h3><StatusBadge tone="review">{observation.status === "success" ? "AI prediction" : "REVIEW"}</StatusBadge></div>
+        <p className="mt-2 text-sm">{observation.status === "success" ? observation.prediction.predicted_label : observation.reason}</p>
+      </li>)}{result.Checks.map((check) => <li key={check.Check} className="flex items-center justify-between gap-3 py-4"><h3 className="text-sm font-bold">{check.Check}</h3><StatusBadge tone="pending">PENDING</StatusBadge></li>)}</ul>
+    </Card>}
+  </>;
 }

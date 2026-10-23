@@ -15,6 +15,8 @@ import {
 
 import { assessmentPresentation, canAssess, usesBranchDistribution } from "./assessmentState.js";
 
+import { UploadPlantInspection } from "./AutomaticLeafUpload.jsx";
+
 function statusTone(status) {
   if (status === "PASS") return "pass";
   if (status === "FAIL") return "fail";
@@ -30,6 +32,7 @@ function SamplePhoto({ image, sampleId }) {
 }
 
 export default function QualityPage() {
+  const [mode, setMode] = useState("upload");
   const evaluationVersion = useRef(0);
   const [qualityResult, setQualityResult] = useState(null);
   const [assessing, setAssessing] = useState(false);
@@ -72,7 +75,7 @@ export default function QualityPage() {
     setRequirements([]); setRequirementId(""); setSamples([]); setSampleId("");
     setLoadingReferences(true);
     setError("");
-    Promise.all([getRequirements(plantId), getSamples(plantId)]).then(([profiles, sampleRows]) => {
+    Promise.all([getRequirements(plantId), mode === "sample" ? getSamples(plantId) : Promise.resolve([])]).then(([profiles, sampleRows]) => {
       if (!active) return;
       setRequirements(profiles);
       setSamples(sampleRows);
@@ -84,7 +87,7 @@ export default function QualityPage() {
       if (active) setError(getApiErrorMessage(requestError, "Could not load requirements and samples."));
     }).finally(() => { if (active) setLoadingReferences(false); });
     return () => { active = false; };
-  }, [plantId]);
+  }, [plantId, mode]);
 
   useEffect(() => {
     if (!sampleId) {
@@ -155,20 +158,23 @@ export default function QualityPage() {
     {loadingPlants ? <Card className="p-5"><LoadingIndicator label="Loading plant types..." /></Card> : plants.length === 0 ? <Card className="p-5"><p className="text-sm text-muted">No plant types are available.</p></Card> :
       <div className="mx-auto max-w-5xl space-y-5">
         <Card className="p-5 sm:p-6">
+          <div className="mb-5"><Field label="Inspection mode"><Select aria-label="Inspection mode" value={mode} onChange={(event) => { invalidateSelection(); setMode(event.target.value); }}><option value="upload">Upload &amp; Inspect</option><option value="sample">Existing sample assessment</option></Select></Field></div>
           <h2 className="mb-5 font-display text-lg font-extrabold text-forest">Assessment setup</h2>
           <div className="grid gap-4 md:grid-cols-3">
             <Field label="Plant type"><Select aria-label="Plant type" value={plantId} onChange={(event) => { invalidateSelection(); setImages([]); setRequirements([]); setSamples([]); setSampleId(""); setRequirementId(""); setPlantId(event.target.value); }}>{plants.map((plant) => <option key={plant.Plant_ID} value={plant.Plant_ID}>{plant.Plant_ID} - {plant.Plant_Name}</option>)}</Select></Field>
             <Field label="Buyer requirement"><Select aria-label="Buyer requirement" value={requirementId} onChange={(event) => { invalidateSelection(); setRequirementId(event.target.value); }} disabled={loadingReferences || !requirements.length}>{!requirements.length && <option value="">No buyer profiles available</option>}{requirements.map((profile) => <option key={profile.Requirement_ID} value={profile.Requirement_ID}>{profile.Buyer_ID} - {profile.Requirement_ID}</option>)}</Select></Field>
-            <Field label="Sample"><Select aria-label="Sample" value={sampleId} onChange={(event) => { invalidateSelection(); setImages([]); setSampleId(event.target.value); }} disabled={loadingReferences || !samples.length}>{!samples.length && <option value="">No samples available</option>}{samples.map((sample) => <option key={sample.Sample_ID} value={sample.Sample_ID}>{sample.Sample_ID}</option>)}</Select></Field>
+            {mode === "sample" && <Field label="Sample"><Select aria-label="Sample" value={sampleId} onChange={(event) => { invalidateSelection(); setImages([]); setSampleId(event.target.value); }} disabled={loadingReferences || !samples.length}>{!samples.length && <option value="">No samples available</option>}{samples.map((sample) => <option key={sample.Sample_ID} value={sample.Sample_ID}>{sample.Sample_ID}</option>)}</Select></Field>}
           </div>
           {loadingReferences && <div className="mt-3"><LoadingIndicator compact label="Loading samples and buyer profiles..." /></div>}
-          <div className="mt-5 flex flex-col gap-4 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
+          {mode === "sample" && <div className="mt-5 flex flex-col gap-4 border-t border-line pt-5 sm:flex-row sm:items-center sm:justify-between">
             <label className="flex items-center gap-2 text-sm font-bold"><input type="checkbox" checked={aiEnabled} onChange={(event) => { invalidateSelection(); setAiEnabled(event.target.checked); }} />Include AI-assisted inspection</label>
             <Button disabled={!assessmentReady} onClick={runQualityAssessment}><ClipboardCheck size={16} />{assessing ? "Assessing sample..." : "Run Quality Assessment"}</Button>
           </div>
+          }
           {assessing && <div className="mt-3" role="status"><LoadingIndicator compact label="Inspecting plant quality..." /></div>}
         </Card>
 
+        {mode === "upload" ? <UploadPlantInspection key={`${plantId}-${requirementId}`} plantId={plantId} requirementId={requirementId} ready={!loadingReferences && Boolean(selectedRequirement) && selectedRequirement.Plant_ID === plantId} /> : <>
         <Card className="p-5 sm:p-6">
           <h2 className="mb-4 font-display text-lg font-extrabold text-forest">Plant photographs</h2>
           {sampleDataError && <ErrorMessage title="Photographs unavailable">{sampleDataError}</ErrorMessage>}
@@ -217,6 +223,7 @@ export default function QualityPage() {
 
           </div>}
         </details></Card>
+        </>}
       </div>}
   </>;
 }

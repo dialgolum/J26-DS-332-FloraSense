@@ -229,3 +229,92 @@ def test_fragmentation_limit_abstains_instead_of_reporting_a_truncated_count():
 @pytest.mark.parametrize("value,expected", [(8, True), (8.0, True), (0, True), (None, False), (float("nan"), False), (float("inf"), False), (-1, False), (2.5, False)])
 def test_evaluation_accepts_only_valid_ground_truth_counts(value, expected):
     assert valid_count(value) is expected
+
+
+@pytest.fixture
+def new_plant_upload(monkeypatch):
+    import base64
+    import pandas as pd
+    # Deliberately no Samples, annotations or measurements: new plants have none.
+    sheets = {"Plant_Types": pd.DataFrame([{"Plant_ID": f"P{i:02d}"} for i in range(1, 9)]),
+              "Requirement_Profiles": pd.DataFrame([
+                  {"Plant_ID": f"P{i:02d}", "Requirement_ID": f"R{i}", "Buyer_ID": "B1"} for i in range(1, 9)])}
+    monkeypatch.setitem(app.dependency_overrides, automatic_routes.get_sheets, lambda: sheets)
+    monkeypatch.setitem(app.dependency_overrides, automatic_routes.get_ai_config,
+                        lambda: {"root_checkpoint": "root.pth", "leaf_checkpoint": "leaf.pth", "device": "cpu"})
+    image = {"content_type": "image/png", "data": base64.b64encode(encoded()).decode()}
+    return {"plant_id": "P02", "requirement_id": "R2", "images": {"Front": image.copy(), "Root": image.copy()}}
+
+
+@pytest.mark.parametrize("plant", range(1, 9))
+def test_new_plant_models_use_uploaded_views_and_always_require_review(new_plant_upload, monkeypatch, plant):
+    from pathlib import Path
+    calls = []
+
+    def predict(path, checkpoint, task, variant, device):
+        assert path.is_file()
+        assert path.stem == ("Root" if task == "root" else "Front")
+        assert checkpoint == f"{task}.pth" and variant == "B" and device == "cpu"
+        calls.append(path)
+        return {"status": "success", "predicted_label": "Acceptable" if task == "root" else "Both Sides",
+                "checkpoint_path": "private/path", "confidence": .9}
+
+    monkeypatch.setattr(automatic_routes, "predict_feature", predict)
+    new_plant_upload.update(plant_id=f"P{plant:02d}", requirement_id=f"R{plant}")
+    new_plant_upload["images"]["Stem"] = new_plant_upload["images"]["Front"].copy()
+    response = client.post("/api/v1/c3/inspections/upload", json=new_plant_upload)
+    assert response.status_code == 200, response.text
+    result = response.json()["data"]
+    assert result["Buyer_Rule_Result"] == "REVIEW"
+    assert "Sample_ID" not in result and "expert_annotation" not in response.text
+    assert "private/path" not in response.text and "confidence" not in response.text
+    assert response.json()["meta"]["persisted"] is False
+    assert all(not path.exists() and not path.parent.exists() for path in calls)
+    assert len(calls) == (0 if plant == 8 else 1 if plant == 1 else 2)
+    assert {row["Check"] for row in result["Checks"]} == (
+        {"Height", "Leaf count", "Overall visual quality"} if plant in {1, 8} else {"Height", "Overall visual quality"})
+    assert all(row["Presentation_Status"] == "PENDING" for row in result["Checks"])
+    assert result["AI_Observations"]["root_B"]["status"] == ("unsupported" if plant == 8 else "success")
+    assert ("leaf_B" in result["AI_Observations"]) == (2 <= plant <= 7)
+
+
+@pytest.mark.parametrize("problem, expected", [
+    ("missing", 422), ("empty", 422), ("type", 415), ("corrupt", 422),
+    ("encoding", 422), ("mismatch", 415), ("buyer", 422), ("unknown", 422),
+    ("oversized", 413), ("stem", 422),
+])
+def test_new_plant_rejects_invalid_uploads_before_inference(new_plant_upload, monkeypatch, problem, expected):
+    import base64
+    payload = new_plant_upload
+    root = payload["images"]["Root"]
+    if problem == "missing": del payload["images"]["Front"]
+    elif problem == "empty": root["data"] = ""
+    elif problem == "type": root["content_type"] = "image/svg+xml"
+    elif problem == "corrupt": root["data"] = base64.b64encode(b"corrupt").decode()
+    elif problem == "encoding": root["data"] = "???"
+    elif problem == "mismatch": root["content_type"] = "image/jpeg"
+    elif problem == "buyer": payload["requirement_id"] = "R1"
+    elif problem == "unknown": payload["plant_id"] = "P99"
+    elif problem == "oversized": monkeypatch.setattr(automatic_routes, "MAX_INSPECTION_BYTES", 10)
+    elif problem == "stem": payload["images"]["Stem"] = {"content_type": "image/png", "data": ""}
+    def unexpected(*args, **kwargs):
+        pytest.fail("Invalid upload reached model inference")
+    monkeypatch.setattr(automatic_routes, "predict_feature", unexpected)
+    response = client.post("/api/v1/c3/inspections/upload", json=payload)
+    assert response.status_code == expected, response.text
+
+
+@pytest.mark.parametrize("failure", ["missing", "incompatible", "exception"])
+def test_new_plant_unavailable_model_never_invents_prediction(new_plant_upload, monkeypatch, failure):
+    if failure == "missing":
+        monkeypatch.setitem(app.dependency_overrides, automatic_routes.get_ai_config, lambda: {})
+    def fail(*args, **kwargs):
+        if failure == "exception": raise RuntimeError("secret checkpoint path")
+        return {"status": "error", "error": {"message": "secret checkpoint path"}}
+    monkeypatch.setattr(automatic_routes, "predict_feature", fail)
+    response = client.post("/api/v1/c3/inspections/upload", json=new_plant_upload)
+    assert response.status_code == 200
+    assert response.json()["data"]["Buyer_Rule_Result"] == "REVIEW"
+    assert all(row["status"] == "unavailable" and "prediction" not in row
+               for row in response.json()["data"]["AI_Observations"].values())
+    assert "secret" not in response.text

@@ -42,3 +42,20 @@ export const assessSample = (plantId, sampleId, requirementId, aiEnabled) => rea
   { plant_id: plantId, sample_id: sampleId, requirement_id: requirementId, ai_enabled: aiEnabled },
   { timeout: 120_000 },
 ));
+
+export async function inspectUploadedPlant(plantId, requirementId, files, signal) {
+  const images = {};
+  for (const [view, file] of Object.entries(files)) {
+    if (!file) continue;
+    const data = await new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(reader.result.split(",")[1]);
+      reader.onerror = () => reject(new Error("Could not read uploaded image."));
+      reader.readAsDataURL(file);
+    });
+    images[view] = { content_type: file.type, data };
+  }
+  if (signal.aborted) throw new Error("Inspection cancelled.");
+  return readData(apiClient.post(`${PREFIX}/inspections/upload`,
+    { plant_id: plantId, requirement_id: requirementId, images }, { signal, timeout: 120_000 }));
+}

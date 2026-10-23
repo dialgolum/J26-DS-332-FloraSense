@@ -5,3 +5,15 @@ export function validateFrontImage(file) {
   if (file.size === 0) return "The image is empty.";
   return "";
 }
+
+export function validateInspectionImages(files) {
+  for (const view of ["Front", "Root"]) {
+    if (!files[view]) return `${view} image is required.`;
+  }
+  for (const [view, file] of Object.entries(files)) {
+    if (!file) continue;
+    const error = validateFrontImage(file);
+    if (error) return `${view}: ${error}`;
+  }
+  return "";
+}
