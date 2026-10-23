@@ -60,3 +60,5 @@ mlruns/
 
 # Temporary files
 ~$*.xlsx
+
+.vite/

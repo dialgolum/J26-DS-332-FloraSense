@@ -199,6 +199,13 @@ export default function C4SupplyDemandForecast() {
   const gap = forecast ? Number(forecast.supply_demand_gap) : null;
   const dispatch = forecast ? Number(forecast.predicted_dispatched_quantity) : null;
   const demand = forecast ? Number(forecast.ordered_quantity) : Number(form.ordered_quantity);
+  const enteredDemand = form.ordered_quantity.trim() === "" ? Number.NaN : Number(form.ordered_quantity);
+  const invalidDemand = !Number.isFinite(enteredDemand) || enteredDemand <= 0;
+  const showDemandWarning = Number.isFinite(enteredDemand) && enteredDemand <= 0;
+  const enteredMaxTemp = form.avg_max_temp_c.trim() === "" ? Number.NaN : Number(form.avg_max_temp_c);
+  const enteredMinTemp = form.avg_min_temp_c.trim() === "" ? Number.NaN : Number(form.avg_min_temp_c);
+  const invalidTemperatureRange = !Number.isFinite(enteredMaxTemp) || !Number.isFinite(enteredMinTemp) || enteredMaxTemp <= enteredMinTemp;
+  const showTemperatureWarning = Number.isFinite(enteredMaxTemp) && Number.isFinite(enteredMinTemp) && enteredMaxTemp <= enteredMinTemp;
   const calculatedRate = forecast && Number.isFinite(dispatch) && demand > 0 ? (dispatch / demand) * 100 : null;
   const fulfillmentRate = forecast && Number.isFinite(Number(forecast.fulfillment_rate_percent))
     ? Number(forecast.fulfillment_rate_percent)
@@ -208,6 +215,14 @@ export default function C4SupplyDemandForecast() {
 
   async function handleSubmit(event) {
     event.preventDefault();
+    if (invalidDemand) {
+      setRequestError("Buyer Contract Demand must be greater than 0 stems.");
+      return;
+    }
+    if (invalidTemperatureRange) {
+      setRequestError("Expected maximum temperature must be greater than expected minimum temperature.");
+      return;
+    }
     setLoading(true);
     setRequestError("");
     setForecast(null);
@@ -301,12 +316,13 @@ export default function C4SupplyDemandForecast() {
                 <NumberInput id="c4-week" value={form.week} onChange={update("week")} min="1" max="52" suffix="week" />
               </Field>
               <Field id="c4-year" label="Forecast year">
-                <NumberInput id="c4-year" value={form.year} onChange={update("year")} min="2023" max="2100" suffix="year" />
+                <NumberInput id="c4-year" value={form.year} onChange={update("year")} min={currentYear} max={currentYear + 1} suffix="year" />
               </Field>
             </div>
 
             <Field id="c4-demand" label="Buyer Contract Demand" hint="Required for this post-order dispatch supply forecast.">
-              <NumberInput id="c4-demand" value={form.ordered_quantity} onChange={update("ordered_quantity")} min="0" suffix="stems" />
+              <NumberInput id="c4-demand" value={form.ordered_quantity} onChange={update("ordered_quantity")} min="0.000001" step="any" suffix="stems" />
+              {showDemandWarning && <p role="alert" className="mt-1.5 text-xs font-semibold text-rose-700">Enter a value greater than 0. Zero and negative quantities are not allowed.</p>}
             </Field>
 
             <div className="rounded-2xl border border-line bg-[#fbfcfa] p-4 sm:p-5">
@@ -328,6 +344,7 @@ export default function C4SupplyDemandForecast() {
                   <NumberInput id="c4-rain" value={form.weekly_rainfall_mm} onChange={update("weekly_rainfall_mm")} min="0" max="2000" step="0.1" suffix="mm" />
                 </Field>
               </div>
+              {showTemperatureWarning && <p role="alert" className="mt-3 text-xs font-semibold text-rose-700">Expected max temperature must be greater than expected min temperature.</p>}
               <div className="mt-4 flex flex-wrap gap-2 text-[10px] font-semibold text-muted">
                 <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 ring-1 ring-line"><Thermometer size={12} /> Temperature</span>
                 <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-1 ring-1 ring-line"><CloudRain size={12} /> Precipitation</span>
@@ -335,7 +352,7 @@ export default function C4SupplyDemandForecast() {
               </div>
             </div>
 
-            <Button type="submit" disabled={loading || metadataLoading} className="w-full shadow-sm">
+            <Button type="submit" disabled={loading || metadataLoading || invalidDemand || invalidTemperatureRange} className="w-full shadow-sm">
               {loading ? <><Loader2 size={17} className="animate-spin" />Calculating forecast…</> : <><Activity size={17} />Run Dispatch Feasibility Analysis</>}
             </Button>
             <p className="text-center text-[11px] leading-5 text-muted">Forecasts support packhouse planning and should be reviewed against current crop and order conditions.</p>

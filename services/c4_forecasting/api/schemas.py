@@ -2,7 +2,11 @@
 
 from __future__ import annotations
 
+from datetime import datetime
+
 from pydantic import BaseModel, ConfigDict, Field, model_validator
+
+current_year = datetime.now().year
 
 
 class ForecastRequest(BaseModel):
@@ -12,8 +16,13 @@ class ForecastRequest(BaseModel):
     plant_variety: str = Field(min_length=1, max_length=160)
     size: str = Field(min_length=1, max_length=80)
     mode: str = Field(min_length=1, max_length=80)
-    ordered_quantity: float = Field(ge=0, allow_inf_nan=False)
-    year: int = Field(ge=2023, le=2100)
+    ordered_quantity: float = Field(gt=0, allow_inf_nan=False)
+    year: int = Field(
+        ...,
+        ge=current_year,
+        le=current_year + 1,
+        description="Forecast year must be the current year or the next year.",
+    )
     week: int = Field(ge=1, le=52)
     avg_max_temp_c: float = Field(ge=-20, le=70, allow_inf_nan=False)
     avg_min_temp_c: float = Field(ge=-20, le=70, allow_inf_nan=False)
@@ -21,8 +30,8 @@ class ForecastRequest(BaseModel):
 
     @model_validator(mode="after")
     def validate_temperature_range(self) -> "ForecastRequest":
-        if self.avg_min_temp_c > self.avg_max_temp_c:
-            raise ValueError("avg_min_temp_c must be less than or equal to avg_max_temp_c")
+        if self.avg_max_temp_c <= self.avg_min_temp_c:
+            raise ValueError("avg_max_temp_c must be greater than avg_min_temp_c")
         return self
 
 
