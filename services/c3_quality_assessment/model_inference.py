@@ -160,7 +160,7 @@ def feature_image_tensor(image_path, preprocessing):
     except (OSError, ValueError, UnidentifiedImageError, Image.DecompressionBombError) as exc:
         raise FeatureInferenceError("INVALID_IMAGE", f"Image could not be decoded: {path}") from exc
 
-
+#loads the trained ResNet18 model and predicts plant visual quality. 
 class FeatureClassifier:
     """Reusable advisory classifier. Explicitly choose a fold, task and A/B arm.
 
